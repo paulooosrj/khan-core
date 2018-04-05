@@ -1,0 +1,14 @@
+{
+    "name": "paulaodev/khan-cli",
+    "description": "Command line khan php",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PaulaoDev",
+            "email": "jskhanframework@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
