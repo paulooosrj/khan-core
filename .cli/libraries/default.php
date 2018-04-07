@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\RouterKhan\Libraries;
+	namespace App\Khan\Libraries;
 
 	class LibraryName {
 

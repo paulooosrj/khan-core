@@ -82,6 +82,8 @@
 
 			if(file_put_contents($dir, $controllerDefault)){
 				$this->print("O Controller {$nameController} foi criado com sucesso em: app/{$nameController}.php");
+			}else{
+				$this->print("Erro ao criar o Controller {$nameController}");
 			}
 
 		}
@@ -101,6 +103,8 @@
 
 			if(file_put_contents($dir, $libDefault)){
 				$this->print("A Library {$nameLib} foi criado com sucesso em: {$dir}");
+			}else{
+				$this->print("Erro ao criar Library {$nameLib}");
 			}
 
 		}
@@ -113,6 +117,8 @@
 			){
 				$this->print('Aguarde a instalação dos pacotes.');
 				$this->runShell('npm i gulp -g && npm install');
+			}else{
+				$this->print("Error install gulp");
 			}
 
 		}
@@ -164,6 +170,10 @@
 
 				$this->print("O arquivo:  {$comando}.js foi criado com sucesso!!");
 
+			}else{
+
+				$this->print("Error create js {$comando}.js");
+
 			}
 
 		}
@@ -181,6 +191,10 @@
 				}
 
 				$this->print("O arquivo:  {$comando}.scss foi criado com sucesso!!");
+
+			}else{
+
+				$this->print("Erro ao criar Sass {$comando}.scss");
 
 			}
 
