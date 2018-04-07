@@ -1,7 +1,7 @@
 {
     "name": "paulaodev/khan-cli",
     "description": "Command line khan php",
-    "type": "project",
+    "type": "composer-plugin",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +9,9 @@
             "email": "jskhanframework@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "minimum-stability": "dev",
+    "require": {},
+    "bin": [
+        "khan"
+	]
 }
