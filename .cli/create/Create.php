@@ -13,7 +13,7 @@
 		}
 
 		protected function print($text){
-			echo "\n\n   {$text}\n\n";
+			echo "\n   {$text}\n";
 		}
 
 		protected function runShell($shell, $debug = false){

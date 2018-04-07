@@ -43,7 +43,7 @@
 		}
 
 		protected function print($text){
-			echo "\n\n   {$text}\n\n";
+			echo "\n   {$text}\n";
 		}
 
 		public function server($porta = 8080){
@@ -188,7 +188,7 @@
 
 		public function help(){
 
-			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )\n      php khan js:NomeDoArquivoJS ( gera um arquivo javascript com a estrutura. )\n      php khan sass:NomeDoSass ( gera um arquivo sass ja com estrutura e bootstrap )\n      php cli-update ( update to cli khan )");
+			$this->print("Comandos: \n\n      khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      khan server ( liga o servidor php embutido )\n      khan gulp ( gera estrutura de sass watch e babel loader )\n      khan js:NomeDoArquivoJS ( gera um arquivo javascript com a estrutura. )\n      khan sass:NomeDoSass ( gera um arquivo sass ja com estrutura e bootstrap )\n      khan update ( update project khan )");
 
 		}
 
