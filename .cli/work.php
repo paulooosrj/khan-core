@@ -26,7 +26,8 @@
 
 			}else{
 
-				$this->print(self::$comando . " esta comando não existe.");
+				$comando = (strlen(self::$comando) > 0) ? self::$comando.' ' : '';
+				$this->print($comando."esta comando não existe.");
 				$this->help();
 
 			}
@@ -74,17 +75,9 @@
 
 			}
 
-			$nameController .= "Controller";
+			require_once 'controllers/Controller.php';
 
-			$controllerDefault = file_get_contents('.cli/controllers/default.php');
-			$controllerDefault = str_replace('NameController', $nameController, $controllerDefault);
-			$dir = "app/{$nameController}.php";
-
-			if(file_put_contents($dir, $controllerDefault)){
-				$this->print("O Controller {$nameController} foi criado com sucesso em: app/{$nameController}.php");
-			}else{
-				$this->print("Erro ao criar o Controller {$nameController}");
-			}
+			$controller = new Controller($nameController);
 
 		}
 
@@ -97,15 +90,8 @@
 
 			}
 
-			$libDefault = file_get_contents('.cli/libraries/default.php');
-			$libDefault = str_replace('LibraryName', $nameLib, $libDefault);
-			$dir = "src/RouterKhan/libraries/{$nameLib}.php";
-
-			if(file_put_contents($dir, $libDefault)){
-				$this->print("A Library {$nameLib} foi criado com sucesso em: {$dir}");
-			}else{
-				$this->print("Erro ao criar Library {$nameLib}");
-			}
+			require_once 'libraries/Lib.php';
+			$lib = new Lib($nameLib);
 
 		}
 
@@ -202,7 +188,7 @@
 
 		public function help(){
 
-			$this->print("Comandos: \n\n      khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      khan server ( liga o servidor php embutido )\n      khan gulp ( gera estrutura de sass watch e babel loader )\n      khan js:NomeDoArquivoJS ( gera um arquivo javascript com a estrutura. )\n      khan sass:NomeDoSass ( gera um arquivo sass ja com estrutura e bootstrap )\n      khan update ( update project khan )");
+			$this->print("Comandos: \n\n      khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      khan lib:LibName ( Create from libraries )\n      khan server ( liga o servidor php embutido )\n      khan gulp ( gera estrutura de sass watch e babel loader )\n      khan js:NomeDoArquivoJS ( gera um arquivo javascript com a estrutura. )\n      khan sass:NomeDoSass ( gera um arquivo sass ja com estrutura e bootstrap )\n      khan update ( update project khan )");
 
 		}
 
