@@ -56,7 +56,6 @@
 			$url = "https://github.com/PaulaoDev/router-khan/archive/master.zip";
 			$zipFile = ".cli/create/downloads/update.zip";
 			$zipResource = fopen($zipFile, "w");
-			// Get The Zip File From Server
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $url);
 			curl_setopt($ch, CURLOPT_FAILONERROR, true);
@@ -69,8 +68,8 @@
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); 
 			curl_setopt($ch, CURLOPT_FILE, $zipResource);
 			$page = curl_exec($ch);
-			if(!$page) {
-			 echo "Error :- ".curl_error($ch);
+			if(!$page) { 
+				$this->print("Error download!!"); 
 			}
 			curl_close($ch);
 			return (file_exists($zipFile)) ? $zipFile : false;
