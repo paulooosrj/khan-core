@@ -1,7 +1,7 @@
 {
     "name": "paulaodev/khan-cli",
     "description": "Command line khan php",
-    "type": "composer-plugin",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
