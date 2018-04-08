@@ -1,3 +1,5 @@
 /vendor/
 package-lock.json
 /node_modules/
+auto-commit.sh
+reinstall-composer.sh
