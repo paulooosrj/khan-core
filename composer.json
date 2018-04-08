@@ -10,7 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-   	"require-dev": {
+    "require-dev": {
         "symfony/console": "^4.0"
     },
     "autoload": {
@@ -20,5 +20,5 @@
     },
     "bin": [
         "khan"
-	]
+    ]
 }
