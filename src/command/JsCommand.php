@@ -21,7 +21,7 @@
 
 		public function context(){
 
-			return file_get_contents(".cli/assets/js.txt");
+			return file_get_contents(__DIR__."/../../.cli/assets/js.txt");
 
 		}
 
