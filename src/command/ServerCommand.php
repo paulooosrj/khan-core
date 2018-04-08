@@ -22,7 +22,9 @@
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    	
 	    	$porta = ($input->getArgument('porta')) ? $input->getArgument('porta') : 8080;
-	        $output->write("Servidor ativo em <info>http://localhost:{$porta}</info>");
+	    	$site = "http://localhost:{$porta}";
+	        $output->write("Servidor ativo em <info>{$site}</info>");
+	        KhanCommand::shell('start chrome "'.$site.'"');
 			KhanCommand::shell("php -S localhost:{$porta} public/index.php");
 
 	    }
