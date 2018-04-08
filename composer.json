@@ -10,7 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-   	"require": {
+   	"require-dev": {
         "symfony/console": "^4.0"
     },
     "autoload": {
