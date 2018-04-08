@@ -1,8 +1,18 @@
+#!/usr/bin/env php
 <?php
-	
-	require_once '.cli/work.php';
-	
-	$args = $argv;
-	unset($args[0]);
 
-	$cli = new CliKhan($args[1]);
+	require __DIR__.'/vendor/autoload.php';
+
+	use Symfony\Component\Console\Application;
+
+	$application = new Application('Khan CLI', '1.0');
+
+	$application->add(new Command\ServerCommand());
+	$application->add(new Command\CreateCommand());
+	$application->add(new Command\ControllerCommand());
+	$application->add(new Command\HelperCommand());
+	$application->add(new Command\GulpCommand());
+	$application->add(new Command\SassCommand());
+	$application->add(new Command\JsCommand());
+
+	$application->run();
