@@ -23,39 +23,27 @@
 
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    		
-	    	$context = __DIR__ . '/../../';
-	    	$name = ($input->getArgument('dir')) ? $input->getArgument('dir') : 'khan';
-	    	$dir = ($input->getArgument('dir')) ? "{$input->getArgument('dir')}/" : "khan-master/";
-	    	$dir = $context . $dir;
 
-	    	if(mkdir($dir)){
-	    		if(file_put_contents($dir . "download.zip", 
-				   file_get_contents(
-				   		"https://github.com/PaulaoDev/khan/archive/master.zip"
-				   )
-				)){
+	    	$dir = ($input->getArgument('dir')) ? $input->getArgument('dir') : "khan-project";
 
-		        	$zip = new \ZipArchive();
-					if ($zip->open($dir . "download.zip") === TRUE) {
-					    $zip->extractTo($dir);
-					    $zip->close();
-					    if(file_exists($dir. 'khan-master')){
-					    	$dire = $dir. 'khan-master';
-					    	KhanCommand::shell("mv {$dire}/* {$dir}");
-					    	KhanCommand::shell("rm -f {$dir}download.zip");
-					    }
-					    $output->write('<info>Finish download zip</info>');
-					} else {
-					    $output->writeln('<fg=red>Error to download</>');
-					}
+	    	if(!file_exists($dir.'/')){
 
-				}else{
+				try {
+					
+                    KhanCommand::shell("git clone https://github.com/PaulaoDev/khan {$dir}");
+                    $output->write('<info>Finish download zip</info>');
 
+				} catch (Exception $e) {
+					
 					$output->writeln('<fg=red>Error to download</>');
 
 				}
+
+
 	    	}else{
+
 	    		$output->writeln('<fg=red>Project is existing!!</>');
+
 	    	}
 
 	    }
