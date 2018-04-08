@@ -35,9 +35,9 @@
 				copy(__DIR__.'/../../.cli/gulp-files/file-package.json', 'package.json')
 			){
 				KhanCommand::shell("npm i gulp -g && npm install");
-				$this->sucess("Gulp configurado com sucesso");
+				$this->sucess($output, "Gulp configurado com sucesso");
 			}else{
-				$this->error("Erro ao instalar gulp");
+				$this->error($output, "Erro ao instalar gulp");
 			}
 
 	    }
