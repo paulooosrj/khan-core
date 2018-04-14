@@ -31,6 +31,8 @@
 				try {
 					
                     KhanCommand::shell("git clone https://github.com/PaulaoDev/khan {$dir}");
+                    KhanCommand::shell("composer install");
+                    
                     $output->write('<info>Finish download zip</info>');
 
 				} catch (Exception $e) {

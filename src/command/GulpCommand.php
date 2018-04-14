@@ -29,10 +29,10 @@
 	    }
 
 	    protected function execute(InputInterface $input, OutputInterface $output){
-
+	    	$root = __DIR__ . '/../../';
 	    	if(
-				copy(__DIR__.'/../../.cli/gulp-files/file-gulpfile.js', 'gulpfile.js') && 
-				copy(__DIR__.'/../../.cli/gulp-files/file-package.json', 'package.json')
+				copy($root . '.cli/gulp-files/file-gulpfile.js', 'gulpfile.js') && 
+				copy($root . '.cli/gulp-files/file-package.json', 'package.json')
 			){
 				KhanCommand::shell("npm i gulp -g && npm install");
 				$this->sucess($output, "Gulp configurado com sucesso");

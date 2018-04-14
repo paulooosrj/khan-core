@@ -18,5 +18,6 @@
 	$application->add(new Command\GulpCommand());
 	$application->add(new Command\SassCommand());
 	$application->add(new Command\JsCommand());
+	$application->add(new Command\MakeCommand());
 
 	$application->run();

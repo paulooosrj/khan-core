@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "symfony/console": "^4.0"
+        "symfony/console": "^4.0",
+        "vlucas/phpdotenv": "^2.4"
     },
     "autoload": {
     	"psr-4": {
