@@ -12,8 +12,8 @@
 
 	class MakeCommand extends Comando {
 
-		public function move($file, $dest){
-			$file = __DIR__ . '/../../.cli/auth/' . $file;
+		public function move($folder, $file, $dest){
+			$file = __DIR__ . '/../../.cli/'.$folder.'/' . $file;
 			try {
 				copy($file, $dest);
 			} catch (Exception $e) {
@@ -49,19 +49,28 @@
 			}
 		}
 
+		public function chatCreate($input, $output){
+			// Move Routes
+			$this->move('chat', 'chat.php', 'routes/chat.php');
+			// Move Views
+			$this->move('chat', 'index.html', 'resources/views/index.html');
+			$this->move('chat', 'chat.html', 'resources/views/chat.html');
+			$output->writeln("Chat create success!!");
+		}
+
 		public function create($input, $output){
 			// Create database
 			$this->createDatabase($input, $output);
 			$this->createTable($input, $output);
 			// Move Routes
-			$this->move('auth.php', 'routes/auth.php');
+			$this->move('auth', 'auth.php', 'routes/auth.php');
 			// Move Views
-			$this->move('index.html', 'resources/views/index.html');
-			$this->move('login.html', 'resources/views/login.html');
-			$this->move('painel.html', 'resources/views/painel.html');
-			$this->move('register.html', 'resources/views/register.html');
+			$this->move('auth', 'index.html', 'resources/views/index.html');
+			$this->move('auth', 'login.html', 'resources/views/login.html');
+			$this->move('auth', 'painel.html', 'resources/views/painel.html');
+			$this->move('auth', 'register.html', 'resources/views/register.html');
 			// Move Controllers
-			$this->move('AuthController.php', 'app/AuthController.php');			
+			$this->move('auth', 'AuthController.php', 'app/AuthController.php');			
 		}
 
 	    protected function configure(){
@@ -83,7 +92,13 @@
 				$dotenv->load();
 	    		$this->create($input, $output);
 
-	    	}else{
+	    	}
+	    	elseif ($make && $make === "chat") {
+	    		
+	    		$this->chatCreate($input, $output);
+
+	    	}
+	    	else{
 
 	    		$output->writeln('<fg=red>Error to make</>');
 
