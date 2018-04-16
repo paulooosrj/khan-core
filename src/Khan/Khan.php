@@ -35,7 +35,7 @@ class Khan
 
     protected function enviroments()
     {
-        $dotenv = new \Dotenv\Dotenv(str_replace('src\Khan', '', __DIR__));
+        $dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
         $dotenv->load();
         $this->db = function () {
             return Conn::getConn($_ENV);
