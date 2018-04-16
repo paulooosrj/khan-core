@@ -3,7 +3,7 @@
     use \App\Khan\Component\Mime\Mime as Mime;
 
     $router::respond('/public/(.*)', function ($req, $res, $db, $reg) {
-        $fileDir = ROOT_FOLDER . "public/{$reg[1]}";
+        $fileDir = "public/{$reg[1]}";
         if (file_exists($fileDir)) {
             $mime = Mime::get($fileDir);
             header("Content-type: {$mime}", true);
@@ -14,7 +14,7 @@
     });
 
     $router::respond('/docs/(.*)', function ($req, $res, $db, $reg) {
-        $fileDir = ROOT_FOLDER . "docs/{$reg[1]}";
+        $fileDir = "docs/{$reg[1]}";
         if (file_exists($fileDir)) {
             $mime = Mime::get($fileDir);
             header("Content-type: {$mime}", true);
