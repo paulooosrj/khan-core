@@ -62,7 +62,7 @@ class Khan
 
         $router = Router::create();
 
-        include_once 'static.php';
+        //include_once 'static.php';
         include_once 'Component/Functions/Functions.php';
 
         foreach (glob("routes/*.php") as $filename) {
