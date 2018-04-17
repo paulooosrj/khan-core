@@ -6,14 +6,17 @@
 	 * @package  Khan
 	 * @author   PaulaoDev <jskhanframework@gmail.com>
 	 */
+
 	define('KHAN_INIT', microtime(true));
-	define('ROOT_FOLDER', str_replace('\public', '', __DIR__));
+    define('ROOT_FOLDER', str_replace(DIRECTORY_SEPARATOR . 'public', '', __DIR__));
+
 	/**
 	 * Register The Auto Loader
 	 *	------------
 	 * Composer provides a convenient, automatically generated class loader for
 	 * our application.
 	 */
+
 	require __DIR__ . '/../vendor/autoload.php';
 
 	/**
@@ -21,5 +24,5 @@
 	 * @var [object]
 	 */
 	
-	$application = App\Khan\Khan::create();
+	$application = App\Khan\KhanFactory::create();
 	$application->dispatch();

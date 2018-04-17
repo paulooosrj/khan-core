@@ -12,9 +12,14 @@
 		
 	});
 
-	Router::post('/chat-emit', function($req, $res){
+	Router::group('/grupo', function($route){
 
-		$socket = App\Khan\Component\Socket\Socket::init();
-		$socket::emit($req->post('channel'), $req->post('message'));
+		$route->map('GET', '/home', function($req, $res){
+			return 'Ola mundo!!';
+		});
+
+		$route->map('PARAMS', '/home/{id}', function($req, $res){
+			return 'Ola mundo!! '.$req->params('id');
+		});
 
 	}); 

@@ -1,89 +1,88 @@
 <?php
 
-    /**
-     * RouterKhan (Khan.php) - A fast, easy and flexible router system for PHP
-     *
-     * @author      PaulaoDev <jskhanframework@gmail.com>
-     * @copyright   (c) PaulaoDev
-     * @link        https://github.com/PaulaoDev/router-khan
-     * @license     MIT
-     */
+	/**
+	 * RouterKhan (Khan.php) - A fast, easy and flexible router system for PHP
+	 *
+	 * @author      PaulaoDev <jskhanframework@gmail.com>
+	 * @copyright   (c) PaulaoDev
+	 * @link        https://github.com/PaulaoDev/router-khan
+	 * @license     MIT
+	 */
 
-    namespace App\Khan;
+	namespace App\Khan;
 
-    use App\Khan\Component\Router\src\Router\Router as Router;
-    use App\Khan\Component\Container\ServiceContainer as Container;
-    use App\Khan\Component\Stream\StreamServer as Stream;
-    use App\Khan\Component\DB\DB as Conn;
+	use App\Khan\Component\{
+		Router\src\Router\Router as Router,
+		Container\ServiceContainer as Container,
+		Stream\StreamServer as Stream,
+		DB\DB as Conn
+	};
 
-class Khan
-{
+	class Khan {
 
-    protected static $instance = null;
+	    protected static $instance = null;
 
-    public static function create()
-    {
-        if (self::$instance == null) {
-            self::$instance = new Khan();
-        }
-        return self::$instance;
-    }
+	    public static function create(){
+	        if (self::$instance == null) {
+	            self::$instance = new Khan();
+	        }
+	        return self::$instance;
+	    }
 
-    protected function __construct()
-    {
-    }
+	    protected function __construct(){}
 
-    protected function enviroments()
-    {
-        $dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
-        $dotenv->load();
-        $this->db = function () {
-            return Conn::getConn($_ENV);
-        };
-    }
+	    private function enviroments(){
+	        $this->dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
+	        $this->dotenv->load();
+	    }
 
-    protected function router()
-    {
+	    private function setDb(){
+	    	$this->db = function () {
+	            return Conn::getConn($_ENV);
+	        };
+	    }
 
-        $container = $this->container;
-        $stream = new Stream;
-        $db = $this->db;
+	    private function setContainer(){
+	    	$this->container = Container::create();
+	    }
 
-        $configs = [
-          "clean_request" => true,
-          "url_filter" => true
-        ];
+	    protected function router(){
 
-        if(isset($_ENV['APP_SUBDIR']) && !empty($_ENV['APP_SUBDIR'])){
-            $configs['sub_dir'] = $_ENV['APP_SUBDIR'];
-        }
+	        $container = $this->container;
+	        $stream = new Stream();
+	        $db = $this->db;
 
-        Router::create($configs);
+	        Router::create([
+	            "clean_request" => true,
+	            "url_filter" => true
+	        ]);
 
-        $router = Router::create();
+	        $router = Router::create();
 
-        //include_once 'static.php';
-        include_once 'Component/Functions/Functions.php';
+	        include_once __DIR__ . '/Component/Functions/Functions.php';
 
-        foreach (glob("routes/*.php") as $filename) {
-            include_once $filename;
-        }
+	        foreach (glob("routes/*.php") as $filename) {
+	            include_once $filename;
+	        }
 
-        $routerFactory = Router::create();
-        $routerFactory->dispatch();
-    }
+	        $routerFactory = Router::create();
+	        $routerFactory->dispatch();
 
-    public function services()
-    {
+	    }
 
-        $this->enviroments();
-        $this->container = Container::create();
-        $this->router();
-    }
+	    public function services(){
 
-    public function dispatch()
-    {
+	        $this->enviroments();
+	        $this->setDb();
+	        $this->setContainer();
+	        $this->router();
 
-        $this->services();
-    }
-}
+	    }
+
+	    public function dispatch(){
+
+	        $this->services();
+
+	    }
+	    
+	}

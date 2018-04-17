@@ -30,8 +30,8 @@
 
           public function helpers(){
               foreach (func_get_args() as $key => $helper) {
-                  $name = "App\Khan\Libraries"."\\".$helper;
-                  $this->$helper = new $name;
+                  $name = "App\Khan\Libraries"."\\".$helper . "::create";
+                  $this->$helper = $name();
               }
           }
 
@@ -58,7 +58,6 @@
               $server = $_SERVER;
               self::$config["uri"] = Router::get_uri();
               self::$config["path"] = (strripos($server["REQUEST_URI"], "?")) ? explode("?", $server["REQUEST_URI"])[0] : $server["REQUEST_URI"];
-              if(isset($config['sub_dir']) && !empty($config['sub_dir'])){ self::$config["path"] = str_replace($config['sub_dir'], '', self::$config["path"]); }
               self::$config["method"] = (isset($server["REQUEST_METHOD"])) ? $server["REQUEST_METHOD"] : "GET";
               if(in_array(self::$config["method"], ["delete","put"])){
                 if(self::$config["method"] === "delete"):
@@ -120,7 +119,7 @@
                 echo call_user_func_array($class, $data);
               }
               else{
-                new $class($data);
+                call_user_func_array([new \ReflectionClass($class), 'newInstance'], $data);
               }
           }
 
@@ -134,7 +133,6 @@
                 echo call_user_func_array($callback, $data);
               }
               elseif($type == "string"){
-                //$callback = $callback->bindTo(Container::class, Stream::class);
                 $this->class_invoked($callback, $data);
               }
           }
@@ -157,6 +155,23 @@
 
           public static function redirect($route, $args){
               header("Location: {$route}");
+          }
+
+          public static function group($route, $call = null){
+              $scope = Router::create();
+              $call(new class($scope, $route) {
+
+                public function __construct($scope, $route){
+                  $this->scope = $scope;
+                  $this->route = $route;
+                }
+
+                public function map($method, $route_two, $call){
+                    $this->scope::$method($this->route . $route_two, $call);
+                }
+
+              });
+              return $scope;
           }
         
           public static function get($route, $call = null, $method = 'GET'){
