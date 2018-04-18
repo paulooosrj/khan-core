@@ -16,7 +16,7 @@
       use App\Khan\Component\Stream\StreamServer as Stream;
       use App\Khan\Component\DB\DB as Conn;
 
-			@session_start();
+      @session_start();
 
       class Responser {
           public function __construct(){
@@ -25,7 +25,6 @@
             $this->db = function(){
               return Conn::getConn($_ENV);
             };
-            $self = $this;
           }
 
           public function helpers(){
@@ -45,6 +44,7 @@
 												 $uses = [],
                          $routes = [],
                          $config = [],
+                         $middlewares = [],
                          $delete, $put;
         
           public static function create($config = ''){
@@ -57,15 +57,26 @@
           protected function __construct($config = null){
               $server = $_SERVER;
               self::$config["uri"] = Router::get_uri();
-              self::$config["path"] = (strripos($server["REQUEST_URI"], "?")) ? explode("?", $server["REQUEST_URI"])[0] : $server["REQUEST_URI"];
-              self::$config["method"] = (isset($server["REQUEST_METHOD"])) ? $server["REQUEST_METHOD"] : "GET";
+
+              self::$config["path"] = (strripos($server["REQUEST_URI"], "?")) 
+                                      ? explode("?", $server["REQUEST_URI"])[0] 
+                                      : $server["REQUEST_URI"];
+
+              self::$config["method"] = (isset($server["REQUEST_METHOD"])) 
+                                        ? $server["REQUEST_METHOD"] 
+                                        : "GET";
+
+              $this->outherMethods($config);
+          }
+
+          private function outherMethods($config){
               if(in_array(self::$config["method"], ["delete","put"])){
                 if(self::$config["method"] === "delete"):
-									parse_str(file_get_contents('php://input'), self::$delete);
-								endif;
-								if(self::$config["method"] === "put"):
-									parse_str(file_get_contents('php://input'), self::$put);
-								endif;
+                  parse_str(file_get_contents('php://input'), self::$delete);
+                endif;
+                if(self::$config["method"] === "put"):
+                  parse_str(file_get_contents('php://input'), self::$put);
+                endif;
               }
               if(!is_null($config) && gettype($config) == "array"){
                 self::$config = array_merge(self::$config, $config);
@@ -110,6 +121,11 @@
           public function class_invoked($string, $data){
               $class = $string;
               $finish = '';
+
+              $this->runMiddlewares($data[0], $data[1]);
+              $data[0] = $this->req_mid;
+              $data[1] = $this->res_mid;
+
               if(strripos($class, "@")){
                 list($className, $fun) = explode('@', $class);
                 $finish = new $className;
@@ -130,6 +146,9 @@
           private function type_trate($type, $callback, $data){
               if($type == "object"){
                 $callback = $callback->bindTo($this->callBind());
+                $this->runMiddlewares($data[0], $data[1]);
+                $data[0] = $this->req_mid;
+                $data[1] = $this->res_mid;
                 echo call_user_func_array($callback, $data);
               }
               elseif($type == "string"){
@@ -155,6 +174,34 @@
 
           public static function redirect($route, $args){
               header("Location: {$route}");
+          }
+
+          public function nextMiddleware($id = 1){
+            $selfed = $this;
+            $id++;
+            return function($req, $res) use($id, $selfed){
+                if(!isset(self::$middlewares[$id])){ 
+                  $selfed->req_mid = $req;
+                  $selfed->res_mid = $res;
+                  return false; 
+                }
+                self::$middlewares[$id]::handle($req, $res, $selfed->nextMiddleware($id));
+            };
+          }
+
+          public function runMiddlewares($req, $res){
+            self::$middlewares[0]::handle($req, $res, $this->nextMiddleware(0));
+          }
+
+          public static function middleware(){
+            foreach (func_get_args() as $key => $mid) {
+                self::$middlewares[] = $mid;
+            }
+          }
+
+          public function setDefaultMiddlewares(){
+              $middlewares = require(ROOT_FOLDER . '/config/Middlewares.php');
+              call_user_func_array([$this, 'middleware'], $middlewares);
           }
 
           public static function group($route, $call = null){
@@ -318,9 +365,10 @@
         }
         
         public function dispatch(){
-          
-            $uri = self::$config["path"];
             
+            $this->setDefaultMiddlewares();
+
+            $uri = self::$config["path"];
             $metodo = self::$config["method"];
 						$param_receive = false;
 
@@ -346,14 +394,9 @@
 						}
           
             // Limpa Request [ GET & POST]
-            if(in_array("clean_request", array_keys(self::$config))){
-							if(self::$config["clean_request"]): Router::clean_request(); endif;
-            }
-          
+            Router::clean_request();
             // Limpa URL
-						if(in_array("url_filter", array_keys(self::$config))){
-							if(self::$config["url_filter"]): $uri = strip_tags(addslashes($uri)); endif;
-            }
+						$uri = strip_tags(addslashes($uri));
             
             if(in_array($metodo, array_keys(self::$routes))){
 							

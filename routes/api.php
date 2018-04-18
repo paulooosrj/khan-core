@@ -4,4 +4,9 @@
 		echo "Perfil id {$req->params('id')}";
 	});
 
-	Router::get('/teste', 'MyApp\TesteController::index');
+	Router::get('/test', function($req, $res){
+
+		print_r($req);
+		return "Ola mundo!!";
+
+	});

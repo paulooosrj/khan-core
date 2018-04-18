@@ -30,15 +30,10 @@
         if(is_null($_FILES)): $_FILES = []; endif;
       }
     
-      /* 
-        public function get($name = null){
-          if($name == null){
-            return self::$data["get"];
-          }else{
-            return self::$data["get"][$name];
-          }
-        }
-      */
+       
+      public function make($name = null, $value){
+          self::$data[$name] = $value;
+      }
     
       public static function validateValue($type, $value){
         return in_array($value, self::$data[$type]);
