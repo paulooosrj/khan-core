@@ -29,10 +29,13 @@
         if(is_null($_COOKIE)): $_COOKIE = []; endif;
         if(is_null($_FILES)): $_FILES = []; endif;
       }
-    
+      
+      public static function getAll(){
+          return self::$data;
+      }
        
-      public function make($name = null, $value){
-          self::$data[$name] = $value;
+      public static function make($name = null, $key, $value){
+          self::$data[$name][$key] = $value;
       }
     
       public static function validateValue($type, $value){

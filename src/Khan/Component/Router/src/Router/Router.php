@@ -95,11 +95,6 @@
             return self::$routes;
           }
         
-          public static function clean_request(){
-              $_POST = filter_input_array(INPUT_POST, FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-			        $_GET = filter_input_array(INPUT_GET, FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-          }
-        
           public static function has($route, $type){
               return !isset(self::$routes[$type][$route]);
           }
@@ -123,8 +118,8 @@
               $finish = '';
 
               $this->runMiddlewares($data[0], $data[1]);
-              $data[0] = $this->req_mid;
-              $data[1] = $this->res_mid;
+              if(isset($this->req_mid)){ $data[0] = $this->req_mid; }
+              if(isset($this->res_mid)){ $data[1] = $this->res_mid; }
 
               if(strripos($class, "@")){
                 list($className, $fun) = explode('@', $class);
@@ -147,8 +142,8 @@
               if($type == "object"){
                 $callback = $callback->bindTo($this->callBind());
                 $this->runMiddlewares($data[0], $data[1]);
-                $data[0] = $this->req_mid;
-                $data[1] = $this->res_mid;
+                if(isset($this->req_mid)){ $data[0] = $this->req_mid; }
+                if(isset($this->res_mid)){ $data[1] = $this->res_mid; }
                 echo call_user_func_array($callback, $data);
               }
               elseif($type == "string"){
@@ -190,7 +185,9 @@
           }
 
           public function runMiddlewares($req, $res){
-            self::$middlewares[0]::handle($req, $res, $this->nextMiddleware(0));
+            if(count(self::$middlewares) > 0){
+              self::$middlewares[0]::handle($req, $res, $this->nextMiddleware(0));
+            }
           }
 
           public static function middleware(){
@@ -392,9 +389,7 @@
 								$metodo = "PARAMS";
 							}
 						}
-          
-            // Limpa Request [ GET & POST]
-            Router::clean_request();
+
             // Limpa URL
 						$uri = strip_tags(addslashes($uri));
             

@@ -5,6 +5,6 @@
 	 */
 
 	return [
-		Middlewares\Middlewares\SessionStart::class,
-		Middlewares\Middlewares\SecureRequest::class
+		/*Middlewares\Middlewares\SessionStart::class,
+		Middlewares\Middlewares\SecureRequest::class*/
 	];

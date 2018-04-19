@@ -25,7 +25,7 @@
 			$this->loadTwig($uses);
 			$this->extendsTwig();
 			foreach(self::$use as $key => $value){
-				if(preg_match("/twig\./i", $key)){
+				if(strpos($key, "twig.") !== false){
 					$fnName = str_replace('twig.', '', $key);
 					$this->setFunctionTwig($fnName, $value);
 				}else{
