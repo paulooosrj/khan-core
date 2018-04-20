@@ -46,9 +46,9 @@
 			$self = $this;
 			$function = new \Twig_SimpleFunction($fname, function() use($self, $fname, $fncall){
 					if($fncall === false){
-						call_user_func_array([$self, $fname], func_get_args());
+						echo call_user_func_array([$self, $fname], func_get_args());
 					}else{
-						call_user_func_array($fncall, func_get_args());
+						echo call_user_func_array($fncall, func_get_args());
 					}
 				});
 			$this->twig->addFunction($function);
@@ -70,16 +70,16 @@
 				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
 			}
 
-			echo $res;
+			return $res;
 
 		}
 
 		public function view($name){
-			echo 'resources/views/' . $name;
+			return 'resources/views/' . $name;
 		}
 
 		public function assets($name){
-			echo $_ENV['APP_URL'] . "/" . "public/" . $name;
+			return $_ENV['APP_URL'] . "/" . "public/" . $name;
 		}
 		
 		public function render($file, $data = []){

@@ -16,8 +16,6 @@
       use App\Khan\Component\Stream\StreamServer as Stream;
       use App\Khan\Component\DB\DB as Conn;
 
-      @session_start();
-
       class Responser {
           public function __construct(){
             $this->container = Container::create();
@@ -43,6 +41,8 @@
           private static $instance = null,
 												 $uses = [],
                          $routes = [],
+                         $routesConfig = [],
+                         $routesName = [],
                          $config = [],
                          $middlewares = [],
                          $delete, $put;
@@ -201,6 +201,46 @@
               call_user_func_array([$this, 'middleware'], $middlewares);
           }
 
+          public static function setRouterConfig($route){
+            self::$routesConfig[$route] = [];
+          }
+
+          public static function setRouterConfigKey($route, $name, $valor){
+            self::$routesConfig[$route][$name] = $valor;
+          }
+
+          public static function setRouterName($name, $route){
+            self::$routesName[$name] = $route;
+          }
+
+          public function configRoute($route){
+               return new class($route){
+
+                  public function __construct($route){
+                      $scope = Router::create();
+                      $this->route = $route;
+                      $scope->setRouterConfig($route);
+                      return $this;
+                  }
+
+                  public function name($name){
+                      $scope = Router::create();
+                      $this->name = $name;
+                      $scope->setRouterName($name, $this->route);
+                      $scope->setRouterConfigKey($this->route, 'name', $name);
+                      return $this;
+                  }
+
+                  public function middleware(){
+                      $scope = Router::create();
+                      $this->middleware = func_get_args();
+                      $scope->setRouterConfigKey($this->route, 'middleware', func_get_args());
+                      return $this;
+                  }
+
+              };
+          }
+
           public static function group($route, $call = null){
               $scope = Router::create();
               $call(new class($scope, $route) {
@@ -211,11 +251,34 @@
                 }
 
                 public function map($method, $route_two, $call){
-                    $this->scope::$method($this->route . $route_two, $call);
+                    $route = $this->route . $route_two;
+                    $this->scope::$method($route, $call);
+                    return $this->scope>configRoute($route);
                 }
 
               });
               return $scope;
+          }
+
+          public static function generate($name, $data){
+
+              $matchs = [];
+              $routeActive = self::$routesName[$name];
+              $uri = $routeActive;
+
+              if(preg_match("/\{(.*?)\}/", $uri)){
+
+                preg_match_all("/\{(.*?)\}/", $routeActive, $matchs);
+                if(is_array($matchs) && count($matchs) > 1){
+                    foreach ($matchs[0] as $key => $value) {
+                       $uri = str_replace($value, $data[$key], $uri);
+                    }
+                }
+
+              }
+
+              return $uri;
+
           }
         
           public static function get($route, $call = null, $method = 'GET'){
@@ -234,7 +297,7 @@
                     }
                   }
                }
-              return $scope;
+              return $scope->configRoute($route);
           }
         
           public static function post($route, $call = null, $method = 'POST'){
@@ -253,7 +316,7 @@
                     }
                   }
                }
-              return $scope;
+              return $scope->configRoute($route);
           }
         
           public static function delete($route, $call = null, $method = 'DELETE'){
@@ -271,7 +334,7 @@
                     }
                   }
                }
-              return $scope;
+              return $scope->configRoute($route);
           }
         
           public static function put($route, $call = null, $method = 'PUT'){
@@ -290,7 +353,7 @@
                     }
                   }
                }
-              return $scope;
+              return $scope->configRoute($route);
           }
 
           public static function respond($route, $call = null, $method = 'RESPOND'){
@@ -309,7 +372,7 @@
                     }
                   }
                }
-              return $scope;
+              return $scope->configRoute($route);
           }
 
           public function isRespond($key, $uri){
@@ -334,7 +397,7 @@
                   }
                 }
              }
-            return $scope;
+            return $scope->configRoute($route);
           }
 
         public function makeData($params = ''){
@@ -342,7 +405,7 @@
                 "post" => $_POST,
                 "get" => $_GET,
                 "params" => (is_array($params)) ? $params : [],
-                "session" => $_SESSION,
+                "session" => (isset($_SESSION) && count($_SESSION) > 0) ? $_SESSION : [],
                 "files" => $_FILES,
                 "put" => (is_array(self::$put)) ? self::$put : [],
                 "delete" => (is_array(self::$delete)) ? self::$delete : []
@@ -359,6 +422,16 @@
                 }
             ], $inject);
             $this->trate_callback($fn, $data);
+        }
+
+        public function isMiddlewareRouter($route){
+            if(isset(self::$routesConfig[$route]['middleware']) 
+              && !empty(self::$routesConfig[$route]['middleware'])){
+                call_user_func_array(
+                  [$this, 'middleware'], 
+                  self::$routesConfig[$route]['middleware']
+                );
+            }
         }
         
         public function dispatch(){
@@ -398,16 +471,16 @@
 							if(in_array($uri, array_keys(self::$routes[$metodo])) || in_array($param_receive["rota"], array_keys(self::$routes[$metodo]))){
 									
                   $data_receive = $this->makeData($param_receive['params']);
+                  $rota = $uri;
 
-									$fn = '';
+                  if(is_array($param_receive)){
+                    $rota = $param_receive['rota'];
+                  }
 
-									if(is_array($param_receive)){
-										$fn = self::$routes[$metodo][$param_receive['rota']];
-									}else{
-										$fn = self::$routes[$metodo][$uri];
-									}
+                  $fn = self::$routes[$metodo][$rota];
 
-									$this->respondRouter($fn, $data_receive);
+                  $this->isMiddlewareRouter($rota);
+                  $this->respondRouter($fn, $data_receive);
 
 							}
 						}
