@@ -1,14 +1,14 @@
 <?php
 	
 	namespace App\Khan\Component\Router\src\Http;
-	use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+	use \App\Khan\Component\HttpFoundation\Response as ResponseFoundation;
   	use \App\Khan\Component\Router\src\Http\Interfaces\Response as ResponseInterface;
 
 	/**
 	* Response Class and Interface Implement
 	*/
 
-	class Response extends SymfonyResponse implements ResponseInterface{
+	class Response extends ResponseFoundation implements ResponseInterface{
 
 		public static $extends = [
 			"view",

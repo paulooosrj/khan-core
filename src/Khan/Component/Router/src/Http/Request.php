@@ -1,14 +1,14 @@
 <?php
 	
 	namespace App\Khan\Component\Router\src\Http;
-	use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
+  use \App\Khan\Component\HttpFoundation\Request as RequestFoundation;
   use \App\Khan\Component\Router\src\Http\Interfaces\Request as RequestInterface;
   
 	/**
 	* Request Class and Interface Implement
 	*/
 
-	class Request extends SymfonyRequest implements RequestInterface{
+	class Request extends RequestFoundation implements RequestInterface{
       
     private static $data = [];
     

@@ -4,6 +4,6 @@
 
 	interface Middleware {
 
-		public static function handle($req, $res, $next);
+		public static function handle($req, $res, \Closure $next);
 
 	}

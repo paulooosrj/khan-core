@@ -11,17 +11,23 @@
 
 	namespace App\Khan;
 
-	use App\Khan\Component\{
-		Router\src\Router\Router as Router,
-		Container\ServiceContainer as Container,
-		Stream\StreamServer as Stream,
-		DB\DB as Conn
-	};
+	use App\Khan\Component\Router\src\Router\Router as Router;
+	use App\Khan\Component\Container\ServiceContainer as Container;
+	use App\Khan\Component\Stream\StreamServer as Stream;
+	use App\Khan\Component\DB\DB as Conn;
+
+	/**
+	 * Class Core Run Project
+	 */
 
 	class Khan {
 
 	    protected static $instance = null;
 
+	    /**
+	     * [create get instance in singleton]
+	     * @return [object] [Return khan instance]
+	     */
 	    public static function create(){
 	        if (self::$instance == null) {
 	            self::$instance = new Khan();
@@ -31,21 +37,35 @@
 
 	    protected function __construct(){}
 
+	    /**
+	     * [enviroments $_ENV]
+	     * @return [void] [load enviroments in system]
+	     */
 	    private function enviroments(){
 	        $this->dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
 	        $this->dotenv->load();
 	    }
 
+	    /**
+	     * [setDb set Database]
+	     */
 	    private function setDb(){
 	    	$this->db = function () {
 	            return Conn::getConn($_ENV);
 	        };
 	    }
 
+	    /**
+	     * [setContainer container injection service]
+	     */
 	    private function setContainer(){
 	    	$this->container = Container::create();
 	    }
 
+	    /**
+	     * [router run router system]
+	     * @return [void] [define router system]
+	     */
 	    protected function router(){
 
 	        $container = $this->container;
@@ -70,6 +90,10 @@
 
 	    }
 
+	    /**
+	     * [services Load all services]
+	     * @return [void [load and run services in framework]
+	     */
 	    public function services(){
 
 	        $this->enviroments();

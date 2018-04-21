@@ -36,7 +36,7 @@
 
       class Router {
         
-          use \KhanComponent\RegexEngine\RegexEngine;
+          use \App\Khan\Component\Router\src\Router\RegexEngine\RegexEngine;
         
           private static $instance = null,
 												 $uses = [],
