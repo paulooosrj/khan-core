@@ -190,7 +190,7 @@ class Response
     /**
      * @throws \InvalidArgumentException When the HTTP status code is not valid
      */
-    public function __construct($content = '', int $status = 200, array $headers = array())
+    public function __construct($content = '', $status = 200, array $headers = array())
     {
         $this->headers = new ResponseHeaderBag($headers);
         $this->setContent($content);
@@ -414,7 +414,7 @@ class Response
      *
      * @final
      */
-    public function setProtocolVersion(string $version)
+    public function setProtocolVersion($version)
     {
         $this->version = $version;
 
@@ -426,7 +426,7 @@ class Response
      *
      * @final
      */
-    public function getProtocolVersion(): string
+    public function getProtocolVersion()
     {
         return $this->version;
     }
@@ -443,7 +443,7 @@ class Response
      *
      * @final
      */
-    public function setStatusCode(int $code, $text = null)
+    public function setStatusCode($code, $text = null)
     {
         $this->statusCode = $code;
         if ($this->isInvalid()) {
@@ -472,7 +472,7 @@ class Response
      *
      * @final
      */
-    public function getStatusCode(): int
+    public function getStatusCode()
     {
         return $this->statusCode;
     }
@@ -484,7 +484,7 @@ class Response
      *
      * @final
      */
-    public function setCharset(string $charset)
+    public function setCharset($charset)
     {
         $this->charset = $charset;
 
@@ -496,7 +496,7 @@ class Response
      *
      * @final
      */
-    public function getCharset(): ?string
+    public function getCharset()
     {
         return $this->charset;
     }
@@ -518,7 +518,7 @@ class Response
      *
      * @final
      */
-    public function isCacheable(): bool
+    public function isCacheable()
     {
         if (!in_array($this->statusCode, array(200, 203, 300, 301, 302, 404, 410))) {
             return false;
@@ -540,7 +540,7 @@ class Response
      *
      * @final
      */
-    public function isFresh(): bool
+    public function isFresh()
     {
         return $this->getTtl() > 0;
     }
@@ -551,7 +551,7 @@ class Response
      *
      * @final
      */
-    public function isValidateable(): bool
+    public function isValidateable()
     {
         return $this->headers->has('Last-Modified') || $this->headers->has('ETag');
     }
@@ -597,7 +597,7 @@ class Response
      *
      * @final
      */
-    public function setImmutable(bool $immutable = true)
+    public function setImmutable($immutable = true)
     {
         if ($immutable) {
             $this->headers->addCacheControlDirective('immutable');
@@ -613,7 +613,7 @@ class Response
      *
      * @final
      */
-    public function isImmutable(): bool
+    public function isImmutable()
     {
         return $this->headers->hasCacheControlDirective('immutable');
     }
@@ -628,7 +628,7 @@ class Response
      *
      * @final
      */
-    public function mustRevalidate(): bool
+    public function mustRevalidate()
     {
         return $this->headers->hasCacheControlDirective('must-revalidate') || $this->headers->hasCacheControlDirective('proxy-revalidate');
     }
@@ -640,7 +640,7 @@ class Response
      *
      * @final
      */
-    public function getDate(): ?\DateTimeInterface
+    public function getDate()
     {
         return $this->headers->getDate('Date');
     }
@@ -669,7 +669,7 @@ class Response
      *
      * @final
      */
-    public function getAge(): int
+    public function getAge()
     {
         if (null !== $age = $this->headers->get('Age')) {
             return (int) $age;
@@ -697,7 +697,7 @@ class Response
      *
      * @final
      */
-    public function getExpires(): ?\DateTimeInterface
+    public function getExpires()
     {
         try {
             return $this->headers->getDate('Expires');
@@ -743,7 +743,7 @@ class Response
      *
      * @final
      */
-    public function getMaxAge(): ?int
+    public function getMaxAge()
     {
         if ($this->headers->hasCacheControlDirective('s-maxage')) {
             return (int) $this->headers->getCacheControlDirective('s-maxage');
@@ -769,7 +769,7 @@ class Response
      *
      * @final
      */
-    public function setMaxAge(int $value)
+    public function setMaxAge($value)
     {
         $this->headers->addCacheControlDirective('max-age', $value);
 
@@ -785,7 +785,7 @@ class Response
      *
      * @final
      */
-    public function setSharedMaxAge(int $value)
+    public function setSharedMaxAge($value)
     {
         $this->setPublic();
         $this->headers->addCacheControlDirective('s-maxage', $value);
@@ -803,7 +803,7 @@ class Response
      *
      * @final
      */
-    public function getTtl(): ?int
+    public function getTtl()
     {
         $maxAge = $this->getMaxAge();
 
@@ -819,7 +819,7 @@ class Response
      *
      * @final
      */
-    public function setTtl(int $seconds)
+    public function setTtl($seconds)
     {
         $this->setSharedMaxAge($this->getAge() + $seconds);
 
@@ -835,7 +835,7 @@ class Response
      *
      * @final
      */
-    public function setClientTtl(int $seconds)
+    public function setClientTtl($seconds)
     {
         $this->setMaxAge($this->getAge() + $seconds);
 
@@ -849,7 +849,7 @@ class Response
      *
      * @final
      */
-    public function getLastModified(): ?\DateTimeInterface
+    public function getLastModified()
     {
         return $this->headers->getDate('Last-Modified');
     }
@@ -886,7 +886,7 @@ class Response
      *
      * @final
      */
-    public function getEtag(): ?string
+    public function getEtag()
     {
         return $this->headers->get('ETag');
     }
@@ -901,7 +901,7 @@ class Response
      *
      * @final
      */
-    public function setEtag(string $etag = null, bool $weak = false)
+    public function setEtag($etag = null,$weak = false)
     {
         if (null === $etag) {
             $this->headers->remove('Etag');
@@ -927,7 +927,7 @@ class Response
      *
      * @final
      */
-    public function setCache(array $options)
+    public function setCache($options)
     {
         if ($diff = array_diff(array_keys($options), array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'public', 'immutable'))) {
             throw new \InvalidArgumentException(sprintf('Response does not support the following options: "%s".', implode('", "', array_values($diff))));
@@ -1002,7 +1002,7 @@ class Response
      *
      * @final
      */
-    public function hasVary(): bool
+    public function hasVary()
     {
         return null !== $this->headers->get('Vary');
     }
@@ -1012,7 +1012,7 @@ class Response
      *
      * @final
      */
-    public function getVary(): array
+    public function getVary()
     {
         if (!$vary = $this->headers->get('Vary', null, false)) {
             return array();
@@ -1036,7 +1036,7 @@ class Response
      *
      * @final
      */
-    public function setVary($headers, bool $replace = true)
+    public function setVary($headers, $replace = true)
     {
         $this->headers->set('Vary', $headers, $replace);
 
@@ -1054,7 +1054,7 @@ class Response
      *
      * @final
      */
-    public function isNotModified(Request $request): bool
+    public function isNotModified(Request $request)
     {
         if (!$request->isMethodCacheable()) {
             return false;
@@ -1086,7 +1086,7 @@ class Response
      *
      * @final
      */
-    public function isInvalid(): bool
+    public function isInvalid()
     {
         return $this->statusCode < 100 || $this->statusCode >= 600;
     }
@@ -1096,7 +1096,7 @@ class Response
      *
      * @final
      */
-    public function isInformational(): bool
+    public function isInformational()
     {
         return $this->statusCode >= 100 && $this->statusCode < 200;
     }
@@ -1106,7 +1106,7 @@ class Response
      *
      * @final
      */
-    public function isSuccessful(): bool
+    public function isSuccessful()
     {
         return $this->statusCode >= 200 && $this->statusCode < 300;
     }
@@ -1116,7 +1116,7 @@ class Response
      *
      * @final
      */
-    public function isRedirection(): bool
+    public function isRedirection()
     {
         return $this->statusCode >= 300 && $this->statusCode < 400;
     }
@@ -1126,7 +1126,7 @@ class Response
      *
      * @final
      */
-    public function isClientError(): bool
+    public function isClientError()
     {
         return $this->statusCode >= 400 && $this->statusCode < 500;
     }
@@ -1136,7 +1136,7 @@ class Response
      *
      * @final
      */
-    public function isServerError(): bool
+    public function isServerError()
     {
         return $this->statusCode >= 500 && $this->statusCode < 600;
     }
@@ -1146,7 +1146,7 @@ class Response
      *
      * @final
      */
-    public function isOk(): bool
+    public function isOk()
     {
         return 200 === $this->statusCode;
     }
@@ -1156,7 +1156,7 @@ class Response
      *
      * @final
      */
-    public function isForbidden(): bool
+    public function isForbidden()
     {
         return 403 === $this->statusCode;
     }
@@ -1166,7 +1166,7 @@ class Response
      *
      * @final
      */
-    public function isNotFound(): bool
+    public function isNotFound()
     {
         return 404 === $this->statusCode;
     }
@@ -1176,7 +1176,7 @@ class Response
      *
      * @final
      */
-    public function isRedirect(string $location = null): bool
+    public function isRedirect($location = null)
     {
         return in_array($this->statusCode, array(201, 301, 302, 303, 307, 308)) && (null === $location ?: $location == $this->headers->get('Location'));
     }
@@ -1186,7 +1186,7 @@ class Response
      *
      * @final
      */
-    public function isEmpty(): bool
+    public function isEmpty()
     {
         return in_array($this->statusCode, array(204, 304));
     }
@@ -1198,7 +1198,7 @@ class Response
      *
      * @final
      */
-    public static function closeOutputBuffers(int $targetLevel, bool $flush)
+    public static function closeOutputBuffers($targetLevel, $flush)
     {
         $status = ob_get_status(true);
         $level = count($status);

@@ -1,17 +1,17 @@
 <?php 
-			
-		 /**
-		 * Khan - Component (Router) - A fast, easy and flexible router system for PHP
-		 *
-		 * @author      PaulaoDev <jskhanframework@gmail.com>
-		 * @copyright   (c) PaulaoDev 
-		 * @link        https://github.com/PaulaoDev/Router
-		 * @license     MIT
-		 */
+      
+     /**
+     * Khan - Component (Router) - A fast, easy and flexible router system for PHP
+     *
+     * @author      PaulaoDev <jskhanframework@gmail.com>
+     * @copyright   (c) PaulaoDev 
+     * @link        https://github.com/PaulaoDev/Router
+     * @license     MIT
+     */
     
       namespace App\Khan\Component\Router\src\Router;
-			use App\Khan\Component\Router\src\Http\Response as Response;
-			use App\Khan\Component\Router\src\Http\Request as Request;
+      use App\Khan\Component\Router\src\Http\Response as Response;
+      use App\Khan\Component\Router\src\Http\Request as Request;
       use App\Khan\Component\Container\ServiceContainer as Container;
       use App\Khan\Component\Stream\StreamServer as Stream;
       use App\Khan\Component\DB\DB as Conn;
@@ -34,18 +34,62 @@
 
       }
 
+      class ConfigureRoute {
+
+                  public function __construct($route){
+                      $scope = Router::create();
+                      $this->route = $route;
+                      $scope->setRouterConfig($route);
+                      return $this;
+                  }
+
+                  public function name($name){
+                      $scope = Router::create();
+                      $this->name = $name;
+                      $scope->setRouterName($name, $this->route);
+                      $scope->setRouterConfigKey($this->route, 'name', $name);
+                      return $this;
+                  }
+
+                  public function middleware(){
+                      $scope = Router::create();
+                      $this->middleware = func_get_args();
+                      $scope->setRouterConfigKey($this->route, 'middleware', func_get_args());
+                      return $this;
+                  }
+
+      }
+
+      class GroupRouter {
+
+             public function __construct($scope, $route){
+                 $this->scope = $scope;
+                 $this->route = $route;
+             }
+
+             public function map($method, $route_two, $call){
+                  $route = $this->route . $route_two;
+                  call_user_func_array(
+                    [$this->scope, $method],
+                    [$route, $call]
+                  );
+                  return $this->scope>configRoute($route);
+             }
+
+      }
+
       class Router {
         
-          use \App\Khan\Component\Router\src\Router\RegexEngine\RegexEngine;
-        
+          use \App\Khan\Component\Router\src\RegexEngine\RegexEngine;
+          
           private static $instance = null,
-												 $uses = [],
+                         $uses = [],
                          $routes = [],
                          $routesConfig = [],
                          $routesName = [],
                          $config = [],
-                         $middlewares = [],
                          $delete, $put;
+          public static  $middlewares = [];
         
           public static function create($config = ''){
               if(self::$instance === null){
@@ -102,16 +146,16 @@
           public static function type($type){
               return gettype($type);
           }
-				
-					public function set($name, $callback){
-							if(!isset(self::$uses[$name])){
-								self::$uses[$name] = $callback;
-							}
-					}
-				
-					private function uses(){
-						return self::$uses;
-					}
+        
+          public function set($name, $callback){
+              if(!isset(self::$uses[$name])){
+                self::$uses[$name] = $callback;
+              }
+          }
+        
+          private function uses(){
+            return self::$uses;
+          }
         
           public function class_invoked($string, $data){
               $class = $string;
@@ -175,18 +219,25 @@
             $selfed = $this;
             $id++;
             return function($req, $res) use($id, $selfed){
+              
                 if(!isset(self::$middlewares[$id])){ 
                   $selfed->req_mid = $req;
                   $selfed->res_mid = $res;
                   return false; 
                 }
-                self::$middlewares[$id]::handle($req, $res, $selfed->nextMiddleware($id));
+                call_user_func_array(
+                  [self::$middlewares[$id], "handle"], 
+                  [$req, $res, $selfed->nextMiddleware($id)]
+                );
             };
           }
 
           public function runMiddlewares($req, $res){
             if(count(self::$middlewares) > 0){
-              self::$middlewares[0]::handle($req, $res, $this->nextMiddleware(0));
+              call_user_func_array(
+                [self::$middlewares[0], "handle"], 
+                [$req, $res, $this->nextMiddleware(0)]
+              );
             }
           }
 
@@ -214,49 +265,14 @@
           }
 
           public function configRoute($route){
-               return new class($route){
-
-                  public function __construct($route){
-                      $scope = Router::create();
-                      $this->route = $route;
-                      $scope->setRouterConfig($route);
-                      return $this;
-                  }
-
-                  public function name($name){
-                      $scope = Router::create();
-                      $this->name = $name;
-                      $scope->setRouterName($name, $this->route);
-                      $scope->setRouterConfigKey($this->route, 'name', $name);
-                      return $this;
-                  }
-
-                  public function middleware(){
-                      $scope = Router::create();
-                      $this->middleware = func_get_args();
-                      $scope->setRouterConfigKey($this->route, 'middleware', func_get_args());
-                      return $this;
-                  }
-
-              };
+            
+              return new ConfigureRoute($route); 
+            
           }
 
           public static function group($route, $call = null){
               $scope = Router::create();
-              $call(new class($scope, $route) {
-
-                public function __construct($scope, $route){
-                  $this->scope = $scope;
-                  $this->route = $route;
-                }
-
-                public function map($method, $route_two, $call){
-                    $route = $this->route . $route_two;
-                    $this->scope::$method($route, $call);
-                    return $this->scope>configRoute($route);
-                }
-
-              });
+              $call(new GroupRouter($scope, $route));
               return $scope;
           }
 
@@ -440,7 +456,7 @@
 
             $uri = self::$config["path"];
             $metodo = self::$config["method"];
-						$param_receive = false;
+            $param_receive = false;
 
             if(in_array('RESPOND', array_keys(self::$routes))){
                 foreach (self::$routes["RESPOND"] as $key => $fn) {
@@ -454,22 +470,22 @@
                     }
                 }
             }
-					
-						if(in_array('PARAMS', array_keys(self::$routes))){
-							$param = $this->build(self::$routes["PARAMS"], $uri);
-							if(is_array($param)){
-								$param_receive = $param;
-								$metodo = "PARAMS";
-							}
-						}
+          
+            if(in_array('PARAMS', array_keys(self::$routes))){
+              $param = $this->build(self::$routes["PARAMS"], $uri);
+              if(is_array($param)){
+                $param_receive = $param;
+                $metodo = "PARAMS";
+              }
+            }
 
             // Limpa URL
-						$uri = strip_tags(addslashes($uri));
+            $uri = strip_tags(addslashes($uri));
             
             if(in_array($metodo, array_keys(self::$routes))){
-							
-							if(in_array($uri, array_keys(self::$routes[$metodo])) || in_array($param_receive["rota"], array_keys(self::$routes[$metodo]))){
-									
+              
+              if(in_array($uri, array_keys(self::$routes[$metodo])) || in_array($param_receive["rota"], array_keys(self::$routes[$metodo]))){
+                  
                   $data_receive = $this->makeData($param_receive['params']);
                   $rota = $uri;
 
@@ -482,8 +498,8 @@
                   $this->isMiddlewareRouter($rota);
                   $this->respondRouter($fn, $data_receive);
 
-							}
-						}
+              }
+            }
             
         }
         
