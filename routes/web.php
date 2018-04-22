@@ -18,6 +18,13 @@
 		
 	});
 
+	/**/
+	Router::get('/peer', function($req, $res){
+
+		$res->render('peer.html');
+		
+	});
+
 	Router::get('/teste', "MyApp\TesteController");
 
 	Router::group('/painel', function($route){

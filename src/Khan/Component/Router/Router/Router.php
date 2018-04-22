@@ -332,6 +332,7 @@
                             $this->makeData(), 
                             ["reg" => $this->isRespond($key, $uri)]
                         );
+                         return true;
                       }
                   }
               }

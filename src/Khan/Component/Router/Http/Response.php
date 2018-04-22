@@ -13,7 +13,9 @@
 		public static $extends = [
 			"view",
 			"assets",
-			"socket"
+			"socket",
+			"peer",
+			"cdn"
 		];
     
 		private static $use = [];
@@ -60,6 +62,11 @@
 			}
 		}
 
+		public function cdn($library, $version, $file){
+			$cdn = \App\Khan\Component\Cdn\Cdn::create();
+			return $cdn->asset($library, $version, $file);
+		}
+
 		public function socket($dev = true){
 
 			$res = "<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js' charset='utf-8'></script>";
@@ -68,6 +75,22 @@
 				$res .= "\n    <script src='https://rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
 			}else{
 				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
+			}
+
+			return $res;
+
+		}
+
+		public function peer($dev = true){
+
+			$res = "<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js' charset='utf-8'></script>";
+
+			if($dev){
+				$res .= "\n    <script src='https://rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
+				$res .= "\n    <script src='https://rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Peer/Peer.js' charset='utf-8'></script>";
+			}else{
+				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
+				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Peer/Peer.js' charset='utf-8'></script>";
 			}
 
 			return $res;

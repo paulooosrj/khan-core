@@ -8,21 +8,25 @@
 	        return file_exists($filename);
 	    }
 
+	    public static function copy($filename, $dist){
+	        return @copy($filename, $dist);
+	    }
+
 	    public static function delete($filename){
 	        if(Hooks::exists($filename)){
-	            @unlink($filename);
+	            return @unlink($filename);
 	        }
 	    }
 
 	    public static function append($filename, $code){
 	        if(Hooks::exists($filename)){
-	            file_put_contents($filename, $code, FILE_APPEND);
+	            return file_put_contents($filename, $code, FILE_APPEND);
 	        }
 	    }
 
 	    public static function write($filename, $code){
 	        if(Hooks::exists($filename)){
-	            file_put_contents($filename, $code);
+	            return file_put_contents($filename, $code);
 	        }
 	    }
 
@@ -56,7 +60,7 @@
 
 	    public static function create($filename, $source = ''){
 	        if(!Hooks::exists($filename)){
-	            file_put_contents($filename, $source);
+	            return file_put_contents($filename, $source);
 	        }
 	    }
 
