@@ -25,7 +25,8 @@
     "autoload-dev": {
         "psr-4": {
             "MyApp\\": "app/",
-            "Middlewares\\": "middlewares/"
+            "Middlewares\\": "middlewares/",
+            "StrategysAuth\\": "config/strategy/"
         }
     },
     "config": {

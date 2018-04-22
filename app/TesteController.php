@@ -2,15 +2,21 @@
 
 	namespace MyApp;
 
-	class TesteController {
+	class TesteController extends \App\Khan\Bootstrap\KhanController {
 
 		public function __construct($req, $res){
 
-			//$this->helpers('files');
-			//print_r($this->files);
-			//
+				$this->helpers('cache');
 
-			return "Ola mundo!!";
+				$this->cache->init();
+				if(!$this->cache->get('data', $out)){
+					$this->cache->set('data', [
+						"msg" => $this->container::get('teste')()
+					], 300);
+				}
+
+				$this->cache->get('data', $out);
+				$res->send($out['msg']);
 
 		}
 

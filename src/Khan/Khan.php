@@ -11,11 +11,12 @@
 
 	namespace App\Khan;
 
-	use App\Khan\Component\Router\src\Router\Router as Router;
+	use App\Khan\Component\Router\Router\Router as Router;
 	use App\Khan\Component\Container\ServiceContainer as Container;
 	use App\Khan\Component\Stream\StreamServer as Stream;
 	use App\Khan\Component\DB\DB as Conn;
 
+	define("ROOT_CORE", __DIR__);
 	/**
 	 * Class Core Run Project
 	 */
@@ -63,6 +64,37 @@
 	    }
 
 	    /**
+	     * Update Aliases in project
+	     */
+	  	public function updateAliases(){
+	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
+	    	foreach ($aliases as $key => $value) {
+	    		@unlink(__DIR__.'/Component/Aliases/storage/'.$key.'.php');
+	    	}
+	    }
+
+	    /**
+	     * Update Aliases in project
+	     */
+	  	public function loadAliases(){
+	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
+	    	foreach ($aliases as $key => $value) {
+	    		$folder = __DIR__.'/Component/Aliases/storage/'.$key.'.php';
+	    		include_once($folder);
+	    	}
+	    }
+
+	    /**
+	     * Create Aliases in project
+	     */
+	    private function aliases(){
+	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
+	    	foreach ($aliases as $key => $value) {
+	    		new Component\Aliases\Aliases($key, $value);
+	    	}
+	    }
+
+	    /**
 	     * [router run router system]
 	     * @return [void] [define router system]
 	     */
@@ -80,6 +112,8 @@
 	        $router = Router::create();
 
 	        include_once __DIR__ . '/Component/Functions/Functions.php';
+
+	        $this->loadAliases();
 
 	        foreach (glob("routes/*.php") as $filename) {
 	            include_once $filename;
@@ -99,6 +133,7 @@
 	        $this->enviroments();
 	        $this->setDb();
 	        $this->setContainer();
+	        $this->aliases();
 	        $this->router();
 
 	    }

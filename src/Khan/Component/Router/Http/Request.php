@@ -1,8 +1,8 @@
 <?php
 	
-	namespace App\Khan\Component\Router\src\Http;
+	namespace App\Khan\Component\Router\Http;
   use \App\Khan\Component\HttpFoundation\Request as RequestFoundation;
-  use \App\Khan\Component\Router\src\Http\Interfaces\Request as RequestInterface;
+  use \App\Khan\Component\Router\Http\Interfaces\Request as RequestInterface;
   
 	/**
 	* Request Class and Interface Implement

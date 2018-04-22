@@ -1,6 +1,6 @@
 <?php
 
-	namespace Middlewares\Middlewares;
+	namespace Middlewares;
 
 	class SecureRequest implements \App\Khan\Contracts\Middlewares\Middleware {
 

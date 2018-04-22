@@ -1,6 +1,6 @@
 <?php
 
-	namespace Middlewares\Middlewares;
+	namespace Middlewares;
 
 	class SessionStart implements \App\Khan\Contracts\Middlewares\Middleware {
 

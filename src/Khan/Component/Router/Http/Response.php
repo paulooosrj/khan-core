@@ -1,8 +1,8 @@
 <?php
 	
-	namespace App\Khan\Component\Router\src\Http;
+	namespace App\Khan\Component\Router\Http;
 	use \App\Khan\Component\HttpFoundation\Response as ResponseFoundation;
-  	use \App\Khan\Component\Router\src\Http\Interfaces\Response as ResponseInterface;
+  	use \App\Khan\Component\Router\Http\Interfaces\Response as ResponseInterface;
 
 	/**
 	* Response Class and Interface Implement

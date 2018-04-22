@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Khan\Component\Router\src\Http\Interfaces;
+	namespace App\Khan\Component\Router\Http\Interfaces;
 
 	interface Request {
     
