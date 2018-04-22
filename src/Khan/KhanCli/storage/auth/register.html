@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Auth Khan</title>
+	<link rel="icon" type="image/jpeg" href="public/img/icone.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		body{ height: 100vh; }
+		.container-fluid{
+    		background: #4b6cb7;
+			background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+			background: linear-gradient(to right, #182848, #4b6cb7);
+    	}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid h-100 bg-dark">
+			
+		<div class="row d-flex align-items-center justify-content-center h-100">
+
+			<div class="login-page col-md-4 col-sm-12 h-50 bg-light rounded">
+			  <div class="form h-100 text-center">
+			    <form class="login-form d-flex flex-column h-100 justify-content-center align-items-center">
+			      <input type="text" placeholder="Username" class="form-control mt-2 w-75" name="username"/>
+			      <input type="text" placeholder="Email" class="form-control mt-2 w-75" name="email"/>
+			      <input type="password" placeholder="Password" class="form-control mt-2 w-75" name="password"/>
+			      <button class="btn btn-primary mt-2 w-75">Register</button>
+			      <p class="message mt-2 text-dark">Already have an account? <a href="/login">Login</a></p>
+			    </form>
+			  </div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script type="text/javascript">
+
+		$('.message a').click(function(){
+		   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+
+		$(".login-form").submit(function( event ) {
+		  event.preventDefault();
+		  
+		  const data = {};
+		  $(this).serializeArray().map((d) => {
+		  	data[d.name] = d.value;
+		  });
+
+		  $.post('/auth/register', data, function(res){
+		  	console.log(res);
+		  	if(res === "sucesso"){
+		  		$(".form").prepend("<h4 class='text-success mt-3 text-center w-100'>Sucesso Cadastrar!!</h4>");
+		  		setTimeout(() => location.href = "/login", 4000);
+		  	}else{
+		  		$(".form").prepend("<h4 class='text-danger mt-3 text-center w-100'>Erro ao Cadastrar!!</h4>");
+		  	}
+		  });
+
+		});
+
+	</script>
+
+</body>
+</html>

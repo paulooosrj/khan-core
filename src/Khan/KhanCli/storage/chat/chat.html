@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ assets('css/estilo.css') }}">
+    <link rel="icon" type="image/jpeg" href="{{ assets('img/icone.png') }}" />
+    <title>Khan</title>
+    <style>
+    	body, .main{ height: 100vh;width: 100vw; }
+    	.container-fluid{
+    		width: 100%;
+    		background: #02AAB0;
+			background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);
+			background: linear-gradient(to right, #00CDAC, #02AAB0);
+    	}
+    	.app>.row:nth-child(1){
+    		height: 80vh;
+    	}
+    	.box-message{
+    		height: 20vh;
+    	}
+    	.box-message input{
+    		height: 100%;
+    		outline: none;
+    		border: none;
+    		box-shadow: none !important;
+    	}
+    	.box{
+    		height: 8vh;
+    	}
+    	.messages{
+    		overflow-y: scroll;
+    	}
+    	.message{
+    		min-height: 10vh;
+    		height: auto;
+    		width: 100%;
+    	}
+    </style>
+  </head>
+  <body>
+
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+
+    	<div class="row main d-flex justify-content-center">
+    		
+			<div class="app col-md-6 col-sm-12 h-100 bg-dark">
+    		
+				<div class="row d-flex justify-content-center align-items-center">
+					
+					<div class="messages col-md-11 col-sm-12 h-100 bg-white mt-5 rounded"></div>
+
+				</div>
+
+				<div class="row box-message d-flex justify-content-center align-items-center">
+					
+					<div class="col-md-11 rounded bg-white d-flex justify-content-center align-items-center box">
+						<i class="fas fa-comments mt-1 mr-4 ml-2"></i>
+						<input type="text" class="form-control input-lg emiter" placeholder="Escreva sua mensagem">
+					</div>
+
+				</div>
+
+	    	</div>
+
+    	</div>
+
+    </div>
+
+    {{ socket() }}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
+    <script type="text/javascript">
+    	
+    	;(async function(){
+
+    		const colors = [
+    			'bg-success',
+    			'bg-danger',
+    			'bg-primary',
+    			'bg-secondary',
+    			'bg-info'
+    		];
+    		var bg = colors[Math.floor(Math.random() * colors.length)];
+    		const render_message = (nome, mensagem, color) => {
+    			$(".messages").append(`
+    				<div class="message d-flex align-items-center justify-content-start pl-3 mt-1 mb-1 rounded text-white flex-wrap flex-column ${color}">
+						<h5 class="mt-2 text-dark w-100 d-flex justify-content-start">${nome}</h5>
+						<p class="m-0 w-100 d-flex justify-content-start flex-wrap">${mensagem}</p> 
+					</div>
+    			`);
+    			$('.messages').animate({ scrollTop: $('.messages').prop("scrollHeight")}, 1000);
+    		};
+
+    		khan_socket.on('login', function(res){
+    			render_message(res.name, res.msg, res.color);
+    		});
+
+    		khan_socket.on('message', function(res){
+    			$('.emiter').val('');
+    			render_message(res.name, res.msg, res.color);
+    		});
+
+    		const { value: name } = await swal({
+			  title: 'Qual é seu nome?',
+			  input: 'text',
+			  inputPlaceholder: 'Insira seu nome ou nickname',
+			  showCancelButton: false,
+			  inputValidator: (value) => {
+			    return !value && 'You need to write something!'
+			  }
+			})
+
+			if (name) {
+
+			  swal({ type: 'success', title: 'Seja bem vindo, ' + name });
+
+			  khan_socket.emit('login', {
+			  	name: name,
+			  	msg: name + ' entrou na sala.',
+			  	color: bg
+			  });
+
+			  $(document).keypress(function(e) {
+				   if(e.which == 13) {
+				   		let box = $(".emiter");
+				        let message = (box.val().length > 0) ? box.val() : false;
+				        if(message){
+				        	khan_socket.emit('message', {
+				        		name: name,
+				        		msg: box.val(),
+				        		color: bg
+				        	});
+				        }
+				   }
+			  });
+
+			}
+
+    	})();
+
+    </script>
+
+    <!-- FONT AWESOME -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+  </body>
+</html>

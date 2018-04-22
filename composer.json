@@ -21,7 +21,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "Command\\": "src/Khan/Console/"
+            "Command\\": "src/Khan/KhanCli/"
         }
     },
     "autoload-dev": {
