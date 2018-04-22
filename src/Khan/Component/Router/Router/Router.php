@@ -12,6 +12,7 @@
       namespace App\Khan\Component\Router\Router;
       use App\Khan\Component\Router\Http\Response as Response;
       use App\Khan\Component\Router\Http\Request as Request;
+      use App\Khan\Component\Mime\Mime as Mime;
 
       class Router {
         
@@ -259,6 +260,21 @@
           public static function patch($route, $call = null, $method = 'PATCH'){
               $scope = Router::create();
               return $scope->makeRoutes($route, $call, $method);
+          }
+
+          public static function staticFile($route, $folder){
+              $scope = Router::create();
+              $scope::respond($route, function ($req, $res, $db, $reg) use($folder){
+                  $fileDir = "{$folder}/{$reg[1]}";
+                  if (file_exists($fileDir)) {
+                      $mime = Mime::get($fileDir);
+                      header("Content-type: {$mime}", true);
+                      return file_get_contents($fileDir);
+                  } else {
+                      echo "error";
+                      http_response_code(404);
+                  }
+              });
           }
 
           public static function notFound($call = null){
