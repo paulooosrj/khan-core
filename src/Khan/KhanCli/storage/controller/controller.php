@@ -6,7 +6,7 @@
 	class controllerName extends \App\Khan\Bootstrap\KhanController {
 
 		public function index($req, $res, $db){
-			$this->container::set('msg', 'Ola mundo!!');
+			$this->container::bind('msg', 'Ola mundo!!');
 			echo $this->container::get('msg');
 		}
 
