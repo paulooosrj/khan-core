@@ -39,7 +39,7 @@
 
 				$make2 = Hooks::write($strategyOrigin, 
 					Hooks::replace($strategyOrigin, [
-						"// newStrategy" => "'$strategy' => 'StrategysAuth\\".$strategy."'
+						"// newStrategy" => ",'$strategy' => 'StrategysAuth\\".$strategy."'
 		// newStrategy"
 				]));
 
