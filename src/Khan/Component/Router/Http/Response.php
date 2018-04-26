@@ -7,6 +7,7 @@
 	/**
 	* Response Class and Interface Implement
 	*/
+	@session_start();
 
 	class Response extends ResponseFoundation implements ResponseInterface{
 
@@ -15,7 +16,9 @@
 			"assets",
 			"socket",
 			"peer",
-			"cdn"
+			"cdn",
+			"csrf_token",
+			"csrf_token_input"
 		];
     
 		private static $use = [];
@@ -60,6 +63,28 @@
 			foreach (self::$extends as $key => $extend) {
 				$this->setFunctionTwig($extend);
 			}
+		}
+
+		public function csrf_token(){
+			if (empty($_SESSION['token'])) {
+			    if (function_exists('mcrypt_create_iv')) {
+			        $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+			    } else {
+			        $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+			    }
+			}
+			return $_SESSION['token'];
+		}
+
+		public function csrf_token_input(){
+			if (empty($_SESSION['token'])) {
+			    if (function_exists('mcrypt_create_iv')) {
+			        $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+			    } else {
+			        $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+			    }
+			}
+			return "<input type='hidden' name='token' value='".$_SESSION['token']."'/>";
 		}
 
 		public function cdn($library, $version, $file){

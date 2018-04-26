@@ -14,10 +14,13 @@
       use App\Khan\Component\Router\Http\Request as Request;
       use App\Khan\Component\Mime\Mime as Mime;
 
+      @session_start();
+
       class Router {
         
           use \App\Khan\Component\Router\RegexEngine\RegexEngine,
-              \App\Khan\Component\Router\Http\Middlewares;
+              \App\Khan\Component\Router\Http\Middlewares,
+              \App\Khan\Component\Router\Router\Temporary;
           
           private static $instance = null,
                          $uses = [],
@@ -174,7 +177,9 @@
               }
           }
 
-          public static function redirect($route, $args){
+          public static function redirect($route){
+              echo $route;
+              $route = ".".$route;
               header("Location: {$route}");
           }
 
@@ -213,6 +218,27 @@
 
               return $uri;
 
+          }
+
+          public static function csrf_token(){
+            if (empty($_SESSION['token'])) {
+                if (function_exists('mcrypt_create_iv')) {
+                    $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+                } else {
+                    $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+                }
+            }
+            return $_SESSION['token'];
+          }
+
+          public static function csrf_token_verify($token){
+            if (!empty($token) && !empty($_SESSION['token'])) {
+                if (hash_equals($_SESSION['token'], $token)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
           }
 
           public function isRespond($key, $uri){
@@ -260,6 +286,32 @@
           public static function patch($route, $call = null, $method = 'PATCH'){
               $scope = Router::create();
               return $scope->makeRoutes($route, $call, $method);
+          }
+
+          public static function temp($method = 'GET', $route, $minutes){
+              $generate = $this->generateHash($route);
+              $time = $this->hour();
+              return $this->gen("/".$generate, $route, $time, $method, $minutes);
+          }
+
+          public function setLoadTemp(){
+              $scope = Router::create();
+              $temp = $this->loadTemp();
+              foreach ($temp as $key => $data) {
+                  $data = (array) $data;
+                  $timeOrigin = (array) $data['time'];
+                  $time = new \DateTime($timeOrigin["date"]);
+                  $time = date_diff(new \DateTime(), $time)->i;
+                  if($time <= $data["minutes"]){
+                    $scope->makeRoutes($key, function() use($data){
+                      echo "Route!!";
+                      Router::redirect($data["origin"]);
+                    }, $data["method"]);
+                  }else{
+                    echo "Clear";
+                    $this->clearRouteTemp($key);
+                  }
+              }
           }
 
           public static function staticFile($route, $folder){
@@ -318,6 +370,7 @@
           public function dispatch(){
               
               $this->setDefaultMiddlewares();
+              $this->setLoadTemp();
 
               $uri = self::$config["path"];
               $metodo = self::$config["method"];

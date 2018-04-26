@@ -18,6 +18,24 @@
 		
 	});
 
+	Router::post('/form', function($req, $res){
+
+		return Router::csrf_token_verify($req->post('token')) ? "true" : "false";
+		
+	});
+
+	Router::get('/form', function($req, $res){
+
+		return $res->render('form.html');
+		
+	});
+
+	Router::get('/maked', function($req, $res){
+
+		echo Router::temp('GET', '/peer', 2);
+		
+	});
+
 	/**/
 	Router::get('/peer', function($req, $res){
 

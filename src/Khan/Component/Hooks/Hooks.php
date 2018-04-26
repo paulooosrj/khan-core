@@ -64,6 +64,12 @@
 	        }
 	    }
 
+	    public static function folder($foldername){
+	        if(!Hooks::exists($foldername)){
+	            return @mkdir($foldername);
+	        }
+	    }
+
 	    public static function __callStatic($name, $arguments)
 	    {
 	        return call_user_func_array([$this, $name], $arguments);
