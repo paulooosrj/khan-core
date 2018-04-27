@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\HttpFoundation\File;
+namespace App\Khan\Component\HttpFoundation\File;
 
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
-use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser;
-use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
+use App\Khan\Component\HttpFoundation\File\Exception\FileException;
+use App\Khan\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use App\Khan\Component\HttpFoundation\File\MimeType\MimeTypeGuesser;
+use App\Khan\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
 
 /**
  * A file in the file system.

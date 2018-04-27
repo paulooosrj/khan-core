@@ -7,8 +7,8 @@
 		public static function handle($req, $res, $next){
 
 			if(isset($_SESSION)){
-				if(!$_SESSION['id'] && !$_SESSION['email']){
-					redirect('./login');
+				if(!isset($_SESSION['id']) && !isset($_SESSION['email'])){
+					redirect('../login');
 				}
 			}
 			

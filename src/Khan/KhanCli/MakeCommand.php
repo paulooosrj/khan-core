@@ -8,6 +8,7 @@
 	use Symfony\Component\Console\Input\InputInterface;
 	use Symfony\Component\Console\Output\OutputInterface;
 	use Symfony\Component\Console\Input\InputArgument;
+	use App\Khan\Component\Hooks\Hooks as Hooks;
 	use Command\KhanCommand as KhanCommand;
 
 	class MakeCommand extends Comando {
@@ -20,6 +21,15 @@
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
+		}
+
+		public function makeStrategy($strategy, $folder){
+			$strategyOrigin = ROOT_FOLDER . '/config/Strategy.php';
+			$make2 = Hooks::write($strategyOrigin, 
+					Hooks::replace($strategyOrigin, [
+						"// newStrategy" => ",'$strategy' => 'StrategysAuth\\".$folder."'
+		// newStrategy"
+			]));
 		}
 
 		public function createDatabase($input, $output){
@@ -76,6 +86,8 @@
 			$this->move('auth', 'CheckLogin.php', 'middlewares/CheckLogin.php');
 			// move Strategy
 			$this->move('auth', 'AuthStrategy.php', 'config/strategy/AuthStrategy.php');
+			// config strategys
+			$this->makeStrategy('auth', 'AuthStrategy');
 		}
 
 	    protected function configure(){

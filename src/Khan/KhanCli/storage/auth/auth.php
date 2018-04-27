@@ -12,13 +12,15 @@
 
         $route->map("GET", '/', function($req, $res){
             $res->render('painel.html', [
-                "nome" => $_SESSION['name']
+                "nome" => $_SESSION['name'],
+                "img" => $_SESSION['icone']
             ]);
-        });
+        })->middleware('Middlewares\CheckLogin');
 
-        $route->map("GET", '/logout', 'MyApp\AuthController@logout');
+        $route->map("GET", '/logout', 'MyApp\AuthController@logout')
+              ->middleware('Middlewares\CheckLogin');
 
-    })->middleware('Middlewares\CheckLogin');
+    });
 
     Router::post('/auth/register', 'MyApp\AuthController@register');
 

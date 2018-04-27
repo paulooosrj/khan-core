@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\HttpFoundation\File;
+namespace App\Khan\Component\HttpFoundation\File;
 
-use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
-use Symfony\Component\HttpFoundation\File\Exception\ExtensionFileException;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
-use Symfony\Component\HttpFoundation\File\Exception\FormSizeFileException;
-use Symfony\Component\HttpFoundation\File\Exception\IniSizeFileException;
-use Symfony\Component\HttpFoundation\File\Exception\NoFileException;
-use Symfony\Component\HttpFoundation\File\Exception\NoTmpDirFileException;
-use Symfony\Component\HttpFoundation\File\Exception\PartialFileException;
-use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
+use App\Khan\Component\HttpFoundation\File\Exception\CannotWriteFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\ExtensionFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\FileException;
+use App\Khan\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use App\Khan\Component\HttpFoundation\File\Exception\FormSizeFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\IniSizeFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\NoFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\NoTmpDirFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\PartialFileException;
+use App\Khan\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
 
 /**
  * A file uploaded through a form.

@@ -15,9 +15,20 @@
       public function __construct(Array $reqs = array(), $uri = ''){
         $this->makeRequests();
         parent::__construct($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
-        self::$data = $reqs;
+        self::$data = $this->infoFile($reqs);
         $this->current_uri = $uri;
         $this->class_name = __CLASS__;
+      }
+
+      public function infoFile($data){
+        foreach ($data['files'] as $key => $file) {
+          $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+          $data["files"][$key]["ext"] = $ext;
+          $data["files"][$key]["newName"] = function($name) use($ext){
+             return $name.".".$ext;
+          };
+        }
+        return $data;
       }
     
       public function makeRequests(){

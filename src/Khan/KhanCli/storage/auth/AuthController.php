@@ -2,7 +2,7 @@
 
 	namespace MyApp;
 	use App\Khan\Libraries\Session as Session;
-	use \StrategysAuth\Strategy as Strategy;
+	use App\Khan\Component\Strategy\Strategy as Strategy;
 
 	class AuthController {
 
@@ -25,18 +25,30 @@
 
 		}
 
+		public function uploadFile($file){
+			$fileNewName = $file['newName'](md5(uniqid()));
+			if(move_uploaded_file($file["tmp_name"], "public/img/{$fileNewName}")){
+				return "public/img/{$fileNewName}";
+			}
+		}
+
 		public function register($req, $res){
+
+			$icone = $this->uploadFile($req->files('icone'));
 
 			$register = Strategy::make('auth')::register([
 				"email" => $req->post('email'),
 				"password" => $req->post('password'),
-				"name" => $req->post('username')
+				"name" => $req->post('username'),
+				"icone" => $icone
 			]);
 
 			if($register["msg"] === "sucess"){
 				$res->send("sucesso");
+				redirect('../../login');
 			}else{
 				$res->send("error");
+				redirect('../../register');
 			}
 
 		}
