@@ -24,13 +24,14 @@
 			<div class="login-page col-md-4 col-sm-12 h-50 bg-light rounded">
 			  <div class="form h-100 text-center">
 			    <form class="login-form d-flex flex-column h-100 justify-content-center align-items-center" action="/auth/register" method="POST" enctype="multipart/form-data">
+			      {{ csrf_token_input() }}
 			      <label class="form-control mt-2 w-75 label-icone" style="cursor:pointer">
 			      	<p class="text-icone mb-0">Escolha sua imagem de Perfil</p>
 			      	<input type="file" name="icone" class="icone" style="display: none">
 			      </label>
-			      <input type="text" placeholder="Username" class="form-control mt-2 w-75" name="username"/>
-			      <input type="text" placeholder="Email" class="form-control mt-2 w-75" name="email"/>
-			      <input type="password" placeholder="Password" class="form-control mt-2 w-75" name="password"/>
+			      <input type="text" placeholder="Username" class="form-control mt-2 w-75" name="username" required/>
+			      <input type="text" placeholder="Email" class="form-control mt-2 w-75" name="email" required/>
+			      <input type="password" placeholder="Password" class="form-control mt-2 w-75" name="password" required/>
 			      <button class="btn btn-primary mt-2 w-75" type="submit">Register</button>
 			      <p class="message mt-2 text-dark">Already have an account? <a href="/login">Login</a></p>
 			    </form>
