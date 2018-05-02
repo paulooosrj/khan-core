@@ -17,6 +17,7 @@
 	use App\Khan\Component\DB\DB as Conn;
 
 	define("ROOT_CORE", __DIR__);
+
 	/**
 	 * Class Core Run Project
 	 */
@@ -29,6 +30,7 @@
 	     * [create get instance in singleton]
 	     * @return [object] [Return khan instance]
 	     */
+	    
 	    public static function create(){
 	        if (self::$instance == null) {
 	            self::$instance = new Khan();
@@ -42,14 +44,17 @@
 	     * [enviroments $_ENV]
 	     * @return [void] [load enviroments in system]
 	     */
-	    private function enviroments(){
-	        $this->dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
-	        $this->dotenv->load();
+	    
+	    public static function enviroments(){
+	        $dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
+	        $dotenv->load();
+	        return $_ENV;
 	    }
 
 	    /**
 	     * [setDb set Database]
 	     */
+	    
 	    private function setDb(){
 	    	$this->db = function () {
 	            return Conn::getConn($_ENV);
@@ -59,6 +64,7 @@
 	    /**
 	     * [setContainer container injection service]
 	     */
+	    
 	    private function setContainer(){
 	    	$this->container = Container::create();
 	    }
@@ -66,6 +72,7 @@
 	    /**
 	     * Update Aliases in project
 	     */
+	    
 	  	public function updateAliases(){
 	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
 	    	foreach ($aliases as $key => $value) {
@@ -76,6 +83,7 @@
 	    /**
 	     * Update Aliases in project
 	     */
+	    
 	  	public function loadAliases(){
 	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
 	    	foreach ($aliases as $key => $value) {
@@ -87,6 +95,7 @@
 	    /**
 	     * Create Aliases in project
 	     */
+	    
 	    private function aliases(){
 	    	$aliases = require(ROOT_FOLDER . '/config/Aliases.php');
 	    	foreach ($aliases as $key => $value) {
@@ -98,6 +107,7 @@
 	     * [router run router system]
 	     * @return [void] [define router system]
 	     */
+	    
 	    protected function router(){
 
 	        $container = $this->container;
@@ -128,6 +138,7 @@
 	     * [services Load all services]
 	     * @return [void [load and run services in framework]
 	     */
+	    
 	    public function services(){
 
 	        $this->enviroments();

@@ -87,6 +87,7 @@
           }
         
           public static function has($route, $type){
+              if(is_array($route)){ return false; }
               return !isset(self::$routes[$type][$route]);
           }
         
@@ -112,10 +113,10 @@
                     self::$routes[$method][$route] = $call;
                   } elseif($type === "array"){
                     foreach ($route as $key => $routeName) {
-                      if($callback == null){
+                      if(is_null($call)){
                         self::$routess[$method][$key] = $routeName;
                       }else{
-                        self::$routess[$method][$key] = $callback;
+                        self::$routess[$method][$key] = $call;
                       }
                     }
                   }
@@ -130,8 +131,8 @@
               if(isset($this->req_mid)){ $data[0] = $this->req_mid; }
               if(isset($this->res_mid)){ $data[1] = $this->res_mid; }
 
-              if(strripos($class, "@")){
-                list($className, $fun) = explode('@', $class);
+              if(strripos($class, "->")){
+                list($className, $fun) = explode('->', $class);
                 $finish = new $className;
                 echo call_user_func_array([$finish, $fun], $data);
               }
@@ -184,6 +185,7 @@
           }
 
           public static function setRouterConfig($route){
+            if(is_array($route)){ return false; }
             self::$routesConfig[$route] = [];
           }
 
