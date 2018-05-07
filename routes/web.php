@@ -18,6 +18,11 @@
 		
 	});
 
+	Router::get('/tess', function(){
+		$this->app()::bind('nome', 'PaulaoDev');
+		print_r($this->app('nome'));
+	});
+
 	Router::post('/form', function($req, $res){
 
 		return Router::csrf_token_verify($req->post('token')) ? "true" : "false";
@@ -43,7 +48,7 @@
 		
 	});
 
-	Router::get('/teste', "MyApp\TesteController");
+	Router::get('/teste', "MyApp\TesteController::teste");
 
 	Router::group('/painel', function($route){
 

@@ -11,12 +11,10 @@
 
 	namespace App\Khan;
 
-	use App\Khan\Component\Router\Router\Router as Router;
-	use App\Khan\Component\Container\ServiceContainer as Container;
-	use App\Khan\Component\Stream\StreamServer as Stream;
-	use App\Khan\Component\DB\DB as Conn;
-
 	define("ROOT_CORE", __DIR__);
+
+	include_once __DIR__ . '/Component/Functions/Helpers.php';
+	include_once __DIR__ . '/Bootstrap/Config.php';
 
 	/**
 	 * Class Core Run Project
@@ -49,24 +47,6 @@
 	        $dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
 	        $dotenv->load();
 	        return $_ENV;
-	    }
-
-	    /**
-	     * [setDb set Database]
-	     */
-	    
-	    private function setDb(){
-	    	$this->db = function () {
-	            return Conn::getConn($_ENV);
-	        };
-	    }
-
-	    /**
-	     * [setContainer container injection service]
-	     */
-	    
-	    private function setContainer(){
-	    	$this->container = Container::create();
 	    }
 
 	    /**
@@ -104,37 +84,6 @@
 	    }
 
 	    /**
-	     * [router run router system]
-	     * @return [void] [define router system]
-	     */
-	    
-	    protected function router(){
-
-	        $container = $this->container;
-	        $stream = new Stream();
-	        $db = $this->db;
-
-	        Router::create([
-	            "clean_request" => true,
-	            "url_filter" => true
-	        ]);
-
-	        $router = Router::create();
-
-	        include_once __DIR__ . '/Component/Functions/Functions.php';
-
-	        $this->loadAliases();
-
-	        foreach (glob("routes/*.php") as $filename) {
-	            include_once $filename;
-	        }
-
-	        $routerFactory = Router::create();
-	        $routerFactory->dispatch();
-
-	    }
-
-	    /**
 	     * [services Load all services]
 	     * @return [void [load and run services in framework]
 	     */
@@ -142,10 +91,14 @@
 	    public function services(){
 
 	        $this->enviroments();
-	        $this->setDb();
-	        $this->setContainer();
 	        $this->aliases();
-	        $this->router();
+	        $this->loadAliases();
+
+	        foreach (app()::resolve('app')() as $key => $value) {
+	        	if(is_closure($value)){
+	        		$value();
+	        	}
+	        }
 
 	    }
 

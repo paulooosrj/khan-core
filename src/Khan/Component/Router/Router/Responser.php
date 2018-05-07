@@ -2,8 +2,8 @@
 	
 	namespace App\Khan\Component\Router\Router;
 	use App\Khan\Component\Container\ServiceContainer as Container;
-    use App\Khan\Component\Stream\StreamServer as Stream;
-    use App\Khan\Component\DB\DB as Conn;
+  use App\Khan\Component\Stream\StreamServer as Stream;
+  use App\Khan\Component\DB\DB as Conn;
 
 	class Responser {
 
@@ -15,6 +15,10 @@
               return Conn::getConn($_ENV);
             };
 
+          }
+
+          public function app($arg = null){
+            return (function_exists('app') && !is_null($arg)) ? app($arg) : Container::create();
           }
 
           public function helpers(){

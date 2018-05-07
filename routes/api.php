@@ -11,7 +11,7 @@
 		if(
 			\App\Khan\Component\Validate\Data::validate([
 				"name" => "PaulaoDev",
-				"age" => 17,
+				"age" => 20,
 				"picture" => "http://imgur.com/minha.png"
 			], [
 				"name" => "not_empty",

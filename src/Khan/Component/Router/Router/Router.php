@@ -20,7 +20,8 @@
         
           use \App\Khan\Component\Router\RegexEngine\RegexEngine,
               \App\Khan\Component\Router\Http\Middlewares,
-              \App\Khan\Component\Router\Router\Temporary;
+              \App\Khan\Component\Router\Router\Temporary,
+              \App\Khan\Component\Router\Components\CsrfToken;
           
           private static $instance = null,
                          $uses = [],
@@ -76,8 +77,12 @@
         
           public static function get_uri(){
               $server = $_SERVER;
-              $protocol = (isset($server["REQUEST_SCHEME"])) ? $server["REQUEST_SCHEME"] : ((isset($server["HTTP_X_FORWARDED_PROTO"])) ? $server["HTTP_X_FORWARDED_PROTO"] : "http");
-              $domain = (isset($server['HTTP_HOST'])) ? $server['HTTP_HOST'] : $server["SERVER_NAME"];
+              $scheme = isset($server["REQUEST_SCHEME"]) ?: null;
+              $host = $server['HTTP_HOST'];
+              $protocol = (isset($scheme)) ? $scheme : ((
+                isset($server["HTTP_X_FORWARDED_PROTO"]
+              )) ? $server["HTTP_X_FORWARDED_PROTO"] : "http");
+              $domain = (isset($host)) ? $host : $server["SERVER_NAME"];
               $path = (isset($server["REQUEST_URI"])) ? $server["REQUEST_URI"] : "/";
               return "{$protocol}://{$domain}{$path}";
           }
@@ -87,7 +92,13 @@
           }
         
           public static function has($route, $type){
-              if(is_array($route)){ return false; }
+              if(is_array($route)){ 
+                $argss = [];
+                foreach ($route as $key => $value) {
+                  $argss[] = !isset(self::$routes[$type][$key]) ? "true" : "false";
+                }
+                return !in_array("false", $argss) ? "true" : "false"; 
+              }
               return !isset(self::$routes[$type][$route]);
           }
         
@@ -114,9 +125,9 @@
                   } elseif($type === "array"){
                     foreach ($route as $key => $routeName) {
                       if(is_null($call)){
-                        self::$routess[$method][$key] = $routeName;
+                        self::$routes[$method][$key] = $routeName;
                       }else{
-                        self::$routess[$method][$key] = $call;
+                        self::$routes[$method][$key] = $call;
                       }
                     }
                   }
@@ -133,14 +144,14 @@
 
               if(strripos($class, "->")){
                 list($className, $fun) = explode('->', $class);
-                $finish = new $className;
+                $finish = new $className(...array_values($data));
                 echo call_user_func_array([$finish, $fun], $data);
               }
               elseif(strripos($class, "::")){
-                echo call_user_func_array($class, $data);
+                echo $class(...array_values($data));
               }
               else{
-                call_user_func_array([new \ReflectionClass($class), 'newInstance'], $data);
+                echo new $class(...array_values($data));
               }
 
           }
@@ -222,27 +233,6 @@
 
           }
 
-          public static function csrf_token(){
-            if (empty($_SESSION['token'])) {
-                if (function_exists('mcrypt_create_iv')) {
-                    $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-                } else {
-                    $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
-                }
-            }
-            return $_SESSION['token'];
-          }
-
-          public static function csrf_token_verify($token){
-            if (!empty($token) && !empty($_SESSION['token'])) {
-                if (hash_equals($_SESSION['token'], $token)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-          }
-
           public function isRespond($key, $uri){
               $key = '/^' . str_replace('/', '\/', $key) . '$/';
               $matches = [];
@@ -293,7 +283,13 @@
           public static function temp($method = 'GET', $route, $minutes){
               $generate = $this->generateHash($route);
               $time = $this->hour();
-              return $this->gen("/".$generate, $route, $time, $method, $minutes);
+              return $this->gen(
+                "/" . $generate, 
+                $route, 
+                $time, 
+                $method, 
+                $minutes
+              );
           }
 
           public function setLoadTemp(){
@@ -306,7 +302,6 @@
                   $time = date_diff(new \DateTime(), $time)->i;
                   if($time <= $data["minutes"]){
                     $scope->makeRoutes($key, function() use($data){
-                      echo "Route!!";
                       Router::redirect($data["origin"]);
                     }, $data["method"]);
                   }else{
