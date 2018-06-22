@@ -10,7 +10,7 @@ const browserify = require('browserify'),
 
 const entry = './public/js/app.js',
       sassWatchPath = './public/sass/**/*.scss',
-      jsWatchPath = './public/js/app.js';
+      jsWatchPath = './public/js/app.{js,jsx}';
 
 gulp.task('js', function () {
     return browserify(entry, { debug: true, extensions: ['es6'] })

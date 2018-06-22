@@ -18,14 +18,20 @@
 		
 	});
 
-	Router::get('/tess', function(){
-		$this->app()::bind('nome', 'PaulaoDev');
-		print_r($this->app('nome'));
-	});
+	Router::get([
+		'/teste1' => function(){
+			$this->app()::bind('nome', 'PaulaoDev');
+			print_r($this->app('nome'));
+		},
+		'/teste2' => function(){
+			print_r(url());
+		},
+	]);
 
 	Router::post('/form', function($req, $res){
 
-		return Router::csrf_token_verify($req->post('token')) ? "true" : "false";
+		return Router::csrf_token_verify($req->post('token')) 
+			   ? "true" : "false";
 		
 	});
 
@@ -48,30 +54,19 @@
 		
 	});
 
+	Router::get('/react', function($req, $res){
+
+		$res->render('react.html');
+		
+	});
+
 	Router::get('/teste', "MyApp\TesteController::teste");
 
 	Router::group('/painel', function($route){
 
-		$route->map('GET', '/strategy', function($req, $res){
+		$route::get('/strategy', function($req, $res){
 
-			/*
-			Logout to strategy
-			Strategy::make('painel')::logout();
-			
-			Register to strategy
-			Strategy::make('painel')::register([
-				"email" => "admin@admin.com",
-				"password" => "paulao2018",
-				"name" => "PaulaoDev"
-			]);
-			
-			Login to strategy
-			Strategy::make('painel')::login([
-				"email" => "admin@admin.com",
-				"password" => "paulao2018"
-			]));
-
-			*/
+			return "Ola mundo!!";
 
 		});
 

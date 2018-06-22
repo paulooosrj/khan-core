@@ -24,6 +24,7 @@
 
 	        $this->setName('js')
 	             ->addArgument('js-name', InputArgument::OPTIONAL, 'Qual o nome do javascript?')
+	             ->addArgument('js-pack', InputArgument::OPTIONAL, 'Qual o pacote do javascript ira usar?')
         		 ->setDescription('New javascript file.')
         		 ->setHelp('New javascript in project...');
 
@@ -32,6 +33,7 @@
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    		
 	    	$jsFile = ($input->getArgument('js-name')) ? $input->getArgument('js-name') : false;
+	    	$type = ($input->getArgument('js-pack')) ? $input->getArgument('js-pack') : "jquery"; 
 
 	    	if($jsFile){
 

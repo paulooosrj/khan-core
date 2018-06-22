@@ -95,7 +95,8 @@
               if(is_array($route)){ 
                 $argss = [];
                 foreach ($route as $key => $value) {
-                  $argss[] = !isset(self::$routes[$type][$key]) ? "true" : "false";
+                  $argss[] = !isset(self::$routes[$type][$key]) ? 
+                              "true" : "false";
                 }
                 return !in_array("false", $argss) ? "true" : "false"; 
               }
@@ -190,8 +191,8 @@
           }
 
           public static function redirect($route){
-              echo $route;
-              $route = ".".$route;
+              $route = self::$routesName[$route] || $route;
+              $route = ".". $route;
               header("Location: {$route}");
           }
 
@@ -244,40 +245,41 @@
               $call(new GroupRouter($scope, $route, $middlewares));
               return $scope;
           }
-        
-          public static function get($route, $call = null, $method = 'GET'){
+
+          public static function resolve(){
+              $args = func_get_args();
+              if(count($args) !== 3){ throw "error arguments"; }
+              list($route, $call, $method) = $args;
               $scope = Router::create();
               return $scope->makeRoutes($route, $call, $method);
+          }
+        
+          public static function get($route, $call = null, $method = 'GET'){
+              return Router::resolve($route, $call, $method);
           }
         
           public static function post($route, $call = null, $method = 'POST'){
-              $scope = Router::create();
-              return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
         
           public static function delete($route, $call = null, $method = 'DELETE'){
-              $scope = Router::create();
-              return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
         
           public static function put($route, $call = null, $method = 'PUT'){
-              $scope = Router::create();
-              return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
 
           public static function respond($route, $call = null, $method = 'RESPOND'){
-              $scope = Router::create();
-              return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
         
           public static function params($route, $call = null, $method = 'PARAMS'){
-             $scope = Router::create();
-             return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
 
           public static function patch($route, $call = null, $method = 'PATCH'){
-              $scope = Router::create();
-              return $scope->makeRoutes($route, $call, $method);
+              return Router::resolve($route, $call, $method);
           }
 
           public static function temp($method = 'GET', $route, $minutes){
@@ -311,7 +313,7 @@
               }
           }
 
-          public static function staticFile($route, $folder){
+          public static function staticFiles($route, $folder){
               $scope = Router::create();
               $scope::respond($route, function ($req, $res, $db, $reg) use($folder){
                   $fileDir = "{$folder}/{$reg[1]}";

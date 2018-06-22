@@ -22,5 +22,3 @@
 	app()::bind('app.use.db', function () {
 	    return Conn::getConn($_ENV);
 	});
-
-	// app()::bind();

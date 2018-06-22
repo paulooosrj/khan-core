@@ -24,6 +24,7 @@
 	    protected function configure(){
 
 	        $this->setName('gulp')
+	        	 ->addArgument('type', InputArgument::OPTIONAL, 'Qual a lib ira usar?')
         		 ->setDescription('Configure gulp.')
         		 ->setHelp('Configure gulp in project...');
 
