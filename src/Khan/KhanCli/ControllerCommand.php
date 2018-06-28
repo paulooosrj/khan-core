@@ -28,7 +28,7 @@
 
 	    	if($controller){
 
-	    		$folder = "app/{$controller}Controller.php";
+	    		$folder = "app/http/controllers/{$controller}Controller.php";
 	    		$folderOrigin = __DIR__. "/storage/controller/controller.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [

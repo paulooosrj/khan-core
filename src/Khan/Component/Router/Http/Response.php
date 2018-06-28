@@ -123,23 +123,38 @@
 		}
 
 		public function view($name){
-			return 'resources/views/' . $name;
+			echo 'resources/views/' . $name;
+			return $this;
 		}
 
 		public function assets($name){
-			return $_ENV['APP_URL'] . "/" . "public/" . $name;
+			echo $_ENV['APP_URL'] . "/" . "public/" . $name;
+			return $this;
 		}
 		
 		public function render($file, $data = []){
 			echo $this->twig->render($file, $data);
+			return $this;
 		}
 
 		public function load($file){
-			return $this->twig->load($file);
+			$this->twig->load($file);
+			return $this;
+		}
+
+		public function json($array = []){
+			echo json_encode($array, JSON_PRETTY_PRINT);
+			return $this;
+		}
+
+		public function status($state = 200){
+			http_response_code($state);
+			return $this;
 		}
 		
 		public function send($string = ''){
 			echo $string;
+			return $this;
 		}
     
 	}

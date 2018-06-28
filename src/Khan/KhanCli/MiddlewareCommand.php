@@ -28,7 +28,7 @@
 
 	    	if($middleware){
 
-	    		$folder = "middlewares/{$middleware}.php";
+	    		$folder = "app/http/middlewares/{$middleware}.php";
 	    		$folderOrigin = __DIR__. "/storage/middleware/middleware.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [

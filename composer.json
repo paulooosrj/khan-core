@@ -27,12 +27,19 @@
     "autoload-dev": {
         "psr-4": {
             "MyApp\\": "app/",
-            "Middlewares\\": "middlewares/",
+            "Middlewares\\": "app/http/middlewares/",
             "StrategysAuth\\": "config/strategy/",
-            "Models\\": "models/"
+            "Models\\": "app/models/"
         }
     },
     "config": {
         "optimize-autoloader": true
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    },
+    "scripts": {
+        "server": "php khan server",
+        "tests": "./vendor/bin/phpunit --colors=auto  tests/unit TesteKhan"
     }
 }

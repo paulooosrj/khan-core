@@ -20,6 +20,7 @@
 	$application = new Application('Khan CLI', '2.0');
 	$application->add(factory('Server'));
 	$application->add(factory('Create'));
+	$application->add(factory('Api'));
 	$application->add(factory('Controller'));
 	$application->add(factory('Model'));
 	$application->add(factory('View'));
@@ -27,6 +28,7 @@
 	$application->add(factory('Strategy'));
 	$application->add(factory('Gulp'));
 	$application->add(factory('React'));
+	$application->add(factory('Vue'));
 	$application->add(factory('Sass'));
 	$application->add(factory('Js'));
 	$application->add(factory('Make'));

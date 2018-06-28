@@ -28,7 +28,7 @@
 
 	    	if($model){
 
-	    		$folder = "models/{$model}.php";
+	    		$folder = "app/models/{$model}.php";
 	    		$folderOrigin = __DIR__. "/storage/model/model.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
