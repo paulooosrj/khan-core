@@ -1,9 +1,17 @@
 import Vue from 'vue';
 
-const hi = "Ola mundo!!";
-
-new Vue({
+const app = new Vue({
 	el: "#app",
-	template: '<div>{{ hi }}</div>',
-	data: { hi }
-})
+	data: {
+		peoples: []
+	},
+	methods: {
+		getPeoples(){
+			fetch("./khan-vue/", { method: "GET" })
+					 .then(res => res.json())
+					 .then(json => this.peoples = json);
+		}
+	}
+});
+
+app.getPeoples();

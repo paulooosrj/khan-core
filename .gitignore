@@ -4,3 +4,6 @@
 /resources/
 /app/
 /config/
+composer.lock
+package.json
+package-lock.json

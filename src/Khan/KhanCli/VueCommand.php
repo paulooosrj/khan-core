@@ -36,7 +36,10 @@
 	    	$webpack = $root . '/vue-files/webpack.config.js';
 	    	$package = $root . '/vue-files/package.json';
 	    	$vue = $root . '/vue-files/app.js';
-	    	$babel = $root . '/vue-files/babelrc';
+				$babel = $root . '/vue-files/babelrc';
+
+				$khanVue = $root . '/vue-files/khan-vue.php';
+				$khanView = $root . '/vue-files/vue.html';
 
 	    	$remove = Hooks::delete('public/js/app.js');
 	    	$removeJsx = Hooks::delete('public/js/app.jsx');
@@ -45,7 +48,9 @@
 				Hooks::copy($webpack, 'webpack.config.js') && 
 				Hooks::copy($package, 'package.json') &&
 				Hooks::copy($vue, 'public/js/app.js') &&
-				Hooks::copy($babel, '.babelrc')
+				Hooks::copy($babel, '.babelrc') &&
+				Hooks::copy($khanVue, 'routes/khan-vue.php') &&
+				Hooks::copy($khanView, 'resources/views/vue.html')
 			){
 				KhanCommand::shell("npm i webpack -g && npm install");
 				$this->sucess($output, "Vue configurado com sucesso");
