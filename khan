@@ -1,8 +1,3 @@
-#!/usr/bin/env php
-<<<<<<< HEAD
-
-=======
->>>>>>> b9cb9d342c68b36d7964db4096ab0948f505d30f
 <?php
 
 	if (file_exists(__DIR__.'/../../autoload.php')) {
@@ -13,7 +8,6 @@
 
 	use Symfony\Component\Console\Application;
 
-<<<<<<< HEAD
 	define("ROOT_FOLDER", __DIR__ );
 
 	function factory($command){
@@ -36,17 +30,5 @@
 	$application->add(factory('Sass'));
 	$application->add(factory('Js'));
 	$application->add(factory('Make'));
-=======
-	$application = new Application('Khan CLI', '1.0');
 
-	$application->add(new Command\ServerCommand());
-	$application->add(new Command\CreateCommand());
-	$application->add(new Command\ControllerCommand());
-	$application->add(new Command\HelperCommand());
-	$application->add(new Command\GulpCommand());
-	$application->add(new Command\SassCommand());
-	$application->add(new Command\JsCommand());
-	$application->add(new Command\MakeCommand());
-
->>>>>>> b9cb9d342c68b36d7964db4096ab0948f505d30f
 	$application->run();
