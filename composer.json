@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "paulaodev/khan-core",
     "description": "Core khan framework",
+=======
+    "name": "paulaodev/khan-cli",
+    "description": "Command line khan php",
+>>>>>>> b9cb9d342c68b36d7964db4096ab0948f505d30f
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,6 +16,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
+<<<<<<< HEAD
         "catfan/Medoo": "^1.4",
         "twig/twig": "^1.3",
         "nesbot/carbon": "^1.22",
@@ -44,4 +50,17 @@
         "server": "@php khan server",
         "tests": "./vendor/bin/phpunit --colors=auto  tests/unit TesteKhan"
     }
+=======
+        "symfony/console": "^4.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Command\\": "src/command/"
+    	}
+    },
+    "bin": [
+        "khan"
+    ]
+>>>>>>> b9cb9d342c68b36d7964db4096ab0948f505d30f
 }
