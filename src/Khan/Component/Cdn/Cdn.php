@@ -1,7 +1,6 @@
 <?php
 
 	namespace App\Khan\Component\Cdn;
-	use App\Khan\Libraries\Request as Request;
 
 	class Cdn {
 
@@ -17,7 +16,7 @@
 
 	    private function __contruct(){}
 
-	    public function asset($library, $version = "latest", $file){
+	    public function asset($library, $file, $version = "latest"){
 
 	    	return self::$endpoint.$library."/".$version."/".$file;
 

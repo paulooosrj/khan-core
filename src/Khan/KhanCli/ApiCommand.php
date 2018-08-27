@@ -17,8 +17,8 @@
 
 	        $this->setName('api')
 	             ->addArgument('api-name', InputArgument::OPTIONAL, 'Qual o nome do controller?')
-        		 ->setDescription('New api.')
-        		 ->setHelp('New api in project...');
+        		   ->setDescription('New api.')
+        		   ->setHelp('New api in project...');
 
 	    }
 
@@ -28,12 +28,12 @@
 
 	    	if($api){
 
-	    		$folder = "routes/{$api}.php";
+	    		$folder = "config/routes.php";
 	    		$folderOrigin = __DIR__. "/storage/api/api.php";
 
-	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
-					"apiName" => $api
-				]));
+	    		$make = Hooks::append($folder, Hooks::replace($folderOrigin, [
+  					"apiName" => $api
+  				]));
 
 	    		if($make){
 

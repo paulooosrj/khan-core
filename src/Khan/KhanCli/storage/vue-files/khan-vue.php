@@ -1,4 +1,4 @@
-<?php
+
 
     $users = [
         [ "name" => "Jose", "idade" => 20 ],

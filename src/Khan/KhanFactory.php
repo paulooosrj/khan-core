@@ -1,16 +1,16 @@
 <?php
 
-	namespace App\Khan;
-	
-	use App\Khan\Khan as Khan;
+namespace App\Khan;
 
-	/**
-	 * Create khan class in factory
-	 */
-	class KhanFactory {
+use App\Khan\Khan as Khan;
 
-		public static function create(){
-        	return Khan::create();
-    	}
+/**
+ * Create khan class in factory
+ */
+class KhanFactory {
 
+	public static function create() {
+		return Khan::create();
 	}
+
+}

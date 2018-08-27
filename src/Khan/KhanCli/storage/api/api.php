@@ -1,5 +1,5 @@
-<?php
 
+  
   function logger($log){
     $log = ucfirst($log);
     return "<h1>{$log}</h1>";
@@ -39,4 +39,4 @@
         return $route::temp("GET", "apiName/", 3);
       });
 
-  });
+    });

@@ -24,7 +24,7 @@
 		}
 
 		public function makeStrategy($strategy, $folder){
-			$strategyOrigin = ROOT_FOLDER . '/config/Strategy.php';
+			$strategyOrigin = ROOT_FOLDER . '/config/strategy.php';
 			$make2 = Hooks::write($strategyOrigin, 
 					Hooks::replace($strategyOrigin, [
 						"// newStrategy" => ",'$strategy' => 'StrategysAuth\\".$folder."'
@@ -62,7 +62,9 @@
 
 		public function chatCreate($input, $output){
 			// Move Routes
-			$this->move('chat', 'chat.php', 'routes/chat.php');
+			// $this->move('chat', 'chat.php', 'routes/chat.php');
+      $file = __DIR__ . '/' . 'storage/chat/chat.php';
+      $maked = Hooks::append('config/router.php', Hooks::read($file)); 
 			// Move Views
 			$this->move('chat', 'index.html', 'resources/views/index.html');
 			$this->move('chat', 'chat.html', 'resources/views/chat.html');
@@ -74,7 +76,9 @@
 			$this->createDatabase($input, $output);
 			$this->createTable($input, $output);
 			// Move Routes
-			$this->move('auth', 'auth.php', 'routes/auth.php');
+			// $this->move('auth', 'auth.php', 'routes/auth.php');
+      $file = __DIR__ . '/' . 'storage/auth/auth.php';
+      $maked = Hooks::append('config/router.php', Hooks::read($file));
 			// Move Views
 			$this->move('auth', 'index.html', 'resources/views/index.html');
 			$this->move('auth', 'login.html', 'resources/views/login.html');

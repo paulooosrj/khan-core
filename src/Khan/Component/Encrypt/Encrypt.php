@@ -5,7 +5,7 @@
 	class Encrypt {
 
 		public static function encrypt($password) {
-		    return password_hash($password, PASSWORD_BCRYPT, ['cost' => 10]);
+		    return password_hash($password, PASSWORD_DEFAULT);
 		}
 
 		public static function verify($password, $hash){

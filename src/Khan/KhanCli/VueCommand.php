@@ -49,7 +49,7 @@
 				Hooks::copy($package, 'package.json') &&
 				Hooks::copy($vue, 'public/js/app.js') &&
 				Hooks::copy($babel, '.babelrc') &&
-				Hooks::copy($khanVue, 'routes/khan-vue.php') &&
+				Hooks::append('config/router.php', Hooks::read($khanVue)) &&
 				Hooks::copy($khanView, 'resources/views/vue.html')
 			){
 				KhanCommand::shell("npm i webpack -g && npm install");

@@ -20,7 +20,7 @@
     	public function __contruct(){}
 
 		public static function make($strategy){
-			$strategys = require(ROOT_FOLDER . '/config/Strategy.php');
+			$strategys = require(ROOT_FOLDER . '/config/strategy.php');
 			if(!isset($strategys[$strategy])){ 
 				return false; 
 			}
