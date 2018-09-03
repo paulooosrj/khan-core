@@ -1,0 +1,15 @@
+{
+    "name": "controllers",
+    "uses": {
+        "\\App\\Khan\\Component\\Cdn\\Cdn": 2,
+        "\\StrategysAuth\\Strategy": 1,
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 1,
+        "\\App\\Khan\\Component\\Hooks\\Hooks": 1
+    },
+    "top_uses": [
+        "\\App\\Khan\\Component\\Cdn\\Cdn",
+        "\\StrategysAuth\\Strategy",
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware"
+    ],
+    "media": 2.5
+}

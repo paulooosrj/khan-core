@@ -1,0 +1,10 @@
+{
+    "name": "middlewares",
+    "uses": {
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 1
+    },
+    "top_uses": [
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware"
+    ],
+    "media": 0.5
+}

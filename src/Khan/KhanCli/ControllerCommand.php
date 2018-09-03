@@ -25,6 +25,8 @@
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    		
 	    	$controller = ($input->getArgument('controller-name')) ? $input->getArgument('controller-name') : false;
+	    	$botLearning = Bot\Bot::init('controllers');
+			$controllerUses = $botLearning::loadUses();
 
 	    	if($controller){
 
@@ -32,7 +34,10 @@
 	    		$folderOrigin = __DIR__. "/storage/controller/controller.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
-					"controllerName" => $controller . "Controller"
+					"controllerName" => $controller . "Controller",
+					"usedss" => array_reduce($controllerUses, function($ant, $atual){
+						return $ant . "\n	use $atual;";
+					}, "")
 				]));
 
 	    		if($make){

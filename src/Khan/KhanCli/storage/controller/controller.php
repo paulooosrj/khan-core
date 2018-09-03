@@ -2,6 +2,7 @@
 
 	namespace Controllers;
 	use \StrategysAuth\Strategy as Strategy;
+	usedss
 
 	class controllerName extends \App\Khan\Bootstrap\KhanController {
 

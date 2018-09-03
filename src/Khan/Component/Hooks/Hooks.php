@@ -48,7 +48,7 @@
 
 	    public static function toJson($filename){
 	        if(Hooks::exists($filename)){
-	            return json_encode(file_get_contents($filename));
+	            return json_encode(file_get_contents($filename), JSON_PRETTY_PRINT);
 	        }
 	    }
 

@@ -25,6 +25,8 @@
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    		
 	    	$middleware = ($input->getArgument('middleware-name')) ? $input->getArgument('middleware-name') : false;
+	    	$botLearning = Bot\Bot::init('middlewares');
+			$middlewareUses = $botLearning::loadUses();
 
 	    	if($middleware){
 
@@ -32,7 +34,10 @@
 	    		$folderOrigin = __DIR__. "/storage/middleware/middleware.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
-					"middlewareName" => $middleware
+					"middlewareName" => $middleware,
+					"usedss" => array_reduce($middlewareUses, function($ant, $atual){
+						return $ant . "\n	use $atual;";
+					}, "")
 				]));
 
 	    		if($make){

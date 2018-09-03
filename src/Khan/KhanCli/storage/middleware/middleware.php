@@ -1,6 +1,7 @@
 <?php
 
 	namespace Middlewares;
+	usedss
 
 	class middlewareName implements \App\Khan\Contracts\Middlewares\Middleware {
 

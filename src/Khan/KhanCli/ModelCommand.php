@@ -25,6 +25,8 @@
 	    protected function execute(InputInterface $input, OutputInterface $output){
 	    		
 	    	$model = ($input->getArgument('model-name')) ? $input->getArgument('model-name') : false;
+	    	$botLearning = Bot\Bot::init('models');
+			$modelUses = $botLearning::loadUses();
 
 	    	if($model){
 
@@ -32,7 +34,10 @@
 	    		$folderOrigin = __DIR__. "/storage/model/model.php";
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
-					"modelName" => $model
+					"modelName" => $model,
+					"usedss" => array_reduce($modelUses, function($ant, $atual){
+						return $ant . "\n	use $atual;";
+					}, "")
 				]));
 
 	    		if($make){

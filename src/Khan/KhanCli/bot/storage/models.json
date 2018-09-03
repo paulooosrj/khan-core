@@ -1,0 +1,15 @@
+{
+    "uses": {
+        "\\StrategysAuth\\Strategy": 3,
+        "\\App\\Khan\\Bootstrap\\KhanController": 3,
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 2,
+        "\\App\\Khan\\Component\\DB\\DB": 1
+    },
+    "top_uses": [
+        "\\StrategysAuth\\Strategy",
+        "\\App\\Khan\\Bootstrap\\KhanController",
+        "\\App\\Khan\\Contracts\\Middlewares\\Middleware",
+        "\\App\\Khan\\Component\\DB\\DB"
+    ],
+    "media": 3
+}

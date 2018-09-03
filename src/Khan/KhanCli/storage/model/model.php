@@ -1,6 +1,7 @@
 <?php
 
 	namespace Models;
+	usedss
 
 	class modelName extends App\Khan\Bootstrap\KhanModel {
 
