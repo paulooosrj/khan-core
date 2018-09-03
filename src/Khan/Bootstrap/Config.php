@@ -5,7 +5,7 @@ use App\Khan\Component\Router\Router\Router as Router;
 use App\Khan\Component\Stream\StreamServer as Stream;
 
 // Set Configs
-app()::bind('app.config', App\Khan\Khan::enviroments());
+app()::bind('app.config', $_ENV);
 
 // Set Router
 app()::bind('app.router', function () {

@@ -17,6 +17,7 @@
 
 	$application = new Application('Khan CLI', '2.0');
 	$application->add(factory('Server'));
+	$application->add(factory('Live'));
 	$application->add(factory('Create'));
 	$application->add(factory('Api'));
 	$application->add(factory('Controller'));

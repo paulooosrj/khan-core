@@ -8,3 +8,4 @@ composer.lock
 package.json
 package-lock.json
 routes
+/node_modules/

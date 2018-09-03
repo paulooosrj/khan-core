@@ -84,7 +84,7 @@ class Khan {
 	public function services() {
 
 		$this->aliases();
-    $this->loadAliases();
+    	$this->loadAliases();
 
 		foreach (app()::resolve('app')() as $key => $value) {
 			if (is_closure($value)) {

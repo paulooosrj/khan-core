@@ -328,10 +328,9 @@ class Router {
 	}
 
 	public static function staticFiles($route) {
-		$scope = Router::create();
 		$folder = $route;
 		$route = "/" . $route . "/(.*)";
-		$scope::respond($route, function ($req, $res, $db, $reg) use ($folder) {
+		self::respond($route, function ($req, $res, $reg) use ($folder) {
 			$fileDir = "{$folder}/{$reg[1]}";
 			if (file_exists($fileDir)) {
 				$mime = Mime::get($fileDir);
