@@ -1,0 +1,221 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\IpUtils",
+    "line": 19,
+    "short_desc": "Http utility functions.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/IpUtils.php",
+    "relative_file": null,
+    "hash": "bcb42e2c9fa1c620ee6b8f07528987ad7d85a1d9",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "checkIp": {
+            "name": "checkIp",
+            "line": 38,
+            "short_desc": "Checks if an IPv4 or IPv6 address is contained in the list of given IPs or subnets.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "Whether the IP is valid",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "requestIp": {
+                    "name": "requestIp",
+                    "line": 38,
+                    "short_desc": "IP to check",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "ips": {
+                    "name": "ips",
+                    "line": 38,
+                    "short_desc": "List of IPs or subnets (can be a string if only a single one)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "checkIp4": {
+            "name": "checkIp4",
+            "line": 64,
+            "short_desc": "Compares two IPv4 addresses.",
+            "long_desc": "In case a subnet is given, it checks if it contains the request IP.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "Whether the request IP matches the IP, or whether the request IP is within the CIDR subnet",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "requestIp": {
+                    "name": "requestIp",
+                    "line": 64,
+                    "short_desc": "IPv4 address to check",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "ip": {
+                    "name": "ip",
+                    "line": 64,
+                    "short_desc": "IPv4 address or subnet in CIDR notation",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "checkIp6": {
+            "name": "checkIp6",
+            "line": 112,
+            "short_desc": "Compares two IPv6 addresses.",
+            "long_desc": "In case a subnet is given, it checks if it contains the request IP.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "Whether the IP is valid",
+            "tags": {
+                "author": [
+                    [
+                        "David",
+                        "Soria",
+                        "Parra",
+                        "<dsp",
+                        "at",
+                        "php",
+                        "dot",
+                        "net>"
+                    ]
+                ],
+                "see": [
+                    [
+                        "https:\/\/github.com\/dsp\/v6tools"
+                    ]
+                ]
+            },
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "When IPV6 support is not enabled"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "requestIp": {
+                    "name": "requestIp",
+                    "line": 112,
+                    "short_desc": "IPv6 address to check",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "ip": {
+                    "name": "ip",
+                    "line": 112,
+                    "short_desc": "IPv6 address or subnet in CIDR notation",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

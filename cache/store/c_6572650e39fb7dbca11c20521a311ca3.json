@@ -1,0 +1,173 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\MockPdo",
+    "line": 365,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/PdoSessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "cb4116d6dc643eec14e94dae9ad901c8622cc448",
+    "parent": "PDO",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "PdoSessionHandler": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\PdoSessionHandler"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "prepareResult": {
+            "name": "prepareResult",
+            "line": 367,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 371,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "driverName": {
+                    "name": "driverName",
+                    "line": 371,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "errorMode": {
+                    "name": "errorMode",
+                    "line": 371,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getAttribute": {
+            "name": "getAttribute",
+            "line": 377,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "attribute": {
+                    "name": "attribute",
+                    "line": 377,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "prepare": {
+            "name": "prepare",
+            "line": 390,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "statement": {
+                    "name": "statement",
+                    "line": 390,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "driverOptions": {
+                    "name": "driverOptions",
+                    "line": 390,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "beginTransaction": {
+            "name": "beginTransaction",
+            "line": 397,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "rollBack": {
+            "name": "rollBack",
+            "line": 401,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,457 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\File\\UploadedFileTest",
+    "line": 25,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\File",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/File\/UploadedFileTest.php",
+    "relative_file": null,
+    "hash": "58458fff64933edd81770f5d4c238a89319ffb5e",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "CannotWriteFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\CannotWriteFileException",
+        "ExtensionFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\ExtensionFileException",
+        "FileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+        "FormSizeFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FormSizeFileException",
+        "IniSizeFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\IniSizeFileException",
+        "NoFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\NoFileException",
+        "NoTmpDirFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\NoTmpDirFileException",
+        "PartialFileException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\PartialFileException",
+        "UploadedFile": "Symfony\\Component\\HttpFoundation\\File\\UploadedFile"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "setUp": {
+            "name": "setUp",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testConstructWhenFileNotExists": {
+            "name": "testConstructWhenFileNotExists",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testFileUploadsWithNoMimeType": {
+            "name": "testFileUploadsWithNoMimeType",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testFileUploadsWithUnknownMimeType": {
+            "name": "testFileUploadsWithUnknownMimeType",
+            "line": 61,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessClientExtension": {
+            "name": "testGuessClientExtension",
+            "line": 73,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessClientExtensionWithIncorrectMimeType": {
+            "name": "testGuessClientExtensionWithIncorrectMimeType",
+            "line": 85,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testErrorIsOkByDefault": {
+            "name": "testErrorIsOkByDefault",
+            "line": 97,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetClientOriginalName": {
+            "name": "testGetClientOriginalName",
+            "line": 109,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetClientOriginalExtension": {
+            "name": "testGetClientOriginalExtension",
+            "line": 121,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testMoveLocalFileIsNotAllowed": {
+            "name": "testMoveLocalFileIsNotAllowed",
+            "line": 136,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "failedUploadedFile": {
+            "name": "failedUploadedFile",
+            "line": 148,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testMoveFailed": {
+            "name": "testMoveFailed",
+            "line": 163,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "dataProvider": [
+                    [
+                        "failedUploadedFile"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 163,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\File\\UploadedFile",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "File",
+                            "UploadedFile"
+                        ],
+                        "attributes": {
+                            "startLine": 163,
+                            "endLine": 163
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "testMoveLocalFileIsAllowedInTestMode": {
+            "name": "testMoveLocalFileIsAllowedInTestMode",
+            "line": 196,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetClientOriginalNameSanitizeFilename": {
+            "name": "testGetClientOriginalNameSanitizeFilename",
+            "line": 222,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetSize": {
+            "name": "testGetSize",
+            "line": 233,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testConstructDeprecatedSize": {
+            "name": "testConstructDeprecatedSize",
+            "line": 256,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "group": [
+                    [
+                        "legacy"
+                    ]
+                ],
+                "expectedDeprecation": [
+                    [
+                        "Passing",
+                        "a",
+                        "size",
+                        "as",
+                        "4th",
+                        "argument",
+                        "to",
+                        "the",
+                        "constructor",
+                        "of",
+                        "\"Symfony\\Component\\HttpFoundation\\File\\UploadedFile\"",
+                        "is",
+                        "deprecated",
+                        "since",
+                        "Symfony",
+                        "4.1."
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testConstructDeprecatedSizeWhenPassingOnlyThe4Needed": {
+            "name": "testConstructDeprecatedSizeWhenPassingOnlyThe4Needed",
+            "line": 274,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "group": [
+                    [
+                        "legacy"
+                    ]
+                ],
+                "expectedDeprecation": [
+                    [
+                        "Passing",
+                        "a",
+                        "size",
+                        "as",
+                        "4th",
+                        "argument",
+                        "to",
+                        "the",
+                        "constructor",
+                        "of",
+                        "\"Symfony\\Component\\HttpFoundation\\File\\UploadedFile\"",
+                        "is",
+                        "deprecated",
+                        "since",
+                        "Symfony",
+                        "4.1."
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetExtension": {
+            "name": "testGetExtension",
+            "line": 286,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsValid": {
+            "name": "testIsValid",
+            "line": 296,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsInvalidOnUploadError": {
+            "name": "testIsInvalidOnUploadError",
+            "line": 312,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "dataProvider": [
+                    [
+                        "uploadedFileErrorProvider"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "error": {
+                    "name": "error",
+                    "line": 312,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "uploadedFileErrorProvider": {
+            "name": "uploadedFileErrorProvider",
+            "line": 324,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsInvalidIfNotHttpUpload": {
+            "name": "testIsInvalidIfNotHttpUpload",
+            "line": 335,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

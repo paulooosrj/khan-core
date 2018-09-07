@@ -1,0 +1,498 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\RequestMatcher",
+    "line": 19,
+    "short_desc": "RequestMatcher compares a pre-defined set of checks against a Request instance.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/RequestMatcher.php",
+    "relative_file": null,
+    "hash": "407a7e4eed3e8506566ef1df3bf7d9c92d08f253",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "App\\Khan\\Component\\HttpFoundation\\RequestMatcherInterface": "App\\Khan\\Component\\HttpFoundation\\RequestMatcherInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 59,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "host": {
+                    "name": "host",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "methods": {
+                    "name": "methods",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "ips": {
+                    "name": "ips",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "attributes": {
+                    "name": "attributes",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "schemes": {
+                    "name": "schemes",
+                    "line": 59,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchScheme": {
+            "name": "matchScheme",
+            "line": 77,
+            "short_desc": "Adds a check for the HTTP scheme.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "scheme": {
+                    "name": "scheme",
+                    "line": 77,
+                    "short_desc": "An HTTP scheme or an array of HTTP schemes",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchHost": {
+            "name": "matchHost",
+            "line": 87,
+            "short_desc": "Adds a check for the URL host name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "regexp": {
+                    "name": "regexp",
+                    "line": 87,
+                    "short_desc": "A Regexp",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchPath": {
+            "name": "matchPath",
+            "line": 97,
+            "short_desc": "Adds a check for the URL path info.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "regexp": {
+                    "name": "regexp",
+                    "line": 97,
+                    "short_desc": "A Regexp",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchIp": {
+            "name": "matchIp",
+            "line": 107,
+            "short_desc": "Adds a check for the client IP.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "ip": {
+                    "name": "ip",
+                    "line": 107,
+                    "short_desc": "A specific IP address or a range specified using IP\/netmask like 192.168.1.0\/24",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchIps": {
+            "name": "matchIps",
+            "line": 117,
+            "short_desc": "Adds a check for the client IP.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "ips": {
+                    "name": "ips",
+                    "line": 117,
+                    "short_desc": "A specific IP address or a range specified using IP\/netmask like 192.168.1.0\/24",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchMethod": {
+            "name": "matchMethod",
+            "line": 127,
+            "short_desc": "Adds a check for the HTTP method.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "method": {
+                    "name": "method",
+                    "line": 127,
+                    "short_desc": "An HTTP method or an array of HTTP methods",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matchAttribute": {
+            "name": "matchAttribute",
+            "line": 138,
+            "short_desc": "Adds a check for request attribute.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 138,
+                    "short_desc": "The request attribute name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "regexp": {
+                    "name": "regexp",
+                    "line": 138,
+                    "short_desc": "A Regexp",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "matches": {
+            "name": "matches",
+            "line": 146,
+            "short_desc": "Decides whether the rule(s) implemented by the strategy matches the supplied request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the request matches, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 146,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 146,
+                            "endLine": 146
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\StringableObject",
+    "line": 1025,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/ResponseTest.php",
+    "relative_file": null,
+    "hash": "a5139d833b03e1b14f28e706f86a9ad425ff16a0",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Request": "Symfony\\Component\\HttpFoundation\\Request",
+        "Response": "Symfony\\Component\\HttpFoundation\\Response"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__toString": {
+            "name": "__toString",
+            "line": 1027,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

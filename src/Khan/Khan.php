@@ -16,9 +16,6 @@ $dotenv->load();
 
 define("ROOT_CORE", __DIR__);
 
-include_once __DIR__ . '/Component/Functions/Helpers.php';
-include_once __DIR__ . '/Bootstrap/Config.php';
-
 /**
  * Class Core Run Project
  */
@@ -41,38 +38,26 @@ class Khan {
 
 	protected function __construct() {}
 
-
 	/**
-	 * Update Aliases in project
-	 */
-
-	public function updateAliases() {
-		$aliases = require ROOT_FOLDER . '/config/aliases.php';
-		foreach ($aliases as $key => $value) {
-			@unlink(__DIR__ . '/Component/Aliases/storage/' . $key . '.php');
-		}
-	}
-
-	/**
-	 * Update Aliases in project
-	 */
-
-	public function loadAliases() {
-		$aliases = require ROOT_FOLDER . '/config/aliases.php';
-		foreach ($aliases as $key => $value) {
-			$folder = __DIR__ . '/Component/Aliases/storage/' . $key . '.php';
-			include_once $folder;
-		}
-	}
-
-	/**
-	 * Create Aliases in project
+	 * Load Aliases in project
 	 */
 
 	private function aliases() {
 		$aliases = require ROOT_FOLDER . '/config/aliases.php';
 		foreach ($aliases as $key => $value) {
-			new Component\Aliases\Aliases($key, $value);
+			class_alias($value, $key);
+		}
+	}
+	
+	public function apps(){
+		include_once __DIR__ . '/Component/Functions/Helpers.php';
+		include_once __DIR__ . '/Bootstrap/Config.php';
+		$callTo = $app::resolve('app');
+		$callTo = (array) $callTo();
+		foreach ($callTo as $key => $value) {
+			if (is_closure($value)) {
+				$value();
+			}
 		}
 	}
 
@@ -84,13 +69,7 @@ class Khan {
 	public function services() {
 
 		$this->aliases();
-    	$this->loadAliases();
-
-		foreach (app()::resolve('app')() as $key => $value) {
-			if (is_closure($value)) {
-				$value();
-			}
-		}
+		$this->apps();
 
 	}
 

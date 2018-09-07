@@ -1,0 +1,515 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\AbstractRedisSessionHandlerTestCase",
+    "line": 21,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "requires": [
+            [
+                "extension",
+                "redis"
+            ]
+        ],
+        "group": [
+            [
+                "time-sensitive"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/AbstractRedisSessionHandlerTestCase.php",
+    "relative_file": null,
+    "hash": "439456d7d4d9ec9a40648455241663a2a8ba0936",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 16,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "RedisSessionHandler": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\RedisSessionHandler"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "storage": {
+            "name": "storage",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\RedisSessionHandler",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "redisClient": {
+            "name": "redisClient",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Redis",
+                    false
+                ],
+                [
+                    "\\RedisArray",
+                    false
+                ],
+                [
+                    "\\RedisCluster",
+                    false
+                ],
+                [
+                    "\\Predis\\Client",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "validator": {
+            "name": "validator",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Redis",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "createRedisClient": {
+            "name": "createRedisClient",
+            "line": 43,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Redis",
+                    false
+                ],
+                [
+                    "\\RedisArray",
+                    false
+                ],
+                [
+                    "\\RedisCluster",
+                    false
+                ],
+                [
+                    "\\Predis\\Client",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 18,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "host": {
+                    "name": "host",
+                    "line": 43,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setUp": {
+            "name": "setUp",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testOpenSession": {
+            "name": "testOpenSession",
+            "line": 73,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testCloseSession": {
+            "name": "testCloseSession",
+            "line": 78,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReadSession": {
+            "name": "testReadSession",
+            "line": 83,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWriteSession": {
+            "name": "testWriteSession",
+            "line": 92,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testUseSessionGcMaxLifetimeAsTimeToLive": {
+            "name": "testUseSessionGcMaxLifetimeAsTimeToLive",
+            "line": 100,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testDestroySession": {
+            "name": "testDestroySession",
+            "line": 109,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGcSession": {
+            "name": "testGcSession",
+            "line": 118,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testUpdateTimestamp": {
+            "name": "testUpdateTimestamp",
+            "line": 123,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testSupportedParam": {
+            "name": "testSupportedParam",
+            "line": 136,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "dataProvider": [
+                    [
+                        "getOptionFixtures"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "options": {
+                    "name": "options",
+                    "line": 136,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "supported": {
+                    "name": "supported",
+                    "line": 136,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getOptionFixtures": {
+            "name": "getOptionFixtures",
+            "line": 146,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setFixture": {
+            "name": "setFixture",
+            "line": 154,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 154,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 154,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "ttl": {
+                    "name": "ttl",
+                    "line": 154,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getFixture": {
+            "name": "getFixture",
+            "line": 163,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 163,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "hasFixture": {
+            "name": "hasFixture",
+            "line": 168,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 168,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "fixtureTtl": {
+            "name": "fixtureTtl",
+            "line": 173,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 173,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "PREFIX": {
+            "name": "PREFIX",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

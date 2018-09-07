@@ -1,0 +1,318 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\RedisSessionHandler",
+    "line": 22,
+    "short_desc": "Redis based session storage handler based on the Redis class\nprovided by the PHP redis extension.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Dalibor",
+                "Karlovi\u0107",
+                "<dalibor@flexolabs.io>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/Handler\/RedisSessionHandler.php",
+    "relative_file": null,
+    "hash": "865147a6b2965e54e75858b7c2efb8d2e831c7b7",
+    "parent": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\AbstractSessionHandler",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ErrorInterface": "Predis\\Response\\ErrorInterface"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 40,
+            "short_desc": "List of available options:\n * prefix: The prefix to use for the keys in order to avoid collision on the Redis server.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When unsupported client or options are passed"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "redis": {
+                    "name": "redis",
+                    "line": 40,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Redis",
+                            false
+                        ],
+                        [
+                            "\\RedisArray",
+                            false
+                        ],
+                        [
+                            "\\RedisCluster",
+                            false
+                        ],
+                        [
+                            "\\Predis\\Client",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "options": {
+                    "name": "options",
+                    "line": 40,
+                    "short_desc": "An associative array of options",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "doRead": {
+            "name": "doRead",
+            "line": 57,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 57,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "doWrite": {
+            "name": "doWrite",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 65,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "data": {
+                    "name": "data",
+                    "line": 65,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "doDestroy": {
+            "name": "doDestroy",
+            "line": 75,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 75,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "close": {
+            "name": "close",
+            "line": 85,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "gc": {
+            "name": "gc",
+            "line": 93,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "maxlifetime": {
+                    "name": "maxlifetime",
+                    "line": 93,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "updateTimestamp": {
+            "name": "updateTimestamp",
+            "line": 101,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 101,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "data": {
+                    "name": "data",
+                    "line": 101,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

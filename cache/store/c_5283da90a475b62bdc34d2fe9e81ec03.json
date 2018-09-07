@@ -1,0 +1,821 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\HeaderBag",
+    "line": 19,
+    "short_desc": "HeaderBag is a container for HTTP headers.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/HeaderBag.php",
+    "relative_file": null,
+    "hash": "797a9871c254091ee1cfa3120950489abef368bd",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "IteratorAggregate": "IteratorAggregate",
+        "Countable": "Countable"
+    },
+    "traits": [],
+    "properties": {
+        "headers": {
+            "name": "headers",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 21,
+                    "endLine": 21,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "cacheControl": {
+            "name": "cacheControl",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 22,
+                    "endLine": 22,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 27,
+                    "short_desc": "An array of HTTP headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__toString": {
+            "name": "__toString",
+            "line": 39,
+            "short_desc": "Returns the headers as a string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The headers",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "all": {
+            "name": "all",
+            "line": 63,
+            "short_desc": "Returns the headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of headers",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "keys": {
+            "name": "keys",
+            "line": 73,
+            "short_desc": "Returns the parameter keys.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of parameter keys",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "replace": {
+            "name": "replace",
+            "line": 83,
+            "short_desc": "Replaces the current HTTP headers by a new set.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 83,
+                    "short_desc": "An array of HTTP headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "add": {
+            "name": "add",
+            "line": 94,
+            "short_desc": "Adds new headers the current HTTP headers set.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 94,
+                    "short_desc": "An array of HTTP headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "get": {
+            "name": "get",
+            "line": 110,
+            "short_desc": "Returns a header value by name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "string",
+                    true
+                ]
+            ],
+            "hint_desc": "The first header value or default value if $first is true, an array of values otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 110,
+                    "short_desc": "The header name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "default": {
+                    "name": "default",
+                    "line": 110,
+                    "short_desc": "The default value",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "first": {
+                    "name": "first",
+                    "line": 110,
+                    "short_desc": "Whether to return the first value or all header values",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "set": {
+            "name": "set",
+            "line": 137,
+            "short_desc": "Sets a header by name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 137,
+                    "short_desc": "The key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "values": {
+                    "name": "values",
+                    "line": 137,
+                    "short_desc": "The value or an array of values",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "replace": {
+                    "name": "replace",
+                    "line": 137,
+                    "short_desc": "Whether to replace the actual value or not (true by default)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "has": {
+            "name": "has",
+            "line": 169,
+            "short_desc": "Returns true if the HTTP header is defined.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the parameter exists, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 169,
+                    "short_desc": "The HTTP header",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "contains": {
+            "name": "contains",
+            "line": 182,
+            "short_desc": "Returns true if the given HTTP header contains the given value.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the value is contained in the header, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 182,
+                    "short_desc": "The HTTP header name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 182,
+                    "short_desc": "The HTTP value",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "remove": {
+            "name": "remove",
+            "line": 192,
+            "short_desc": "Removes a header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 192,
+                    "short_desc": "The HTTP header name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getDate": {
+            "name": "getDate",
+            "line": 213,
+            "short_desc": "Returns the HTTP header value converted to a date.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ],
+                [
+                    "\\DateTime",
+                    false
+                ]
+            ],
+            "hint_desc": "The parsed DateTime or the default value if the header does not exist",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "When the HTTP header is not parseable"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 213,
+                    "short_desc": "The parameter key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "default": {
+                    "name": "default",
+                    "line": 213,
+                    "short_desc": "The default value",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\DateTime",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "DateTime"
+                        ],
+                        "attributes": {
+                            "startLine": 213,
+                            "endLine": 213
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "addCacheControlDirective": {
+            "name": "addCacheControlDirective",
+            "line": 232,
+            "short_desc": "Adds a custom Cache-Control directive.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 232,
+                    "short_desc": "The Cache-Control directive name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 232,
+                    "short_desc": "The Cache-Control directive value",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "hasCacheControlDirective": {
+            "name": "hasCacheControlDirective",
+            "line": 246,
+            "short_desc": "Returns true if the Cache-Control directive is defined.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the directive exists, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 246,
+                    "short_desc": "The Cache-Control directive",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getCacheControlDirective": {
+            "name": "getCacheControlDirective",
+            "line": 258,
+            "short_desc": "Returns a Cache-Control directive value by name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The directive value if defined, null otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 258,
+                    "short_desc": "The directive name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "removeCacheControlDirective": {
+            "name": "removeCacheControlDirective",
+            "line": 268,
+            "short_desc": "Removes a Cache-Control directive.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 268,
+                    "short_desc": "The Cache-Control directive",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getIterator": {
+            "name": "getIterator",
+            "line": 280,
+            "short_desc": "Returns an iterator for headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\ArrayIterator",
+                    false
+                ]
+            ],
+            "hint_desc": "An \\ArrayIterator instance",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "count": {
+            "name": "count",
+            "line": 290,
+            "short_desc": "Returns the number of headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "The number of headers",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getCacheControlHeader": {
+            "name": "getCacheControlHeader",
+            "line": 295,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "parseCacheControl": {
+            "name": "parseCacheControl",
+            "line": 321,
+            "short_desc": "Parses a Cache-Control HTTP header.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array representing the attribute values",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "header": {
+                    "name": "header",
+                    "line": 321,
+                    "short_desc": "The value of the Cache-Control HTTP header",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

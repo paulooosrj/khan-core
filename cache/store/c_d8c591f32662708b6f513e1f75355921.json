@@ -1,0 +1,23 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Exception\\RequestExceptionInterface",
+    "line": 19,
+    "short_desc": "Interface for Request exceptions.",
+    "long_desc": "Exceptions implementing this interface should trigger an HTTP 400 response in the application code.",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Exception\/RequestExceptionInterface.php",
+    "relative_file": null,
+    "hash": "5b6406d781fc52141652761dffd6db0a36e9e057",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+    "line": 19,
+    "short_desc": "Thrown when an error occurred in the component File.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/Exception\/FileException.php",
+    "relative_file": null,
+    "hash": "fffe45a6b1c1d6c1a27de3fe7ccbe0d7f1c3d66d",
+    "parent": "RuntimeException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

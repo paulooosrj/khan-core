@@ -1,0 +1,398 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\PdoSessionHandlerTest",
+    "line": 21,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "requires": [
+            [
+                "extension",
+                "pdo_sqlite"
+            ]
+        ],
+        "group": [
+            [
+                "time-sensitive"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/PdoSessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "cb4116d6dc643eec14e94dae9ad901c8622cc448",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "PdoSessionHandler": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\PdoSessionHandler"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "tearDown": {
+            "name": "tearDown",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPersistentSqliteDsn": {
+            "name": "getPersistentSqliteDsn",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getMemorySqlitePdo": {
+            "name": "getMemorySqlitePdo",
+            "line": 41,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWrongPdoErrMode": {
+            "name": "testWrongPdoErrMode",
+            "line": 54,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\InvalidArgumentException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testInexistentTable": {
+            "name": "testInexistentTable",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\RuntimeException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testCreateTableTwice": {
+            "name": "testCreateTableTwice",
+            "line": 77,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\RuntimeException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWithLazyDsnConnection": {
+            "name": "testWithLazyDsnConnection",
+            "line": 83,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWithLazySavePathConnection": {
+            "name": "testWithLazySavePathConnection",
+            "line": 101,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReadWriteReadWithNullByte": {
+            "name": "testReadWriteReadWithNullByte",
+            "line": 120,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReadConvertsStreamToString": {
+            "name": "testReadConvertsStreamToString",
+            "line": 137,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReadLockedConvertsStreamToString": {
+            "name": "testReadLockedConvertsStreamToString",
+            "line": 154,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReadingRequiresExactlySameId": {
+            "name": "testReadingRequiresExactlySameId",
+            "line": 188,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWriteDifferentSessionIdThanRead": {
+            "name": "testWriteDifferentSessionIdThanRead",
+            "line": 213,
+            "short_desc": "Simulates session_regenerate_id(true) which will require an INSERT or UPDATE (replace).",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWrongUsageStillWorks": {
+            "name": "testWrongUsageStillWorks",
+            "line": 229,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testSessionDestroy": {
+            "name": "testSessionDestroy",
+            "line": 245,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testSessionGC": {
+            "name": "testSessionGC",
+            "line": 271,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetConnection": {
+            "name": "testGetConnection",
+            "line": 300,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetConnectionConnectsIfNeeded": {
+            "name": "testGetConnectionConnectsIfNeeded",
+            "line": 310,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testUrlDsn": {
+            "name": "testUrlDsn",
+            "line": 323,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "dataProvider": [
+                    [
+                        "provideUrlDsnPairs"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "url": {
+                    "name": "url",
+                    "line": 323,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "expectedDsn": {
+                    "name": "expectedDsn",
+                    "line": 323,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "expectedUser": {
+                    "name": "expectedUser",
+                    "line": 323,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "expectedPassword": {
+                    "name": "expectedPassword",
+                    "line": 323,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "provideUrlDsnPairs": {
+            "name": "provideUrlDsnPairs",
+            "line": 338,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

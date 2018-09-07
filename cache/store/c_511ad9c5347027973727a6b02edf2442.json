@@ -1,0 +1,260 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\RedirectResponse",
+    "line": 19,
+    "short_desc": "RedirectResponse represents an HTTP response doing a redirect.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/RedirectResponse.php",
+    "relative_file": null,
+    "hash": "b0289584b7925d844498976d9387ae93aa071d1b",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\Response",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "targetUrl": {
+            "name": "targetUrl",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 35,
+            "short_desc": "Creates a redirect response so that it conforms to the rules defined for a redirect status code.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/tools.ietf.org\/html\/rfc2616#section-10.3"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "url": {
+                    "name": "url",
+                    "line": 35,
+                    "short_desc": "The URL to redirect to. The URL should be a full URL, with schema etc.,\n                       but practically every browser redirects on paths only as well",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "NullableType",
+                        "type": "string",
+                        "attributes": {
+                            "startLine": 35,
+                            "endLine": 35
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 35,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": "302",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 35,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "create": {
+            "name": "create",
+            "line": 59,
+            "short_desc": "Factory method for chainability.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Response",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "url": {
+                    "name": "url",
+                    "line": 59,
+                    "short_desc": "The url to redirect to",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 59,
+                    "short_desc": "The response status code",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "302",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 59,
+                    "short_desc": "An array of response headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTargetUrl": {
+            "name": "getTargetUrl",
+            "line": 69,
+            "short_desc": "Returns the target URL.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "target URL",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setTargetUrl": {
+            "name": "setTargetUrl",
+            "line": 83,
+            "short_desc": "Sets the redirect target of this response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "url": {
+                    "name": "url",
+                    "line": 83,
+                    "short_desc": "The URL to redirect to",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

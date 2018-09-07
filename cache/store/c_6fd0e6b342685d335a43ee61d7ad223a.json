@@ -1,0 +1,258 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Proxy\\AbstractProxyTest",
+    "line": 23,
+    "short_desc": "Test class for AbstractProxy.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Proxy",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Proxy\/AbstractProxyTest.php",
+    "relative_file": null,
+    "hash": "c11dc15da941a06fbba3920b9b34b820b4ac310c",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "AbstractProxy": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\AbstractProxy",
+        "SessionHandlerProxy": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\SessionHandlerProxy"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "proxy": {
+            "name": "proxy",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\AbstractProxy",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "setUp": {
+            "name": "setUp",
+            "line": 30,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetSaveHandlerName": {
+            "name": "testGetSaveHandlerName",
+            "line": 40,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsSessionHandlerInterface": {
+            "name": "testIsSessionHandlerInterface",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsWrapper": {
+            "name": "testIsWrapper",
+            "line": 52,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIsActive": {
+            "name": "testIsActive",
+            "line": 61,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ],
+                "preserveGlobalState": [
+                    [
+                        "disabled"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testName": {
+            "name": "testName",
+            "line": 72,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ],
+                "preserveGlobalState": [
+                    [
+                        "disabled"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testNameException": {
+            "name": "testNameException",
+            "line": 85,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ],
+                "preserveGlobalState": [
+                    [
+                        "disabled"
+                    ]
+                ],
+                "expectedException": [
+                    [
+                        "\\LogicException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testId": {
+            "name": "testId",
+            "line": 95,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ],
+                "preserveGlobalState": [
+                    [
+                        "disabled"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testIdException": {
+            "name": "testIdException",
+            "line": 108,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "runInSeparateProcess": [
+                    [
+                        ""
+                    ]
+                ],
+                "preserveGlobalState": [
+                    [
+                        "disabled"
+                    ]
+                ],
+                "expectedException": [
+                    [
+                        "\\LogicException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

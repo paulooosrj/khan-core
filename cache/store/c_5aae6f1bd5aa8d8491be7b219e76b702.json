@@ -1,0 +1,145 @@
+{
+    "name": "App\\Khan\\Khan",
+    "line": 23,
+    "short_desc": "Class Core Run Project",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Khan.php",
+    "relative_file": null,
+    "hash": "4cc4a1dddaf3b8f4e10b714beb88f61f20d6d250",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "instance": {
+            "name": "instance",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "null"
+                    ],
+                    "attributes": {
+                        "startLine": 25,
+                        "endLine": 25,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "null"
+                            ],
+                            "attributes": {
+                                "startLine": 25,
+                                "endLine": 25
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 25,
+                    "endLine": 25
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "create": {
+            "name": "create",
+            "line": 32,
+            "short_desc": "[create get instance in singleton]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\[object]",
+                    false
+                ]
+            ],
+            "hint_desc": "[Return khan instance]",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__construct": {
+            "name": "__construct",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "apps": {
+            "name": "apps",
+            "line": 52,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "services": {
+            "name": "services",
+            "line": 69,
+            "short_desc": "[services Load all services]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\[void",
+                    false
+                ]
+            ],
+            "hint_desc": "[load and run services in framework]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "dispatch": {
+            "name": "dispatch",
+            "line": 76,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

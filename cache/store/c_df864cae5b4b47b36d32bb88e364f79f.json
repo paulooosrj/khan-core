@@ -1,0 +1,40 @@
+{
+    "name": "App\\Khan\\KhanFactory",
+    "line": 10,
+    "short_desc": "Create khan class in factory",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanFactory.php",
+    "relative_file": null,
+    "hash": "8596dfb578aaa21c31cb1ad84201853af18c539e",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Khan": "App\\Khan\\Khan"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "create": {
+            "name": "create",
+            "line": 12,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

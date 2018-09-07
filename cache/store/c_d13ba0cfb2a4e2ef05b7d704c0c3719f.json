@@ -1,0 +1,89 @@
+{
+    "name": "App\\Khan\\Contracts\\Middlewares\\Middleware",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Contracts\\Middlewares",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Contracts\/Middlewares\/Middleware.php",
+    "relative_file": null,
+    "hash": "fd80a47a5d8ae7c16a3d7ef0ec5b01a541337016",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "handle": {
+            "name": "handle",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "req": {
+                    "name": "req",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "res": {
+                    "name": "res",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "next": {
+                    "name": "next",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Closure"
+                        ],
+                        "attributes": {
+                            "startLine": 7,
+                            "endLine": 7
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

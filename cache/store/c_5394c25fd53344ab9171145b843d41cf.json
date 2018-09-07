@@ -1,0 +1,33 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Exception\\ConflictingHeadersException",
+    "line": 19,
+    "short_desc": "The HTTP request contains headers with conflicting information.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Magnus",
+                "Nordlander",
+                "<magnus@fervo.se>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Exception\/ConflictingHeadersException.php",
+    "relative_file": null,
+    "hash": "1155649fad15c9d5c0c78e481c68afa83dc78760",
+    "parent": "UnexpectedValueException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\Exception\\RequestExceptionInterface": "Symfony\\Component\\HttpFoundation\\Exception\\RequestExceptionInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

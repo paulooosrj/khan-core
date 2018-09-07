@@ -1,0 +1,81 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\NativeFileSessionHandler",
+    "line": 19,
+    "short_desc": "Native session handler using PHP's built in file storage.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/Handler\/NativeFileSessionHandler.php",
+    "relative_file": null,
+    "hash": "602c773f295b276c73d6a200c2b8d3a01c22d449",
+    "parent": "SessionHandler",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/php.net\/session.configuration.php#ini.session.save-path",
+                        "for",
+                        "further",
+                        "details."
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "On invalid $savePath"
+                ],
+                [
+                    "\\RuntimeException",
+                    "When failing to create the save directory"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "savePath": {
+                    "name": "savePath",
+                    "line": 31,
+                    "short_desc": "Path of directory to save session files\n                        Default null will leave setting as defined by PHP.\n                        '\/path', 'N;\/path', or 'N;octal-mode;\/path",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,213 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\MockFileSessionStorage",
+    "line": 25,
+    "short_desc": "MockFileSessionStorage is used to mock sessions for\nfunctional testing when done in a single PHP process.",
+    "long_desc": "No PHP session is actually started since a session can be initialized\nand shutdown only once per PHP execution cycle and this class does\nnot pollute any session related globals, including session_*() functions\nor session.* PHP ini directives.",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/MockFileSessionStorage.php",
+    "relative_file": null,
+    "hash": "61a82c9454d2a26eedd2d8253312954d9a814155",
+    "parent": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\MockArraySessionStorage",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "savePath": {
+                    "name": "savePath",
+                    "line": 34,
+                    "short_desc": "Path of directory to save session files",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "name": {
+                    "name": "name",
+                    "line": 34,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "'MOCKSESSID'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "metaBag": {
+                    "name": "metaBag",
+                    "line": 34,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "Storage",
+                            "MetadataBag"
+                        ],
+                        "attributes": {
+                            "startLine": 34,
+                            "endLine": 34
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "start": {
+            "name": "start",
+            "line": 52,
+            "short_desc": "Starts the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if started",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "if something goes wrong starting the session"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "regenerate": {
+            "name": "regenerate",
+            "line": 72,
+            "short_desc": "Regenerates id that represents this storage.",
+            "long_desc": "This method must invoke session_regenerate_id($destroy) unless\nthis interface is used for a storage object designed for unit\nor functional testing where a real PHP session would interfere\nwith testing.\n\nNote regenerate+destroy should not clear the session data in memory\nonly delete the session data from persistent storage.\n\nCare: When regenerating the session ID no locking is involved in PHP's\nsession design. See https:\/\/bugs.php.net\/bug.php?id=61470 for a discussion.\nSo you must make sure the regenerated session is saved BEFORE sending the\nheaders with the new ID. Symfony's HttpKernel offers a listener for this.\nSee Symfony\\Component\\HttpKernel\\EventListener\\SaveSessionListener.\nOtherwise session data could get lost again for concurrent requests with the\nnew ID. One result could be that you get logged out after just logging in.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if session regenerated, false if error",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "If an error occurs while regenerating this storage"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "destroy": {
+                    "name": "destroy",
+                    "line": 72,
+                    "short_desc": "Destroy session when regenerating?",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "lifetime": {
+                    "name": "lifetime",
+                    "line": 72,
+                    "short_desc": "Sets the cookie lifetime for the session cookie. A null value\n                      will leave the system settings unchanged, 0 sets the cookie\n                      to expire with browser session. Time is in seconds, and is\n                      not a Unix timestamp.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "save": {
+            "name": "save",
+            "line": 88,
+            "short_desc": "Force the session to be saved and closed.",
+            "long_desc": "This method must invoke session_write_close() unless this interface is\nused for a storage object design for unit or functional testing where\na real PHP session would interfere with testing, in which case\nit should actually persist the session data if required.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "if the session is saved without being started, or if the session\n                          is already closed"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

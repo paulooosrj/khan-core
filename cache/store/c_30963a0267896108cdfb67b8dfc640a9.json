@@ -1,0 +1,134 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\FileBinaryMimeTypeGuesser",
+    "line": 22,
+    "short_desc": "Guesses the mime type with the binary \"file\" (only available on *nix).",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/FileBinaryMimeTypeGuesser.php",
+    "relative_file": null,
+    "hash": "5aeeb46d7e5f18f1229bc690b7e79e0fa473806e",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "FileNotFoundException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "AccessDeniedException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException"
+    },
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 34,
+            "short_desc": "The $cmd pattern must contain a \"%s\" string that will be replaced\nwith the file name to guess.",
+            "long_desc": "The command output must start with the mime type of the file.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "cmd": {
+                    "name": "cmd",
+                    "line": 34,
+                    "short_desc": "The command to run to get the mime type of a file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "'file -b --mime %s 2>\/dev\/null'",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isSupported": {
+            "name": "isSupported",
+            "line": 44,
+            "short_desc": "Returns whether this guesser is supported on the current OS.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "guess": {
+            "name": "guess",
+            "line": 66,
+            "short_desc": "Guesses the mime type of the file with the given path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The mime type or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    "If the file does not exist"
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException",
+                    "If the file could not be read"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 66,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

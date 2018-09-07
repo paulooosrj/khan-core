@@ -1,0 +1,242 @@
+{
+    "name": "App\\Khan\\Libraries\\Image",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Libraries",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Libraries\/Image.php",
+    "relative_file": null,
+    "hash": "6e0e5feb4998f9bcf838b626381da56d4cb89551",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "LibrariesContract": "App\\Khan\\Contracts\\Libraries\\Libraries"
+    },
+    "errors": [],
+    "interfaces": {
+        "App\\Khan\\Contracts\\Libraries\\Libraries": "App\\Khan\\Contracts\\Libraries\\Libraries"
+    },
+    "traits": [],
+    "properties": {
+        "instance": {
+            "name": "instance",
+            "line": 13,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "null"
+                    ],
+                    "attributes": {
+                        "startLine": 13,
+                        "endLine": 13,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Libraries",
+                                "null"
+                            ],
+                            "attributes": {
+                                "startLine": 13,
+                                "endLine": 13
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 13,
+                    "endLine": 13
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "create": {
+            "name": "create",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__construct": {
+            "name": "__construct",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "set": {
+            "name": "set",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "fileName": {
+                    "name": "fileName",
+                    "line": 24,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "resizeImage": {
+            "name": "resizeImage",
+            "line": 55,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "newWidth": {
+                    "name": "newWidth",
+                    "line": 55,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "newHeight": {
+                    "name": "newHeight",
+                    "line": 55,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "option": {
+                    "name": "option",
+                    "line": 55,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "\"auto\"",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "showImage": {
+            "name": "showImage",
+            "line": 167,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "imageQuality": {
+                    "name": "imageQuality",
+                    "line": 167,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "\"100\"",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "saveImage": {
+            "name": "saveImage",
+            "line": 175,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "savePath": {
+                    "name": "savePath",
+                    "line": 175,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "imageQuality": {
+                    "name": "imageQuality",
+                    "line": 175,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "\"100\"",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

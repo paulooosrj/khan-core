@@ -1,0 +1,244 @@
+{
+    "name": "App\\Khan\\Component\\Router\\Router\\GroupRouter",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Component\\Router\\Router",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/Router\/Router\/GroupRouter.php",
+    "relative_file": null,
+    "hash": "7a82a26b66e8cb5274bea09af498550be0325047",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "scope": {
+            "name": "scope",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "null"
+                    ],
+                    "attributes": {
+                        "startLine": 7,
+                        "endLine": 7,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "Router",
+                                "Router",
+                                "null"
+                            ],
+                            "attributes": {
+                                "startLine": 7,
+                                "endLine": 7
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 7,
+                    "endLine": 7
+                }
+            },
+            "errors": []
+        },
+        "route": {
+            "name": "route",
+            "line": 8,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "null"
+                    ],
+                    "attributes": {
+                        "startLine": 8,
+                        "endLine": 8,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "Router",
+                                "Router",
+                                "null"
+                            ],
+                            "attributes": {
+                                "startLine": 8,
+                                "endLine": 8
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 8,
+                    "endLine": 8
+                }
+            },
+            "errors": []
+        },
+        "middlewares": {
+            "name": "middlewares",
+            "line": 9,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "null"
+                    ],
+                    "attributes": {
+                        "startLine": 9,
+                        "endLine": 9,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "Router",
+                                "Router",
+                                "null"
+                            ],
+                            "attributes": {
+                                "startLine": 9,
+                                "endLine": 9
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 9,
+                    "endLine": 9
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 11,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "scope": {
+                    "name": "scope",
+                    "line": 11,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "route": {
+                    "name": "route",
+                    "line": 11,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "middlewares": {
+                    "name": "middlewares",
+                    "line": 11,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__callStatic": {
+            "name": "__callStatic",
+            "line": 17,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "method": {
+                    "name": "method",
+                    "line": 17,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "arguments": {
+                    "name": "arguments",
+                    "line": 17,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Command\\Bot\\BotBuild",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Command\\Bot",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanCli\/bot\/BotBuild.php",
+    "relative_file": null,
+    "hash": "272f23e4058ff34e60c5c7c28c32c876ac7b4908",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

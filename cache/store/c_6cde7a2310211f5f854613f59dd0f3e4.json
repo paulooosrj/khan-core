@@ -1,0 +1,205 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\MongoDbSessionHandlerTest",
+    "line": 22,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Markus",
+                "Bachmann",
+                "<markus.bachmann@bachi.biz>"
+            ]
+        ],
+        "group": [
+            [
+                "time-sensitive"
+            ]
+        ],
+        "requires": [
+            [
+                "extension",
+                "mongodb"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/MongoDbSessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "71ab650b016c0b8f191c8384cf1bfa2f36ef1a3c",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "MongoDbSessionHandler": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\MongoDbSessionHandler"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "options": {
+            "name": "options",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "setUp": {
+            "name": "setUp",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testConstructorShouldThrowExceptionForMissingOptions": {
+            "name": "testConstructorShouldThrowExceptionForMissingOptions",
+            "line": 58,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\InvalidArgumentException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testOpenMethodAlwaysReturnTrue": {
+            "name": "testOpenMethodAlwaysReturnTrue",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testCloseMethodAlwaysReturnTrue": {
+            "name": "testCloseMethodAlwaysReturnTrue",
+            "line": 68,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testRead": {
+            "name": "testRead",
+            "line": 73,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testWrite": {
+            "name": "testWrite",
+            "line": 108,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testReplaceSessionData": {
+            "name": "testReplaceSessionData",
+            "line": 135,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testDestroy": {
+            "name": "testDestroy",
+            "line": 158,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGc": {
+            "name": "testGc",
+            "line": 174,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGetConnection": {
+            "name": "testGetConnection",
+            "line": 193,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

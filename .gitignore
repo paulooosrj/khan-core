@@ -1,11 +1,13 @@
 /vendor/
 /public/
-/routes/
-/resources/
-/app/
-/config/
+/app/http/controllers/**/*.php
+/app/http/middlewares/**/*.php
+/app/models/**/*.php
 composer.lock
 package.json
 package-lock.json
 routes
+gulpfile.js
 /node_modules/
+sami.phar
+.env

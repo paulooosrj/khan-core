@@ -1,0 +1,23 @@
+{
+    "name": "App\\Khan\\Component\\Router\\Router\\Resource",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Component\\Router\\Router",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/Router\/Router\/Resource.php",
+    "relative_file": null,
+    "hash": "173becc1c97530faed9bfc2872ddbd1622268e93",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

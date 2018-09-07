@@ -1,0 +1,4297 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\Response",
+    "line": 19,
+    "short_desc": "Response represents an HTTP response.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Response.php",
+    "relative_file": null,
+    "hash": "6454f2cb881a1ba1c1d5e0da09506f77ebfffbeb",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "headers": {
+            "name": "headers",
+            "line": 87,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ResponseHeaderBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "content": {
+            "name": "content",
+            "line": 92,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "version": {
+            "name": "version",
+            "line": 97,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "statusCode": {
+            "name": "statusCode",
+            "line": 102,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "statusText": {
+            "name": "statusText",
+            "line": 107,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "charset": {
+            "name": "charset",
+            "line": 112,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "statusTexts": {
+            "name": "statusTexts",
+            "line": 125,
+            "short_desc": "Status codes translation table.",
+            "long_desc": "The list of codes is complete according to the\n{@link http:\/\/www.iana.org\/assignments\/http-status-codes\/ Hypertext Transfer Protocol (HTTP) Status Code Registry}\n(last updated 2016-03-01).\n\nUnless otherwise noted, the status code is defined in RFC2616.",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 100,
+                            "attributes": {
+                                "startLine": 126,
+                                "endLine": 126,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Continue",
+                            "attributes": {
+                                "startLine": 126,
+                                "endLine": 126,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 126,
+                            "endLine": 126
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 101,
+                            "attributes": {
+                                "startLine": 127,
+                                "endLine": 127,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Switching Protocols",
+                            "attributes": {
+                                "startLine": 127,
+                                "endLine": 127,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 127,
+                            "endLine": 127
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 102,
+                            "attributes": {
+                                "startLine": 128,
+                                "endLine": 128,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Processing",
+                            "attributes": {
+                                "startLine": 128,
+                                "endLine": 128,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 128,
+                            "endLine": 128
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 103,
+                            "attributes": {
+                                "startLine": 129,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2518\n",
+                                        "line": 128,
+                                        "filePos": 4593
+                                    }
+                                ],
+                                "endLine": 129,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Early Hints",
+                            "attributes": {
+                                "startLine": 129,
+                                "endLine": 129,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 129,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2518\n",
+                                    "line": 128,
+                                    "filePos": 4593
+                                }
+                            ],
+                            "endLine": 129
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 200,
+                            "attributes": {
+                                "startLine": 130,
+                                "endLine": 130,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "OK",
+                            "attributes": {
+                                "startLine": 130,
+                                "endLine": 130,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 130,
+                            "endLine": 130
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 201,
+                            "attributes": {
+                                "startLine": 131,
+                                "endLine": 131,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Created",
+                            "attributes": {
+                                "startLine": 131,
+                                "endLine": 131,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 131,
+                            "endLine": 131
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 202,
+                            "attributes": {
+                                "startLine": 132,
+                                "endLine": 132,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Accepted",
+                            "attributes": {
+                                "startLine": 132,
+                                "endLine": 132,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 132,
+                            "endLine": 132
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 203,
+                            "attributes": {
+                                "startLine": 133,
+                                "endLine": 133,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Non-Authoritative Information",
+                            "attributes": {
+                                "startLine": 133,
+                                "endLine": 133,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 133,
+                            "endLine": 133
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 204,
+                            "attributes": {
+                                "startLine": 134,
+                                "endLine": 134,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "No Content",
+                            "attributes": {
+                                "startLine": 134,
+                                "endLine": 134,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 134,
+                            "endLine": 134
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 205,
+                            "attributes": {
+                                "startLine": 135,
+                                "endLine": 135,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Reset Content",
+                            "attributes": {
+                                "startLine": 135,
+                                "endLine": 135,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 135,
+                            "endLine": 135
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 206,
+                            "attributes": {
+                                "startLine": 136,
+                                "endLine": 136,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Partial Content",
+                            "attributes": {
+                                "startLine": 136,
+                                "endLine": 136,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 136,
+                            "endLine": 136
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 207,
+                            "attributes": {
+                                "startLine": 137,
+                                "endLine": 137,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Multi-Status",
+                            "attributes": {
+                                "startLine": 137,
+                                "endLine": 137,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 137,
+                            "endLine": 137
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 208,
+                            "attributes": {
+                                "startLine": 138,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC4918\n",
+                                        "line": 137,
+                                        "filePos": 4891
+                                    }
+                                ],
+                                "endLine": 138,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Already Reported",
+                            "attributes": {
+                                "startLine": 138,
+                                "endLine": 138,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 138,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC4918\n",
+                                    "line": 137,
+                                    "filePos": 4891
+                                }
+                            ],
+                            "endLine": 138
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 226,
+                            "attributes": {
+                                "startLine": 139,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC5842\n",
+                                        "line": 138,
+                                        "filePos": 4942
+                                    }
+                                ],
+                                "endLine": 139,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "IM Used",
+                            "attributes": {
+                                "startLine": 139,
+                                "endLine": 139,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 139,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC5842\n",
+                                    "line": 138,
+                                    "filePos": 4942
+                                }
+                            ],
+                            "endLine": 139
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 300,
+                            "attributes": {
+                                "startLine": 140,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC3229\n",
+                                        "line": 139,
+                                        "filePos": 4993
+                                    }
+                                ],
+                                "endLine": 140,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Multiple Choices",
+                            "attributes": {
+                                "startLine": 140,
+                                "endLine": 140,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 140,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC3229\n",
+                                    "line": 139,
+                                    "filePos": 4993
+                                }
+                            ],
+                            "endLine": 140
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 301,
+                            "attributes": {
+                                "startLine": 141,
+                                "endLine": 141,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Moved Permanently",
+                            "attributes": {
+                                "startLine": 141,
+                                "endLine": 141,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 141,
+                            "endLine": 141
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 302,
+                            "attributes": {
+                                "startLine": 142,
+                                "endLine": 142,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Found",
+                            "attributes": {
+                                "startLine": 142,
+                                "endLine": 142,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 142,
+                            "endLine": 142
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 303,
+                            "attributes": {
+                                "startLine": 143,
+                                "endLine": 143,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "See Other",
+                            "attributes": {
+                                "startLine": 143,
+                                "endLine": 143,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 143,
+                            "endLine": 143
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 304,
+                            "attributes": {
+                                "startLine": 144,
+                                "endLine": 144,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Not Modified",
+                            "attributes": {
+                                "startLine": 144,
+                                "endLine": 144,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 144,
+                            "endLine": 144
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 305,
+                            "attributes": {
+                                "startLine": 145,
+                                "endLine": 145,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Use Proxy",
+                            "attributes": {
+                                "startLine": 145,
+                                "endLine": 145,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 145,
+                            "endLine": 145
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 307,
+                            "attributes": {
+                                "startLine": 146,
+                                "endLine": 146,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Temporary Redirect",
+                            "attributes": {
+                                "startLine": 146,
+                                "endLine": 146,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 146,
+                            "endLine": 146
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 308,
+                            "attributes": {
+                                "startLine": 147,
+                                "endLine": 147,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Permanent Redirect",
+                            "attributes": {
+                                "startLine": 147,
+                                "endLine": 147,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 147,
+                            "endLine": 147
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 400,
+                            "attributes": {
+                                "startLine": 148,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC7238\n",
+                                        "line": 147,
+                                        "filePos": 5263
+                                    }
+                                ],
+                                "endLine": 148,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Bad Request",
+                            "attributes": {
+                                "startLine": 148,
+                                "endLine": 148,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 148,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC7238\n",
+                                    "line": 147,
+                                    "filePos": 5263
+                                }
+                            ],
+                            "endLine": 148
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 401,
+                            "attributes": {
+                                "startLine": 149,
+                                "endLine": 149,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Unauthorized",
+                            "attributes": {
+                                "startLine": 149,
+                                "endLine": 149,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 149,
+                            "endLine": 149
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 402,
+                            "attributes": {
+                                "startLine": 150,
+                                "endLine": 150,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Payment Required",
+                            "attributes": {
+                                "startLine": 150,
+                                "endLine": 150,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 150,
+                            "endLine": 150
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 403,
+                            "attributes": {
+                                "startLine": 151,
+                                "endLine": 151,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Forbidden",
+                            "attributes": {
+                                "startLine": 151,
+                                "endLine": 151,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 151,
+                            "endLine": 151
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 404,
+                            "attributes": {
+                                "startLine": 152,
+                                "endLine": 152,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Not Found",
+                            "attributes": {
+                                "startLine": 152,
+                                "endLine": 152,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 152,
+                            "endLine": 152
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 405,
+                            "attributes": {
+                                "startLine": 153,
+                                "endLine": 153,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Method Not Allowed",
+                            "attributes": {
+                                "startLine": 153,
+                                "endLine": 153,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 153,
+                            "endLine": 153
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 406,
+                            "attributes": {
+                                "startLine": 154,
+                                "endLine": 154,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Not Acceptable",
+                            "attributes": {
+                                "startLine": 154,
+                                "endLine": 154,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 154,
+                            "endLine": 154
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 407,
+                            "attributes": {
+                                "startLine": 155,
+                                "endLine": 155,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Proxy Authentication Required",
+                            "attributes": {
+                                "startLine": 155,
+                                "endLine": 155,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 155,
+                            "endLine": 155
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 408,
+                            "attributes": {
+                                "startLine": 156,
+                                "endLine": 156,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Request Timeout",
+                            "attributes": {
+                                "startLine": 156,
+                                "endLine": 156,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 156,
+                            "endLine": 156
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 409,
+                            "attributes": {
+                                "startLine": 157,
+                                "endLine": 157,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Conflict",
+                            "attributes": {
+                                "startLine": 157,
+                                "endLine": 157,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 157,
+                            "endLine": 157
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 410,
+                            "attributes": {
+                                "startLine": 158,
+                                "endLine": 158,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Gone",
+                            "attributes": {
+                                "startLine": 158,
+                                "endLine": 158,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 158,
+                            "endLine": 158
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 411,
+                            "attributes": {
+                                "startLine": 159,
+                                "endLine": 159,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Length Required",
+                            "attributes": {
+                                "startLine": 159,
+                                "endLine": 159,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 159,
+                            "endLine": 159
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 412,
+                            "attributes": {
+                                "startLine": 160,
+                                "endLine": 160,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Precondition Failed",
+                            "attributes": {
+                                "startLine": 160,
+                                "endLine": 160,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 160,
+                            "endLine": 160
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 413,
+                            "attributes": {
+                                "startLine": 161,
+                                "endLine": 161,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Payload Too Large",
+                            "attributes": {
+                                "startLine": 161,
+                                "endLine": 161,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 161,
+                            "endLine": 161
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 414,
+                            "attributes": {
+                                "startLine": 162,
+                                "endLine": 162,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "URI Too Long",
+                            "attributes": {
+                                "startLine": 162,
+                                "endLine": 162,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 162,
+                            "endLine": 162
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 415,
+                            "attributes": {
+                                "startLine": 163,
+                                "endLine": 163,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Unsupported Media Type",
+                            "attributes": {
+                                "startLine": 163,
+                                "endLine": 163,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 163,
+                            "endLine": 163
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 416,
+                            "attributes": {
+                                "startLine": 164,
+                                "endLine": 164,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Range Not Satisfiable",
+                            "attributes": {
+                                "startLine": 164,
+                                "endLine": 164,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 164,
+                            "endLine": 164
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 417,
+                            "attributes": {
+                                "startLine": 165,
+                                "endLine": 165,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Expectation Failed",
+                            "attributes": {
+                                "startLine": 165,
+                                "endLine": 165,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 165,
+                            "endLine": 165
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 418,
+                            "attributes": {
+                                "startLine": 166,
+                                "endLine": 166,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "I'm a teapot",
+                            "attributes": {
+                                "startLine": 166,
+                                "endLine": 166,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 166,
+                            "endLine": 166
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 421,
+                            "attributes": {
+                                "startLine": 167,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2324\n",
+                                        "line": 166,
+                                        "filePos": 5963
+                                    }
+                                ],
+                                "endLine": 167,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Misdirected Request",
+                            "attributes": {
+                                "startLine": 167,
+                                "endLine": 167,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 167,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2324\n",
+                                    "line": 166,
+                                    "filePos": 5963
+                                }
+                            ],
+                            "endLine": 167
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 422,
+                            "attributes": {
+                                "startLine": 168,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC7540\n",
+                                        "line": 167,
+                                        "filePos": 6052
+                                    }
+                                ],
+                                "endLine": 168,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Unprocessable Entity",
+                            "attributes": {
+                                "startLine": 168,
+                                "endLine": 168,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 168,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC7540\n",
+                                    "line": 167,
+                                    "filePos": 6052
+                                }
+                            ],
+                            "endLine": 168
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 423,
+                            "attributes": {
+                                "startLine": 169,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC4918\n",
+                                        "line": 168,
+                                        "filePos": 6141
+                                    }
+                                ],
+                                "endLine": 169,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Locked",
+                            "attributes": {
+                                "startLine": 169,
+                                "endLine": 169,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 169,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC4918\n",
+                                    "line": 168,
+                                    "filePos": 6141
+                                }
+                            ],
+                            "endLine": 169
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 424,
+                            "attributes": {
+                                "startLine": 170,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC4918\n",
+                                        "line": 169,
+                                        "filePos": 6230
+                                    }
+                                ],
+                                "endLine": 170,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Failed Dependency",
+                            "attributes": {
+                                "startLine": 170,
+                                "endLine": 170,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 170,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC4918\n",
+                                    "line": 169,
+                                    "filePos": 6230
+                                }
+                            ],
+                            "endLine": 170
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 425,
+                            "attributes": {
+                                "startLine": 171,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC4918\n",
+                                        "line": 170,
+                                        "filePos": 6319
+                                    }
+                                ],
+                                "endLine": 171,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Reserved for WebDAV advanced collections expired proposal",
+                            "attributes": {
+                                "startLine": 171,
+                                "endLine": 171,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 171,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC4918\n",
+                                    "line": 170,
+                                    "filePos": 6319
+                                }
+                            ],
+                            "endLine": 171
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 426,
+                            "attributes": {
+                                "startLine": 172,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2817\n",
+                                        "line": 171,
+                                        "filePos": 6408
+                                    }
+                                ],
+                                "endLine": 172,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Upgrade Required",
+                            "attributes": {
+                                "startLine": 172,
+                                "endLine": 172,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 172,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2817\n",
+                                    "line": 171,
+                                    "filePos": 6408
+                                }
+                            ],
+                            "endLine": 172
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 428,
+                            "attributes": {
+                                "startLine": 173,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2817\n",
+                                        "line": 172,
+                                        "filePos": 6497
+                                    }
+                                ],
+                                "endLine": 173,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Precondition Required",
+                            "attributes": {
+                                "startLine": 173,
+                                "endLine": 173,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 173,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2817\n",
+                                    "line": 172,
+                                    "filePos": 6497
+                                }
+                            ],
+                            "endLine": 173
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 429,
+                            "attributes": {
+                                "startLine": 174,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC6585\n",
+                                        "line": 173,
+                                        "filePos": 6586
+                                    }
+                                ],
+                                "endLine": 174,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Too Many Requests",
+                            "attributes": {
+                                "startLine": 174,
+                                "endLine": 174,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 174,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC6585\n",
+                                    "line": 173,
+                                    "filePos": 6586
+                                }
+                            ],
+                            "endLine": 174
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 431,
+                            "attributes": {
+                                "startLine": 175,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC6585\n",
+                                        "line": 174,
+                                        "filePos": 6675
+                                    }
+                                ],
+                                "endLine": 175,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Request Header Fields Too Large",
+                            "attributes": {
+                                "startLine": 175,
+                                "endLine": 175,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 175,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC6585\n",
+                                    "line": 174,
+                                    "filePos": 6675
+                                }
+                            ],
+                            "endLine": 175
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 451,
+                            "attributes": {
+                                "startLine": 176,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC6585\n",
+                                        "line": 175,
+                                        "filePos": 6764
+                                    }
+                                ],
+                                "endLine": 176,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Unavailable For Legal Reasons",
+                            "attributes": {
+                                "startLine": 176,
+                                "endLine": 176,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 176,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC6585\n",
+                                    "line": 175,
+                                    "filePos": 6764
+                                }
+                            ],
+                            "endLine": 176
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 500,
+                            "attributes": {
+                                "startLine": 177,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC7725\n",
+                                        "line": 176,
+                                        "filePos": 6853
+                                    }
+                                ],
+                                "endLine": 177,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Internal Server Error",
+                            "attributes": {
+                                "startLine": 177,
+                                "endLine": 177,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 177,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC7725\n",
+                                    "line": 176,
+                                    "filePos": 6853
+                                }
+                            ],
+                            "endLine": 177
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 501,
+                            "attributes": {
+                                "startLine": 178,
+                                "endLine": 178,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Not Implemented",
+                            "attributes": {
+                                "startLine": 178,
+                                "endLine": 178,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 178,
+                            "endLine": 178
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 502,
+                            "attributes": {
+                                "startLine": 179,
+                                "endLine": 179,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Bad Gateway",
+                            "attributes": {
+                                "startLine": 179,
+                                "endLine": 179,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 179,
+                            "endLine": 179
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 503,
+                            "attributes": {
+                                "startLine": 180,
+                                "endLine": 180,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Service Unavailable",
+                            "attributes": {
+                                "startLine": 180,
+                                "endLine": 180,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 180,
+                            "endLine": 180
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 504,
+                            "attributes": {
+                                "startLine": 181,
+                                "endLine": 181,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Gateway Timeout",
+                            "attributes": {
+                                "startLine": 181,
+                                "endLine": 181,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 181,
+                            "endLine": 181
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 505,
+                            "attributes": {
+                                "startLine": 182,
+                                "endLine": 182,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "HTTP Version Not Supported",
+                            "attributes": {
+                                "startLine": 182,
+                                "endLine": 182,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 182,
+                            "endLine": 182
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 506,
+                            "attributes": {
+                                "startLine": 183,
+                                "endLine": 183,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Variant Also Negotiates",
+                            "attributes": {
+                                "startLine": 183,
+                                "endLine": 183,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 183,
+                            "endLine": 183
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 507,
+                            "attributes": {
+                                "startLine": 184,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2295\n",
+                                        "line": 183,
+                                        "filePos": 7163
+                                    }
+                                ],
+                                "endLine": 184,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Insufficient Storage",
+                            "attributes": {
+                                "startLine": 184,
+                                "endLine": 184,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 184,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2295\n",
+                                    "line": 183,
+                                    "filePos": 7163
+                                }
+                            ],
+                            "endLine": 184
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 508,
+                            "attributes": {
+                                "startLine": 185,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC4918\n",
+                                        "line": 184,
+                                        "filePos": 7252
+                                    }
+                                ],
+                                "endLine": 185,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Loop Detected",
+                            "attributes": {
+                                "startLine": 185,
+                                "endLine": 185,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 185,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC4918\n",
+                                    "line": 184,
+                                    "filePos": 7252
+                                }
+                            ],
+                            "endLine": 185
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 510,
+                            "attributes": {
+                                "startLine": 186,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC5842\n",
+                                        "line": 185,
+                                        "filePos": 7341
+                                    }
+                                ],
+                                "endLine": 186,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Not Extended",
+                            "attributes": {
+                                "startLine": 186,
+                                "endLine": 186,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 186,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC5842\n",
+                                    "line": 185,
+                                    "filePos": 7341
+                                }
+                            ],
+                            "endLine": 186
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 511,
+                            "attributes": {
+                                "startLine": 187,
+                                "comments": [
+                                    {
+                                        "nodeType": "Comment",
+                                        "text": "\/\/ RFC2774\n",
+                                        "line": 186,
+                                        "filePos": 7430
+                                    }
+                                ],
+                                "endLine": 187,
+                                "kind": 10
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "Network Authentication Required",
+                            "attributes": {
+                                "startLine": 187,
+                                "endLine": 187,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 187,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment",
+                                    "text": "\/\/ RFC2774\n",
+                                    "line": 186,
+                                    "filePos": 7430
+                                }
+                            ],
+                            "endLine": 187
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 125,
+                    "endLine": 188,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 193,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When the HTTP status code is not valid"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "content": {
+                    "name": "content",
+                    "line": 193,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 193,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 193,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "create": {
+            "name": "create",
+            "line": 215,
+            "short_desc": "Factory method for chainability.",
+            "long_desc": "Example:\n\n    return Response::create($body, 200)\n        ->setSharedMaxAge(300);",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Response",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "content": {
+                    "name": "content",
+                    "line": 215,
+                    "short_desc": "The response content, see setContent()",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 215,
+                    "short_desc": "The response status code",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 215,
+                    "short_desc": "An array of response headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__toString": {
+            "name": "__toString",
+            "line": 231,
+            "short_desc": "Returns the Response as an HTTP string.",
+            "long_desc": "The string representation of the Response is the same as the\none that will be sent to the client only if the prepare() method\nhas been called before.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The Response as an HTTP string",
+            "tags": {
+                "see": [
+                    [
+                        "prepare()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__clone": {
+            "name": "__clone",
+            "line": 242,
+            "short_desc": "Clones the current Response instance.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "prepare": {
+            "name": "prepare",
+            "line": 256,
+            "short_desc": "Prepares the Response before it is sent to the client.",
+            "long_desc": "This method tweaks the Response to ensure that it is\ncompliant with RFC 2616. Most of the changes are based on\nthe Request that is \"associated\" with this Response.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 256,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 256,
+                            "endLine": 256
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "sendHeaders": {
+            "name": "sendHeaders",
+            "line": 318,
+            "short_desc": "Sends HTTP headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "sendContent": {
+            "name": "sendContent",
+            "line": 352,
+            "short_desc": "Sends content for the current web response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "send": {
+            "name": "send",
+            "line": 364,
+            "short_desc": "Sends HTTP headers and content.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setContent": {
+            "name": "setContent",
+            "line": 389,
+            "short_desc": "Sets the response content.",
+            "long_desc": "Valid types are strings, numbers, null, and objects that implement a __toString() method.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\UnexpectedValueException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "content": {
+                    "name": "content",
+                    "line": 389,
+                    "short_desc": "Content that can be cast to string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getContent": {
+            "name": "getContent",
+            "line": 405,
+            "short_desc": "Gets the current response content.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "Content",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setProtocolVersion": {
+            "name": "setProtocolVersion",
+            "line": 417,
+            "short_desc": "Sets the HTTP protocol version (1.0 or 1.1).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "version": {
+                    "name": "version",
+                    "line": 417,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getProtocolVersion": {
+            "name": "getProtocolVersion",
+            "line": 429,
+            "short_desc": "Gets the HTTP protocol version.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setStatusCode": {
+            "name": "setStatusCode",
+            "line": 446,
+            "short_desc": "Sets the response status code.",
+            "long_desc": "If the status text is null it will be automatically populated for the known\nstatus codes and left empty otherwise.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When the HTTP status code is not valid"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "code": {
+                    "name": "code",
+                    "line": 446,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "text": {
+                    "name": "text",
+                    "line": 446,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getStatusCode": {
+            "name": "getStatusCode",
+            "line": 475,
+            "short_desc": "Retrieves the status code for the current web response.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setCharset": {
+            "name": "setCharset",
+            "line": 487,
+            "short_desc": "Sets the response charset.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "charset": {
+                    "name": "charset",
+                    "line": 487,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getCharset": {
+            "name": "getCharset",
+            "line": 499,
+            "short_desc": "Retrieves the response charset.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isCacheable": {
+            "name": "isCacheable",
+            "line": 521,
+            "short_desc": "Returns true if the response may safely be kept in a shared (surrogate) cache.",
+            "long_desc": "Responses marked \"private\" with an explicit Cache-Control directive are\nconsidered uncacheable.\n\nResponses with neither a freshness lifetime (Expires, max-age) nor cache\nvalidator (Last-Modified, ETag) are considered uncacheable because there is\nno way to tell when or how to remove them from the cache.\n\nNote that RFC 7231 and RFC 7234 possibly allow for a more permissive implementation,\nfor example \"status codes that are defined as cacheable by default [...]\ncan be reused by a cache with heuristic expiration unless otherwise indicated\"\n(https:\/\/tools.ietf.org\/html\/rfc7231#section-6.1)",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isFresh": {
+            "name": "isFresh",
+            "line": 543,
+            "short_desc": "Returns true if the response is \"fresh\".",
+            "long_desc": "Fresh responses may be served from cache without any interaction with the\norigin. A response is considered fresh when it includes a Cache-Control\/max-age\nindicator or Expires header and the calculated age is less than the freshness lifetime.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isValidateable": {
+            "name": "isValidateable",
+            "line": 554,
+            "short_desc": "Returns true if the response includes headers that can be used to validate\nthe response with the origin server using a conditional GET request.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setPrivate": {
+            "name": "setPrivate",
+            "line": 568,
+            "short_desc": "Marks the response as \"private\".",
+            "long_desc": "It makes the response ineligible for serving other clients.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setPublic": {
+            "name": "setPublic",
+            "line": 585,
+            "short_desc": "Marks the response as \"public\".",
+            "long_desc": "It makes the response eligible for serving other clients.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setImmutable": {
+            "name": "setImmutable",
+            "line": 600,
+            "short_desc": "Marks the response as \"immutable\".",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "immutable": {
+                    "name": "immutable",
+                    "line": 600,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isImmutable": {
+            "name": "isImmutable",
+            "line": 616,
+            "short_desc": "Returns true if the response is marked as \"immutable\".",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "mustRevalidate": {
+            "name": "mustRevalidate",
+            "line": 631,
+            "short_desc": "Returns true if the response must be revalidated by caches.",
+            "long_desc": "This method indicates that the response must not be served stale by a\ncache in any circumstance without first revalidating with the origin.\nWhen present, the TTL of the response should not be overridden to be\ngreater than the value provided by the origin.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getDate": {
+            "name": "getDate",
+            "line": 643,
+            "short_desc": "Returns the Date header as a DateTime instance.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "When the header is not parseable"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "setDate": {
+            "name": "setDate",
+            "line": 655,
+            "short_desc": "Sets the Date header.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "date": {
+                    "name": "date",
+                    "line": 655,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\DateTimeInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "DateTimeInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 655,
+                            "endLine": 655
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getAge": {
+            "name": "getAge",
+            "line": 672,
+            "short_desc": "Returns the age of the response in seconds.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "expire": {
+            "name": "expire",
+            "line": 686,
+            "short_desc": "Marks the response stale by setting the Age header to be equal to the maximum age of the response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getExpires": {
+            "name": "getExpires",
+            "line": 700,
+            "short_desc": "Returns the value of the Expires header as a DateTime instance.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setExpires": {
+            "name": "setExpires",
+            "line": 719,
+            "short_desc": "Sets the Expires HTTP header with a DateTime instance.",
+            "long_desc": "Passing null as value will remove the header.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "date": {
+                    "name": "date",
+                    "line": 719,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\DateTimeInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "DateTimeInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 719,
+                            "endLine": 719
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getMaxAge": {
+            "name": "getMaxAge",
+            "line": 746,
+            "short_desc": "Returns the number of seconds after the time specified in the response's Date\nheader when the response should no longer be considered fresh.",
+            "long_desc": "First, it checks for a s-maxage directive, then a max-age directive, and then it falls\nback on an expires header. It returns null when no maximum age can be established.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setMaxAge": {
+            "name": "setMaxAge",
+            "line": 772,
+            "short_desc": "Sets the number of seconds after which the response should no longer be considered fresh.",
+            "long_desc": "This methods sets the Cache-Control max-age directive.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "value": {
+                    "name": "value",
+                    "line": 772,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setSharedMaxAge": {
+            "name": "setSharedMaxAge",
+            "line": 788,
+            "short_desc": "Sets the number of seconds after which the response should no longer be considered fresh by shared caches.",
+            "long_desc": "This methods sets the Cache-Control s-maxage directive.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "value": {
+                    "name": "value",
+                    "line": 788,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTtl": {
+            "name": "getTtl",
+            "line": 806,
+            "short_desc": "Returns the response's time-to-live in seconds.",
+            "long_desc": "It returns null when no freshness information is present in the response.\n\nWhen the responses TTL is <= 0, the response may not be served from cache without first\nrevalidating with the origin.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setTtl": {
+            "name": "setTtl",
+            "line": 822,
+            "short_desc": "Sets the response's time-to-live for shared caches in seconds.",
+            "long_desc": "This method adjusts the Cache-Control\/s-maxage directive.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "seconds": {
+                    "name": "seconds",
+                    "line": 822,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setClientTtl": {
+            "name": "setClientTtl",
+            "line": 838,
+            "short_desc": "Sets the response's time-to-live for private\/client caches in seconds.",
+            "long_desc": "This method adjusts the Cache-Control\/max-age directive.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "seconds": {
+                    "name": "seconds",
+                    "line": 838,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getLastModified": {
+            "name": "getLastModified",
+            "line": 852,
+            "short_desc": "Returns the Last-Modified HTTP header as a DateTime instance.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "When the HTTP header is not parseable"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "setLastModified": {
+            "name": "setLastModified",
+            "line": 866,
+            "short_desc": "Sets the Last-Modified HTTP header with a DateTime instance.",
+            "long_desc": "Passing null as value will remove the header.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "date": {
+                    "name": "date",
+                    "line": 866,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\DateTimeInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "DateTimeInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 866,
+                            "endLine": 866
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getEtag": {
+            "name": "getEtag",
+            "line": 889,
+            "short_desc": "Returns the literal value of the ETag HTTP header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setEtag": {
+            "name": "setEtag",
+            "line": 904,
+            "short_desc": "Sets the ETag value.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "etag": {
+                    "name": "etag",
+                    "line": 904,
+                    "short_desc": "The ETag unique identifier or null to remove the header",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "weak": {
+                    "name": "weak",
+                    "line": 904,
+                    "short_desc": "Whether you want a weak ETag or not",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setCache": {
+            "name": "setCache",
+            "line": 930,
+            "short_desc": "Sets the response's cache headers (validation and\/or expiration).",
+            "long_desc": "Available options are: etag, last_modified, max_age, s_maxage, private, public and immutable.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "options": {
+                    "name": "options",
+                    "line": 930,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setNotModified": {
+            "name": "setNotModified",
+            "line": 987,
+            "short_desc": "Modifies the response so that it conforms to the rules defined for a 304 status code.",
+            "long_desc": "This sets the status, removes the body, and discards any headers\nthat MUST NOT be included in 304 responses.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/tools.ietf.org\/html\/rfc2616#section-10.3.5"
+                    ]
+                ],
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "hasVary": {
+            "name": "hasVary",
+            "line": 1005,
+            "short_desc": "Returns true if the response includes a Vary header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getVary": {
+            "name": "getVary",
+            "line": 1015,
+            "short_desc": "Returns an array of header names given in the Vary header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setVary": {
+            "name": "setVary",
+            "line": 1039,
+            "short_desc": "Sets the Vary header.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 1039,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "replace": {
+                    "name": "replace",
+                    "line": 1039,
+                    "short_desc": "Whether to replace the actual value or not (true by default)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isNotModified": {
+            "name": "isNotModified",
+            "line": 1057,
+            "short_desc": "Determines if the Response validators (ETag, Last-Modified) match\na conditional value specified in the Request.",
+            "long_desc": "If the Response is not modified, it sets the status code to 304 and\nremoves the actual content by calling the setNotModified() method.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the Response validators match the Request, false otherwise",
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 1057,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 1057,
+                            "endLine": 1057
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isInvalid": {
+            "name": "isInvalid",
+            "line": 1089,
+            "short_desc": "Is response invalid?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/www.w3.org\/Protocols\/rfc2616\/rfc2616-sec10.html"
+                    ]
+                ],
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isInformational": {
+            "name": "isInformational",
+            "line": 1099,
+            "short_desc": "Is response informative?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isSuccessful": {
+            "name": "isSuccessful",
+            "line": 1109,
+            "short_desc": "Is response successful?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isRedirection": {
+            "name": "isRedirection",
+            "line": 1119,
+            "short_desc": "Is the response a redirect?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isClientError": {
+            "name": "isClientError",
+            "line": 1129,
+            "short_desc": "Is there a client error?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isServerError": {
+            "name": "isServerError",
+            "line": 1139,
+            "short_desc": "Was there a server side error?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isOk": {
+            "name": "isOk",
+            "line": 1149,
+            "short_desc": "Is the response OK?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isForbidden": {
+            "name": "isForbidden",
+            "line": 1159,
+            "short_desc": "Is the response forbidden?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isNotFound": {
+            "name": "isNotFound",
+            "line": 1169,
+            "short_desc": "Is the response a not found error?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isRedirect": {
+            "name": "isRedirect",
+            "line": 1179,
+            "short_desc": "Is the response a redirect of some form?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "location": {
+                    "name": "location",
+                    "line": 1179,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isEmpty": {
+            "name": "isEmpty",
+            "line": 1189,
+            "short_desc": "Is the response empty?",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "closeOutputBuffers": {
+            "name": "closeOutputBuffers",
+            "line": 1201,
+            "short_desc": "Cleans or flushes output buffers up to target level.",
+            "long_desc": "Resulting level can be greater than target level if a non-removable buffer has been encountered.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "targetLevel": {
+                    "name": "targetLevel",
+                    "line": 1201,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "flush": {
+                    "name": "flush",
+                    "line": 1201,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "ensureIEOverSSLCompatibility": {
+            "name": "ensureIEOverSSLCompatibility",
+            "line": 1223,
+            "short_desc": "Checks if we need to remove Cache-Control for SSL encrypted downloads when using IE < 9.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/support.microsoft.com\/kb\/323308"
+                    ]
+                ],
+                "final": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 1223,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 1223,
+                            "endLine": 1223
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "HTTP_CONTINUE": {
+            "name": "HTTP_CONTINUE",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_SWITCHING_PROTOCOLS": {
+            "name": "HTTP_SWITCHING_PROTOCOLS",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PROCESSING": {
+            "name": "HTTP_PROCESSING",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_OK": {
+            "name": "HTTP_OK",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_CREATED": {
+            "name": "HTTP_CREATED",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_ACCEPTED": {
+            "name": "HTTP_ACCEPTED",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NON_AUTHORITATIVE_INFORMATION": {
+            "name": "HTTP_NON_AUTHORITATIVE_INFORMATION",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NO_CONTENT": {
+            "name": "HTTP_NO_CONTENT",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_RESET_CONTENT": {
+            "name": "HTTP_RESET_CONTENT",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PARTIAL_CONTENT": {
+            "name": "HTTP_PARTIAL_CONTENT",
+            "line": 30,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_MULTI_STATUS": {
+            "name": "HTTP_MULTI_STATUS",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_ALREADY_REPORTED": {
+            "name": "HTTP_ALREADY_REPORTED",
+            "line": 32,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_IM_USED": {
+            "name": "HTTP_IM_USED",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_MULTIPLE_CHOICES": {
+            "name": "HTTP_MULTIPLE_CHOICES",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_MOVED_PERMANENTLY": {
+            "name": "HTTP_MOVED_PERMANENTLY",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_FOUND": {
+            "name": "HTTP_FOUND",
+            "line": 36,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_SEE_OTHER": {
+            "name": "HTTP_SEE_OTHER",
+            "line": 37,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NOT_MODIFIED": {
+            "name": "HTTP_NOT_MODIFIED",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_USE_PROXY": {
+            "name": "HTTP_USE_PROXY",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_RESERVED": {
+            "name": "HTTP_RESERVED",
+            "line": 40,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_TEMPORARY_REDIRECT": {
+            "name": "HTTP_TEMPORARY_REDIRECT",
+            "line": 41,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PERMANENTLY_REDIRECT": {
+            "name": "HTTP_PERMANENTLY_REDIRECT",
+            "line": 42,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_BAD_REQUEST": {
+            "name": "HTTP_BAD_REQUEST",
+            "line": 43,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_UNAUTHORIZED": {
+            "name": "HTTP_UNAUTHORIZED",
+            "line": 44,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PAYMENT_REQUIRED": {
+            "name": "HTTP_PAYMENT_REQUIRED",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_FORBIDDEN": {
+            "name": "HTTP_FORBIDDEN",
+            "line": 46,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NOT_FOUND": {
+            "name": "HTTP_NOT_FOUND",
+            "line": 47,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_METHOD_NOT_ALLOWED": {
+            "name": "HTTP_METHOD_NOT_ALLOWED",
+            "line": 48,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NOT_ACCEPTABLE": {
+            "name": "HTTP_NOT_ACCEPTABLE",
+            "line": 49,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PROXY_AUTHENTICATION_REQUIRED": {
+            "name": "HTTP_PROXY_AUTHENTICATION_REQUIRED",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_REQUEST_TIMEOUT": {
+            "name": "HTTP_REQUEST_TIMEOUT",
+            "line": 51,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_CONFLICT": {
+            "name": "HTTP_CONFLICT",
+            "line": 52,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_GONE": {
+            "name": "HTTP_GONE",
+            "line": 53,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_LENGTH_REQUIRED": {
+            "name": "HTTP_LENGTH_REQUIRED",
+            "line": 54,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PRECONDITION_FAILED": {
+            "name": "HTTP_PRECONDITION_FAILED",
+            "line": 55,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_REQUEST_ENTITY_TOO_LARGE": {
+            "name": "HTTP_REQUEST_ENTITY_TOO_LARGE",
+            "line": 56,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_REQUEST_URI_TOO_LONG": {
+            "name": "HTTP_REQUEST_URI_TOO_LONG",
+            "line": 57,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_UNSUPPORTED_MEDIA_TYPE": {
+            "name": "HTTP_UNSUPPORTED_MEDIA_TYPE",
+            "line": 58,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_REQUESTED_RANGE_NOT_SATISFIABLE": {
+            "name": "HTTP_REQUESTED_RANGE_NOT_SATISFIABLE",
+            "line": 59,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_EXPECTATION_FAILED": {
+            "name": "HTTP_EXPECTATION_FAILED",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_I_AM_A_TEAPOT": {
+            "name": "HTTP_I_AM_A_TEAPOT",
+            "line": 61,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_MISDIRECTED_REQUEST": {
+            "name": "HTTP_MISDIRECTED_REQUEST",
+            "line": 62,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_UNPROCESSABLE_ENTITY": {
+            "name": "HTTP_UNPROCESSABLE_ENTITY",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_LOCKED": {
+            "name": "HTTP_LOCKED",
+            "line": 64,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_FAILED_DEPENDENCY": {
+            "name": "HTTP_FAILED_DEPENDENCY",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_RESERVED_FOR_WEBDAV_ADVANCED_COLLECTIONS_EXPIRED_PROPOSAL": {
+            "name": "HTTP_RESERVED_FOR_WEBDAV_ADVANCED_COLLECTIONS_EXPIRED_PROPOSAL",
+            "line": 66,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_UPGRADE_REQUIRED": {
+            "name": "HTTP_UPGRADE_REQUIRED",
+            "line": 67,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_PRECONDITION_REQUIRED": {
+            "name": "HTTP_PRECONDITION_REQUIRED",
+            "line": 68,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_TOO_MANY_REQUESTS": {
+            "name": "HTTP_TOO_MANY_REQUESTS",
+            "line": 69,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE": {
+            "name": "HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE",
+            "line": 70,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_UNAVAILABLE_FOR_LEGAL_REASONS": {
+            "name": "HTTP_UNAVAILABLE_FOR_LEGAL_REASONS",
+            "line": 71,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_INTERNAL_SERVER_ERROR": {
+            "name": "HTTP_INTERNAL_SERVER_ERROR",
+            "line": 72,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NOT_IMPLEMENTED": {
+            "name": "HTTP_NOT_IMPLEMENTED",
+            "line": 73,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_BAD_GATEWAY": {
+            "name": "HTTP_BAD_GATEWAY",
+            "line": 74,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_SERVICE_UNAVAILABLE": {
+            "name": "HTTP_SERVICE_UNAVAILABLE",
+            "line": 75,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_GATEWAY_TIMEOUT": {
+            "name": "HTTP_GATEWAY_TIMEOUT",
+            "line": 76,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_VERSION_NOT_SUPPORTED": {
+            "name": "HTTP_VERSION_NOT_SUPPORTED",
+            "line": 77,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_VARIANT_ALSO_NEGOTIATES_EXPERIMENTAL": {
+            "name": "HTTP_VARIANT_ALSO_NEGOTIATES_EXPERIMENTAL",
+            "line": 78,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_INSUFFICIENT_STORAGE": {
+            "name": "HTTP_INSUFFICIENT_STORAGE",
+            "line": 79,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_LOOP_DETECTED": {
+            "name": "HTTP_LOOP_DETECTED",
+            "line": 80,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NOT_EXTENDED": {
+            "name": "HTTP_NOT_EXTENDED",
+            "line": 81,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HTTP_NETWORK_AUTHENTICATION_REQUIRED": {
+            "name": "HTTP_NETWORK_AUTHENTICATION_REQUIRED",
+            "line": 82,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

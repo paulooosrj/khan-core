@@ -1,0 +1,31 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\Exception\\ExtensionFileException",
+    "line": 19,
+    "short_desc": "Thrown when an UPLOAD_ERR_EXTENSION error occurred with UploadedFile.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Florent",
+                "Mata",
+                "<florentmata@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/Exception\/ExtensionFileException.php",
+    "relative_file": null,
+    "hash": "3e535a162465ed25c381f209f7208451f2266a99",
+    "parent": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

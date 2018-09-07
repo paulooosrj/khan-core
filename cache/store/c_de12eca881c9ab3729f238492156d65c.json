@@ -1,0 +1,856 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\BinaryFileResponse",
+    "line": 26,
+    "short_desc": "BinaryFileResponse represents an HTTP response delivering a file.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Niklas",
+                "Fiekas",
+                "<niklas.fiekas@tu-clausthal.de>"
+            ],
+            [
+                "stealth35",
+                "<stealth35-php@live.fr>"
+            ],
+            [
+                "Igor",
+                "Wiedler",
+                "<igor@wiedler.ch>"
+            ],
+            [
+                "Jordan",
+                "Alliot",
+                "<jordan.alliot@gmail.com>"
+            ],
+            [
+                "Sergey",
+                "Linnik",
+                "<linniksa@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/BinaryFileResponse.php",
+    "relative_file": null,
+    "hash": "c1e48fed5f02420dad6755dc796433624e82f865",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\Response",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "File": "App\\Khan\\Component\\HttpFoundation\\File\\File",
+        "FileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "trustXSendfileTypeHeader": {
+            "name": "trustXSendfileTypeHeader",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 28,
+                        "endLine": 28,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "HttpFoundation",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 28,
+                                "endLine": 28
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 28,
+                    "endLine": 28
+                }
+            },
+            "errors": []
+        },
+        "file": {
+            "name": "file",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\File",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "offset": {
+            "name": "offset",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "maxlen": {
+            "name": "maxlen",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "deleteFileAfterSend": {
+            "name": "deleteFileAfterSend",
+            "line": 36,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 36,
+                        "endLine": 36,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "HttpFoundation",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 36,
+                                "endLine": 36
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 36,
+                    "endLine": 36
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 47,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 47,
+                    "short_desc": "The file to stream",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\SplFileInfo",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 47,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 47,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "public": {
+                    "name": "public",
+                    "line": 47,
+                    "short_desc": "Files are public by default",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "contentDisposition": {
+                    "name": "contentDisposition",
+                    "line": 47,
+                    "short_desc": "The type of Content-Disposition to set automatically with the filename",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoEtag": {
+                    "name": "autoEtag",
+                    "line": 47,
+                    "short_desc": "Whether the ETag header should be automatically set",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoLastModified": {
+                    "name": "autoLastModified",
+                    "line": 47,
+                    "short_desc": "Whether the Last-Modified header should be automatically set",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "create": {
+            "name": "create",
+            "line": 69,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Response",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 69,
+                    "short_desc": "The file to stream",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\SplFileInfo",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 69,
+                    "short_desc": "The response status code",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 69,
+                    "short_desc": "An array of response headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "public": {
+                    "name": "public",
+                    "line": 69,
+                    "short_desc": "Files are public by default",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "contentDisposition": {
+                    "name": "contentDisposition",
+                    "line": 69,
+                    "short_desc": "The type of Content-Disposition to set automatically with the filename",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoEtag": {
+                    "name": "autoEtag",
+                    "line": 69,
+                    "short_desc": "Whether the ETag header should be automatically set",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoLastModified": {
+                    "name": "autoLastModified",
+                    "line": 69,
+                    "short_desc": "Whether the Last-Modified header should be automatically set",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setFile": {
+            "name": "setFile",
+            "line": 86,
+            "short_desc": "Sets the file to stream.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 86,
+                    "short_desc": "The file to stream",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\SplFileInfo",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "contentDisposition": {
+                    "name": "contentDisposition",
+                    "line": 86,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoEtag": {
+                    "name": "autoEtag",
+                    "line": 86,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "autoLastModified": {
+                    "name": "autoLastModified",
+                    "line": 86,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getFile": {
+            "name": "getFile",
+            "line": 122,
+            "short_desc": "Gets the file.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\File",
+                    false
+                ]
+            ],
+            "hint_desc": "The file to stream",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setAutoLastModified": {
+            "name": "setAutoLastModified",
+            "line": 130,
+            "short_desc": "Automatically sets the Last-Modified header according the file modification date.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setAutoEtag": {
+            "name": "setAutoEtag",
+            "line": 140,
+            "short_desc": "Automatically sets the ETag header according to the checksum of the file.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setContentDisposition": {
+            "name": "setContentDisposition",
+            "line": 156,
+            "short_desc": "Sets the Content-Disposition header with the given filename.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "disposition": {
+                    "name": "disposition",
+                    "line": 156,
+                    "short_desc": "ResponseHeaderBag::DISPOSITION_INLINE or ResponseHeaderBag::DISPOSITION_ATTACHMENT",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "filename": {
+                    "name": "filename",
+                    "line": 156,
+                    "short_desc": "Optionally use this UTF-8 encoded filename instead of the real name of the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "filenameFallback": {
+                    "name": "filenameFallback",
+                    "line": 156,
+                    "short_desc": "A fallback filename, containing only ASCII characters. Defaults to an automatically encoded filename",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "prepare": {
+            "name": "prepare",
+            "line": 185,
+            "short_desc": "Prepares the Response before it is sent to the client.",
+            "long_desc": "This method tweaks the Response to ensure that it is\ncompliant with RFC 2616. Most of the changes are based on\nthe Request that is \"associated\" with this Response.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 185,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 185,
+                            "endLine": 185
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "sendContent": {
+            "name": "sendContent",
+            "line": 290,
+            "short_desc": "Sends the file.",
+            "long_desc": "{@inheritdoc}",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setContent": {
+            "name": "setContent",
+            "line": 320,
+            "short_desc": "Sets the response content.",
+            "long_desc": "Valid types are strings, numbers, null, and objects that implement a __toString() method.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\UnexpectedValueException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "content": {
+                    "name": "content",
+                    "line": 320,
+                    "short_desc": "Content that can be cast to string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getContent": {
+            "name": "getContent",
+            "line": 332,
+            "short_desc": "Gets the current response content.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "Content",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "trustXSendfileTypeHeader": {
+            "name": "trustXSendfileTypeHeader",
+            "line": 340,
+            "short_desc": "Trust X-Sendfile-Type header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "deleteFileAfterSend": {
+            "name": "deleteFileAfterSend",
+            "line": 353,
+            "short_desc": "If this is set to true, the file will be unlinked after the request is send\nNote: If the X-Sendfile header is used, the deleteFileAfterSend setting will not be used.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "shouldDelete": {
+                    "name": "shouldDelete",
+                    "line": 353,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

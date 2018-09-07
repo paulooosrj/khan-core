@@ -1,0 +1,160 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\File\\MimeType\\MimeTypeTest",
+    "line": 21,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "requires": [
+            [
+                "extension",
+                "fileinfo"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/File\/MimeType\/MimeTypeTest.php",
+    "relative_file": null,
+    "hash": "0c852372eb7cf3718e7e4591fc063bb9d1f7899d",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "MimeTypeGuesser": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesser",
+        "FileBinaryMimeTypeGuesser": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\FileBinaryMimeTypeGuesser"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "path": {
+            "name": "path",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "testGuessImageWithoutExtension": {
+            "name": "testGuessImageWithoutExtension",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessImageWithDirectory": {
+            "name": "testGuessImageWithDirectory",
+            "line": 30,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessImageWithFileBinaryMimeTypeGuesser": {
+            "name": "testGuessImageWithFileBinaryMimeTypeGuesser",
+            "line": 37,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessImageWithKnownExtension": {
+            "name": "testGuessImageWithKnownExtension",
+            "line": 44,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessFileWithUnknownExtension": {
+            "name": "testGuessFileWithUnknownExtension",
+            "line": 49,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessWithIncorrectPath": {
+            "name": "testGuessWithIncorrectPath",
+            "line": 54,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testGuessWithNonReadablePath": {
+            "name": "testGuessWithNonReadablePath",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDownAfterClass": {
+            "name": "tearDownAfterClass",
+            "line": 82,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

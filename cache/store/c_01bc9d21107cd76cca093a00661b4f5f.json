@@ -1,0 +1,287 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\File\\File",
+    "line": 24,
+    "short_desc": "A file in the file system.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation\\File",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/File.php",
+    "relative_file": null,
+    "hash": "bdb60a362d7be19d0402a415e80828e23c1de477",
+    "parent": "SplFileInfo",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "FileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+        "FileNotFoundException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "MimeTypeGuesser": "App\\Khan\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesser",
+        "ExtensionGuesser": "App\\Khan\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesser"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 34,
+            "short_desc": "Constructs a new file from the given path.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    "If the given path is not a file"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 34,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "checkPath": {
+                    "name": "checkPath",
+                    "line": 34,
+                    "short_desc": "Whether to check the path or not",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "guessExtension": {
+            "name": "guessExtension",
+            "line": 56,
+            "short_desc": "Returns the extension based on the mime type.",
+            "long_desc": "If the mime type is unknown, returns null.\n\nThis method uses the mime type as guessed by getMimeType()\nto guess the file extension.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The guessed extension or null if it cannot be guessed",
+            "tags": {
+                "see": [
+                    [
+                        "ExtensionGuesser"
+                    ],
+                    [
+                        "getMimeType()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getMimeType": {
+            "name": "getMimeType",
+            "line": 75,
+            "short_desc": "Returns the mime type of the file.",
+            "long_desc": "The mime type is guessed using a MimeTypeGuesser instance, which uses finfo(),\nmime_content_type() and the system binary \"file\" (in this order), depending on\nwhich of those are available.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The guessed mime type (e.g. \"application\/pdf\")",
+            "tags": {
+                "see": [
+                    [
+                        "MimeTypeGuesser"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "move": {
+            "name": "move",
+            "line": 92,
+            "short_desc": "Moves the file to a new location.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\File\\File",
+                    false
+                ]
+            ],
+            "hint_desc": "A File object representing the new file",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+                    "if the target file could not be created"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "directory": {
+                    "name": "directory",
+                    "line": 92,
+                    "short_desc": "The destination folder",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "name": {
+                    "name": "name",
+                    "line": 92,
+                    "short_desc": "The new file name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTargetFile": {
+            "name": "getTargetFile",
+            "line": 106,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "directory": {
+                    "name": "directory",
+                    "line": 106,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "name": {
+                    "name": "name",
+                    "line": 106,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getName": {
+            "name": "getName",
+            "line": 128,
+            "short_desc": "Returns locale independent base name of the given path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "containing",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 128,
+                    "short_desc": "The new file name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,61 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesserInterface",
+    "line": 17,
+    "short_desc": "Guesses the file extension corresponding to a given mime type.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/ExtensionGuesserInterface.php",
+    "relative_file": null,
+    "hash": "52471309b989ea6521e4f51edd65ec2f7db570cb",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "guess": {
+            "name": "guess",
+            "line": 26,
+            "short_desc": "Makes a best guess for a file extension, given a mime type.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The guessed extension or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "mimeType": {
+                    "name": "mimeType",
+                    "line": 26,
+                    "short_desc": "The mime type",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

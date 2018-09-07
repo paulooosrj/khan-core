@@ -31,11 +31,12 @@
 
 		public static function login($data){
 			$scope = Strategy::create();
-			if(method_exists(self::$strategy, "extendsLogin")){
-				$data = self::$strategy::extendsLogin($data);
+			$strategy = self::$strategy;
+			if(method_exists($strategy, "extendsLogin")){
+				$data = $strategy::extendsLogin($data);
 			}
 			$res = ["msg" => "sucess"];
-			foreach (self::$strategy::login as $key => $required) {
+			foreach ($strategy::login as $key => $required) {
 				if(!$scope->validate($data, $required)){
 					$res['msg'] = "error";
 				}
@@ -43,7 +44,7 @@
 			$login = $scope::validateDatabase($data);
 			if($login){
 				foreach ($login as $key => $value) {
-					if(!in_array($key, self::$strategy::ignoreSession)){
+					if(!in_array($key, $strategy::ignoreSession)){
 						Session::set($key, $value);
 					}
 				}
@@ -55,12 +56,13 @@
 
 		public static function register($data){
 			$scope = Strategy::create();
-			if(method_exists(self::$strategy, "extendsRegister")){
-				$data = self::$strategy::extendsRegister($data);
+			$strategy = self::$strategy;
+			if(method_exists($strategy, "extendsRegister")){
+				$data = $strategy::extendsRegister($data);
 			}
 			$res = ["msg" => "sucess"];
 			$schema = [];
-			foreach (self::$strategy::register as $key => $required) {
+			foreach ($strategy::register as $key => $required) {
 				if(!$scope->validate($data, $required)){
 					$res['msg'] = "error";
 				}else{
@@ -80,16 +82,18 @@
 		}
 
 		public static function logout(){
-			if(method_exists(self::$strategy, "extendsLogout")){
-				$data = self::$strategy::extendsLogout();
+			$strategy = self::$strategy;
+			if(method_exists($strategy, "extendsLogout")){
+				$data = $strategy::extendsLogout();
 			}
 			Session::removeAll();
-			redirect(self::$strategy::logout);
+			redirect($strategy::logout);
 		}
 
 		public static function validateDatabase($data){
-			if(method_exists(self::$strategy, "extendsValidate")){
-				$data = self::$strategy::extendsValidate($data);
+			$strategy = self::$strategy;
+			if(method_exists($strategy, "extendsValidate")){
+				$data = $strategy::extendsValidate($data);
 			}
 			$query = self::$db->select("login", "*", [
 				"email" => $data["email"],
@@ -104,7 +108,8 @@
 		}
 
 		public static function exists($email){
-			return ( count(self::$db->select(self::$strategy::table, "*", [
+			$strategy = self::$strategy;
+			return ( count(self::$db->select($strategy::table, "*", [
 				"email" => $email
 			])) > 0 ) ? true : false;
 		}

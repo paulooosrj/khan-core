@@ -1,0 +1,57 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\RequestContentProxy",
+    "line": 2191,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/RequestTest.php",
+    "relative_file": null,
+    "hash": "c04de93afea8e235c4ce7bb8991be45e3a447b2e",
+    "parent": "Symfony\\Component\\HttpFoundation\\Request",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "SuspiciousOperationException": "Symfony\\Component\\HttpFoundation\\Exception\\SuspiciousOperationException",
+        "MockArraySessionStorage": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\MockArraySessionStorage",
+        "Session": "Symfony\\Component\\HttpFoundation\\Session\\Session",
+        "Request": "Symfony\\Component\\HttpFoundation\\Request"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getContent": {
+            "name": "getContent",
+            "line": 2193,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "asResource": {
+                    "name": "asResource",
+                    "line": 2193,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,82 @@
+{
+    "name": "Middlewares\\CheckLogin",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Middlewares",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanCli\/storage\/auth\/CheckLogin.php",
+    "relative_file": null,
+    "hash": "aeda03fcf1ed462f46a72b3cba12924c359d7a1e",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "App\\Khan\\Contracts\\Middlewares\\Middleware": "App\\Khan\\Contracts\\Middlewares\\Middleware"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "handle": {
+            "name": "handle",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "req": {
+                    "name": "req",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "res": {
+                    "name": "res",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "next": {
+                    "name": "next",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

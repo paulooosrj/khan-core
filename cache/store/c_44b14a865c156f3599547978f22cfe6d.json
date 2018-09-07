@@ -1,0 +1,31 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\Exception\\NoTmpDirFileException",
+    "line": 19,
+    "short_desc": "Thrown when an UPLOAD_ERR_NO_TMP_DIR error occurred with UploadedFile.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Florent",
+                "Mata",
+                "<florentmata@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/Exception\/NoTmpDirFileException.php",
+    "relative_file": null,
+    "hash": "6dbac68a34deada348aa59787c06e384a52a10a8",
+    "parent": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

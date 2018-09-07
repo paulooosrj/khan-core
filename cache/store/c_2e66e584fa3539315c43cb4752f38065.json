@@ -1,0 +1,102 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\NullSessionHandlerTest",
+    "line": 27,
+    "short_desc": "Test class for NullSessionHandler.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ],
+        "runTestsInSeparateProcesses": [
+            [
+                ""
+            ]
+        ],
+        "preserveGlobalState": [
+            [
+                "disabled"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/NullSessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "431ada473062a24a3b30600244d6800dadbc11d0",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "NullSessionHandler": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\NullSessionHandler",
+        "NativeSessionStorage": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage",
+        "Session": "Symfony\\Component\\HttpFoundation\\Session\\Session"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "testSaveHandlers": {
+            "name": "testSaveHandlers",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testSession": {
+            "name": "testSession",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testNothingIsPersisted": {
+            "name": "testNothingIsPersisted",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getStorage": {
+            "name": "getStorage",
+            "line": 55,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

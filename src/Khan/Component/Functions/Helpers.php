@@ -2,6 +2,7 @@
 
 use App\Khan\Component\Container\ServiceContainer as Container;
 
+
 function redirect($url) {
 	header("Location: {$url}");
 }
@@ -11,7 +12,12 @@ function view($url) {
 }
 
 function loadView($url) {
-  include_once view($url);
+  ob_start();
+  extract($data);
+  include view($url);
+  $res = ob_get_contents();
+  ob_end_clean();
+  echo $res;
 }
 
 function url($url) {
@@ -67,7 +73,7 @@ function config($factory = '', $value = null) {
 } 
 
 function db() {
-  $db = DB::getConn(app()::get('app.config'));
+  $db = DB::getConn($app::get('app.config'));
   if($db !== null){
     return $db;
   }else{
@@ -84,3 +90,5 @@ function cors() {
 		header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
 	};
 }
+
+$app = app();

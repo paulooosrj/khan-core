@@ -1,0 +1,769 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\ResponseHeaderBag",
+    "line": 19,
+    "short_desc": "ResponseHeaderBag is a container for Response HTTP headers.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/ResponseHeaderBag.php",
+    "relative_file": null,
+    "hash": "21836267997b71fb68c1f1312798d2a9e590d978",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\HeaderBag",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "computedCacheControl": {
+            "name": "computedCacheControl",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 27,
+                    "endLine": 27,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "cookies": {
+            "name": "cookies",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 28,
+                    "endLine": 28,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "headerNames": {
+            "name": "headerNames",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 29,
+                    "endLine": 29,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 31,
+                    "short_desc": "An array of HTTP headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "allPreserveCase": {
+            "name": "allPreserveCase",
+            "line": 50,
+            "short_desc": "Returns the headers, with original capitalizations.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of headers",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "allPreserveCaseWithoutCookies": {
+            "name": "allPreserveCaseWithoutCookies",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "replace": {
+            "name": "replace",
+            "line": 73,
+            "short_desc": "Replaces the current HTTP headers by a new set.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "headers": {
+                    "name": "headers",
+                    "line": 73,
+                    "short_desc": "An array of HTTP headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "all": {
+            "name": "all",
+            "line": 91,
+            "short_desc": "Returns the headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of headers",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "set": {
+            "name": "set",
+            "line": 104,
+            "short_desc": "Sets a header by name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 104,
+                    "short_desc": "The key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "values": {
+                    "name": "values",
+                    "line": 104,
+                    "short_desc": "The value or an array of values",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "string",
+                            true
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "replace": {
+                    "name": "replace",
+                    "line": 104,
+                    "short_desc": "Whether to replace the actual value or not (true by default)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "remove": {
+            "name": "remove",
+            "line": 136,
+            "short_desc": "Removes a header.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 136,
+                    "short_desc": "The HTTP header name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "hasCacheControlDirective": {
+            "name": "hasCacheControlDirective",
+            "line": 161,
+            "short_desc": "Returns true if the Cache-Control directive is defined.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the directive exists, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 161,
+                    "short_desc": "The Cache-Control directive",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getCacheControlDirective": {
+            "name": "getCacheControlDirective",
+            "line": 169,
+            "short_desc": "Returns a Cache-Control directive value by name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The directive value if defined, null otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 169,
+                    "short_desc": "The directive name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setCookie": {
+            "name": "setCookie",
+            "line": 174,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "cookie": {
+                    "name": "cookie",
+                    "line": 174,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Cookie",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Cookie"
+                        ],
+                        "attributes": {
+                            "startLine": 174,
+                            "endLine": 174
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "removeCookie": {
+            "name": "removeCookie",
+            "line": 187,
+            "short_desc": "Removes a cookie from the array, but does not unset it in the browser.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 187,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "path": {
+                    "name": "path",
+                    "line": 187,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "'\/'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "domain": {
+                    "name": "domain",
+                    "line": 187,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getCookies": {
+            "name": "getCookies",
+            "line": 217,
+            "short_desc": "Returns an array with all cookies.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When the $format is invalid"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 217,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "self::COOKIES_FLAT",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "clearCookie": {
+            "name": "clearCookie",
+            "line": 248,
+            "short_desc": "Clears a cookie in the browser.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 248,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "path": {
+                    "name": "path",
+                    "line": 248,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "'\/'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "domain": {
+                    "name": "domain",
+                    "line": 248,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "secure": {
+                    "name": "secure",
+                    "line": 248,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "httpOnly": {
+                    "name": "httpOnly",
+                    "line": 248,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "makeDisposition": {
+            "name": "makeDisposition",
+            "line": 268,
+            "short_desc": "Generates a HTTP Content-Disposition field-value.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "A string suitable for use as a Content-Disposition field-value",
+            "tags": {
+                "see": [
+                    [
+                        "RFC",
+                        "6266"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "disposition": {
+                    "name": "disposition",
+                    "line": 268,
+                    "short_desc": "One of \"inline\" or \"attachment\"",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "filename": {
+                    "name": "filename",
+                    "line": 268,
+                    "short_desc": "A unicode string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "filenameFallback": {
+                    "name": "filenameFallback",
+                    "line": 268,
+                    "short_desc": "A string containing only ASCII characters that\n                                is semantically equivalent to $filename. If the filename is already ASCII,\n                                it can be omitted, or just copied from $filename",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "computeCacheControlValue": {
+            "name": "computeCacheControlValue",
+            "line": 310,
+            "short_desc": "Returns the calculated value of the cache-control header.",
+            "long_desc": "This considers several other headers and calculates or modifies the\ncache-control header to a sensible, conservative value.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": {
+        "COOKIES_FLAT": {
+            "name": "COOKIES_FLAT",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "COOKIES_ARRAY": {
+            "name": "COOKIES_ARRAY",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "DISPOSITION_ATTACHMENT": {
+            "name": "DISPOSITION_ATTACHMENT",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "DISPOSITION_INLINE": {
+            "name": "DISPOSITION_INLINE",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

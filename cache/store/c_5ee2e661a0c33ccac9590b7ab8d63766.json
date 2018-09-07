@@ -1,0 +1,192 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesser",
+    "line": 40,
+    "short_desc": "A singleton mime type guesser.",
+    "long_desc": "By default, all mime type guessers provided by the framework are installed\n(if available on the current OS\/PHP setup).\n\nYou can register custom guessers by calling the register() method on the\nsingleton instance. Custom guessers are always called before any default ones.\n\n    $guesser = MimeTypeGuesser::getInstance();\n    $guesser->register(new MyCustomMimeTypeGuesser());\n\nIf you want to change the order of the default guessers, just re-register your\npreferred one as a custom one. The last registered guesser is preferred over\npreviously registered ones.\n\nRe-registering a built-in guesser also allows you to configure it:\n\n    $guesser = MimeTypeGuesser::getInstance();\n    $guesser->register(new FileinfoMimeTypeGuesser('\/path\/to\/magic\/file'));",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/MimeTypeGuesser.php",
+    "relative_file": null,
+    "hash": "d1d277d5803948e17feb87c0ce92c97d22d14941",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "FileNotFoundException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "AccessDeniedException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException"
+    },
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface"
+    },
+    "traits": [],
+    "properties": {
+        "guessers": {
+            "name": "guessers",
+            "line": 54,
+            "short_desc": "All registered MimeTypeGuesserInterface instances.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 54,
+                    "endLine": 54,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "getInstance": {
+            "name": "getInstance",
+            "line": 61,
+            "short_desc": "Returns the singleton instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesser",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "reset": {
+            "name": "reset",
+            "line": 73,
+            "short_desc": "Resets the singleton instance.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "register": {
+            "name": "register",
+            "line": 97,
+            "short_desc": "Registers a new mime type guesser.",
+            "long_desc": "When guessing, this guesser is preferred over previously registered ones.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "guesser": {
+                    "name": "guesser",
+                    "line": 97,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "File",
+                            "MimeType",
+                            "MimeTypeGuesserInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 97,
+                            "endLine": 97
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "guess": {
+            "name": "guess",
+            "line": 118,
+            "short_desc": "Tries to guess the mime type of the given file.",
+            "long_desc": "The file is passed to each registered mime type guesser in reverse order\nof their registration (last registered is queried first). Once a guesser\nreturns a value that is not NULL, this method terminates and returns the\nvalue.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The mime type or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\LogicException",
+                    ""
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    ""
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 118,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,150 @@
+{
+    "name": "StrategysAuth\\strategyName",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "StrategysAuth",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanCli\/storage\/strategy\/strategy.php",
+    "relative_file": null,
+    "hash": "762367331ed76f5efeedbd60fb3b008724c77a0f",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "extendsLogin": {
+            "name": "extendsLogin",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 23,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "extendsRegister": {
+            "name": "extendsRegister",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 27,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "extendsLogout": {
+            "name": "extendsLogout",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "extendsValidate": {
+            "name": "extendsValidate",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 34,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "table": {
+            "name": "table",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "logout": {
+            "name": "logout",
+            "line": 9,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "ignoreSession": {
+            "name": "ignoreSession",
+            "line": 11,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "login": {
+            "name": "login",
+            "line": 13,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "register": {
+            "name": "register",
+            "line": 18,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

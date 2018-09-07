@@ -1,0 +1,286 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\AbstractProxy",
+    "line": 17,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/Proxy\/AbstractProxy.php",
+    "relative_file": null,
+    "hash": "e8c78f652bc05e2e36d761419937bfbb918a1310",
+    "parent": null,
+    "modifiers": 16,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "wrapper": {
+            "name": "wrapper",
+            "line": 24,
+            "short_desc": "Flag if handler wraps an internal PHP session handler (using \\SessionHandler).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 24,
+                        "endLine": 24,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "Symfony",
+                                "Component",
+                                "HttpFoundation",
+                                "Session",
+                                "Storage",
+                                "Proxy",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 24,
+                                "endLine": 24
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 24,
+                    "endLine": 24
+                }
+            },
+            "errors": []
+        },
+        "saveHandlerName": {
+            "name": "saveHandlerName",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "getSaveHandlerName": {
+            "name": "getSaveHandlerName",
+            "line": 36,
+            "short_desc": "Gets the session.save_handler name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isSessionHandlerInterface": {
+            "name": "isSessionHandlerInterface",
+            "line": 46,
+            "short_desc": "Is this proxy handler and instance of \\SessionHandlerInterface.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isWrapper": {
+            "name": "isWrapper",
+            "line": 56,
+            "short_desc": "Returns true if this handler wraps an internal PHP session save handler using \\SessionHandler.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isActive": {
+            "name": "isActive",
+            "line": 66,
+            "short_desc": "Has a session started?",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getId": {
+            "name": "getId",
+            "line": 76,
+            "short_desc": "Gets the session ID.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setId": {
+            "name": "setId",
+            "line": 88,
+            "short_desc": "Sets the session ID.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\LogicException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 88,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getName": {
+            "name": "getName",
+            "line": 102,
+            "short_desc": "Gets the session name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setName": {
+            "name": "setName",
+            "line": 114,
+            "short_desc": "Sets the session name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\LogicException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 114,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,65 @@
+{
+    "name": "App\\Khan\\Component\\Router\\Components\\CsrfToken",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Component\\Router\\Components",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/Router\/Components\/CsrfToken.php",
+    "relative_file": null,
+    "hash": "56ba10e10287d00b83e369fe76bb6052d13a7a02",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": true,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "csrf_token": {
+            "name": "csrf_token",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "csrf_token_verify": {
+            "name": "csrf_token_verify",
+            "line": 18,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 18,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

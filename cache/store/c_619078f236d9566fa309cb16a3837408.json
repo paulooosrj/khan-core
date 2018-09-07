@@ -1,0 +1,124 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\PhpBridgeSessionStorageTest",
+    "line": 28,
+    "short_desc": "Test class for PhpSessionStorage.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>\n\nThese",
+                "tests",
+                "require",
+                "separate",
+                "processes."
+            ]
+        ],
+        "runTestsInSeparateProcesses": [
+            [
+                ""
+            ]
+        ],
+        "preserveGlobalState": [
+            [
+                "disabled"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/PhpBridgeSessionStorageTest.php",
+    "relative_file": null,
+    "hash": "a15dc2e11f10d694cebb8d69ffd43a2fe13397c6",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "PhpBridgeSessionStorage": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\PhpBridgeSessionStorage",
+        "AttributeBag": "Symfony\\Component\\HttpFoundation\\Session\\Attribute\\AttributeBag"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "setUp": {
+            "name": "setUp",
+            "line": 32,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 41,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getStorage": {
+            "name": "getStorage",
+            "line": 55,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\PhpBridgeSessionStorage",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testPhpSession": {
+            "name": "testPhpSession",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testClear": {
+            "name": "testClear",
+            "line": 82,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,38 @@
+{
+    "name": "App\\Khan\\Contracts\\Libraries\\Libraries",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Khan\\Contracts\\Libraries",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Contracts\/Libraries\/Libraries.php",
+    "relative_file": null,
+    "hash": "442c296a16d933d881a38430a5c58cca4ebc9c6e",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "create": {
+            "name": "create",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

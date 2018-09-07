@@ -1,0 +1,55 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\ResponseTestCase",
+    "line": 17,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/ResponseTestCase.php",
+    "relative_file": null,
+    "hash": "9eaeed44bf761839f89a5cf1411388deef0d2f76",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 16,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "Request": "Symfony\\Component\\HttpFoundation\\Request"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE": {
+            "name": "testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "provideResponse": {
+            "name": "provideResponse",
+            "line": 88,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 18,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,119 @@
+{
+    "name": "Command\\ServerCommand",
+    "line": 11,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Command",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanCli\/ServerCommand.php",
+    "relative_file": null,
+    "hash": "3f1c3dc726a8291bc12a41491152af6bda3e17b3",
+    "parent": "Symfony\\Component\\Console\\Command\\Command",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Comando": "Symfony\\Component\\Console\\Command\\Command",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "InputArgument": "Symfony\\Component\\Console\\Input\\InputArgument",
+        "KhanCommand": "Command\\KhanCommand"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "configure": {
+            "name": "configure",
+            "line": 13,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "execute": {
+            "name": "execute",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "input": {
+                    "name": "input",
+                    "line": 22,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\Console\\Input\\InputInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "Console",
+                            "Input",
+                            "InputInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 22,
+                            "endLine": 22
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "output": {
+                    "name": "output",
+                    "line": 22,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\Console\\Output\\OutputInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "Console",
+                            "Output",
+                            "OutputInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 22,
+                            "endLine": 22
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

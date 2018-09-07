@@ -1,0 +1,434 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\File\\UploadedFile",
+    "line": 32,
+    "short_desc": "A file uploaded through a form.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ],
+            [
+                "Florian",
+                "Eckerstorfer",
+                "<florian@eckerstorfer.org>"
+            ],
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation\\File",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/UploadedFile.php",
+    "relative_file": null,
+    "hash": "755b1c96a8e9e4505e9a1874959f30d3a4d8303d",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\File\\File",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "CannotWriteFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\CannotWriteFileException",
+        "ExtensionFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\ExtensionFileException",
+        "FileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+        "FileNotFoundException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "FormSizeFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FormSizeFileException",
+        "IniSizeFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\IniSizeFileException",
+        "NoFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\NoFileException",
+        "NoTmpDirFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\NoTmpDirFileException",
+        "PartialFileException": "App\\Khan\\Component\\HttpFoundation\\File\\Exception\\PartialFileException",
+        "ExtensionGuesser": "App\\Khan\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesser"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 63,
+            "short_desc": "Accepts the information of the uploaded file as provided by the PHP global $_FILES.",
+            "long_desc": "The file object is only created when the uploaded file is valid (i.e. when the\nisValid() method returns true). Otherwise the only methods that could be called\non an UploadedFile instance are:\n\n  * getClientOriginalName,\n  * getClientMimeType,\n  * isValid,\n  * getError.\n\nCalling any other method on an non-valid instance will cause an unpredictable result.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+                    "If file_uploads is disabled"
+                ],
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    "If the file does not exist"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 63,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "originalName": {
+                    "name": "originalName",
+                    "line": 63,
+                    "short_desc": "The original file name of the uploaded file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "mimeType": {
+                    "name": "mimeType",
+                    "line": 63,
+                    "short_desc": "The type of the file as provided by PHP; null defaults to application\/octet-stream",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "error": {
+                    "name": "error",
+                    "line": 63,
+                    "short_desc": "The error constant of the upload (one of PHP's UPLOAD_ERR_XXX constants); null defaults to UPLOAD_ERR_OK",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "test": {
+                    "name": "test",
+                    "line": 63,
+                    "short_desc": "Whether the test mode is active\n                                 Local files are used in test mode hence the code should not enforce HTTP uploads",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getClientOriginalName": {
+            "name": "getClientOriginalName",
+            "line": 88,
+            "short_desc": "Returns the original file name.",
+            "long_desc": "It is extracted from the request from which the file has been uploaded.\nThen it should not be considered as a safe value.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The original name",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getClientOriginalExtension": {
+            "name": "getClientOriginalExtension",
+            "line": 101,
+            "short_desc": "Returns the original file extension.",
+            "long_desc": "It is extracted from the original file name that was uploaded.\nThen it should not be considered as a safe value.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The extension",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getClientMimeType": {
+            "name": "getClientMimeType",
+            "line": 119,
+            "short_desc": "Returns the file mime type.",
+            "long_desc": "The client mime type is extracted from the request from which the file\nwas uploaded, so it should not be considered as a safe value.\n\nFor a trusted mime type, use getMimeType() instead (which guesses the mime\ntype based on the file content).",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The mime type",
+            "tags": {
+                "see": [
+                    [
+                        "getMimeType()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "guessClientExtension": {
+            "name": "guessClientExtension",
+            "line": 141,
+            "short_desc": "Returns the extension based on the client mime type.",
+            "long_desc": "If the mime type is unknown, returns null.\n\nThis method uses the mime type as guessed by getClientMimeType()\nto guess the file extension. As such, the extension returned\nby this method cannot be trusted.\n\nFor a trusted extension, use guessExtension() instead (which guesses\nthe extension based on the guessed mime type for the file).",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The guessed extension or null if it cannot be guessed",
+            "tags": {
+                "see": [
+                    [
+                        "guessExtension()"
+                    ],
+                    [
+                        "getClientMimeType()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getClientSize": {
+            "name": "getClientSize",
+            "line": 159,
+            "short_desc": "Returns the file size.",
+            "long_desc": "It is extracted from the request from which the file has been uploaded.\nThen it should not be considered as a safe value.",
+            "hint": [
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The file sizes",
+            "tags": {
+                "deprecated": [
+                    [
+                        "since",
+                        "Symfony",
+                        "4.1,",
+                        "use",
+                        "getSize()",
+                        "instead."
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getError": {
+            "name": "getError",
+            "line": 174,
+            "short_desc": "Returns the upload error.",
+            "long_desc": "If the upload was successful, the constant UPLOAD_ERR_OK is returned.\nOtherwise one of the other UPLOAD_ERR_XXX constants is returned.",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "The upload error",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isValid": {
+            "name": "isValid",
+            "line": 184,
+            "short_desc": "Returns whether the file was uploaded successfully.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if the file has been uploaded with HTTP and no error occurred",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "move": {
+            "name": "move",
+            "line": 201,
+            "short_desc": "Moves the file to a new location.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\File\\File",
+                    false
+                ]
+            ],
+            "hint_desc": "A File object representing the new file",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\Exception\\FileException",
+                    "if, for any reason, the file could not have been moved"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "directory": {
+                    "name": "directory",
+                    "line": 201,
+                    "short_desc": "The destination folder",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "name": {
+                    "name": "name",
+                    "line": 201,
+                    "short_desc": "The new file name",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getMaxFilesize": {
+            "name": "getMaxFilesize",
+            "line": 245,
+            "short_desc": "Returns the maximum size of an uploaded file as configured in php.ini.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "The maximum size of an uploaded file in bytes",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getErrorMessage": {
+            "name": "getErrorMessage",
+            "line": 280,
+            "short_desc": "Returns an informative upload error message.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The error message regarding the specified error code",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

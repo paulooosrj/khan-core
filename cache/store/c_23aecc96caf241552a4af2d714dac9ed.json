@@ -1,0 +1,169 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\RequestStack",
+    "line": 19,
+    "short_desc": "Request stack that controls the lifecycle of requests.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Benjamin",
+                "Eberlei",
+                "<kontakt@beberlei.de>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/RequestStack.php",
+    "relative_file": null,
+    "hash": "c719ba377b61a12716a777bec905fa77543e584a",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "push": {
+            "name": "push",
+            "line": 32,
+            "short_desc": "Pushes a Request on the stack.",
+            "long_desc": "This method should generally not be called directly as the stack\nmanagement should be taken care of by the application itself.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 32,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 32,
+                            "endLine": 32
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "pop": {
+            "name": "pop",
+            "line": 47,
+            "short_desc": "Pops the current request from the stack.",
+            "long_desc": "This operation lets the current request go out of scope.\n\nThis method should generally not be called directly as the stack\nmanagement should be taken care of by the application itself.",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getCurrentRequest": {
+            "name": "getCurrentRequest",
+            "line": 59,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getMasterRequest": {
+            "name": "getMasterRequest",
+            "line": 73,
+            "short_desc": "Gets the master Request.",
+            "long_desc": "Be warned that making your code aware of the master request\nmight make it un-compatible with other features of your framework\nlike ESI support.",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getParentRequest": {
+            "name": "getParentRequest",
+            "line": 93,
+            "short_desc": "Returns the parent request of the current.",
+            "long_desc": "Be warned that making your code aware of the parent request\nmight make it un-compatible with other features of your framework\nlike ESI support.\n\nIf current Request is the master request, it returns null.",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

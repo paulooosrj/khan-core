@@ -1,0 +1,209 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\ServerBagTest",
+    "line": 22,
+    "short_desc": "ServerBagTest.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bulat",
+                "Shakirzyanov",
+                "<mallluhuct@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/ServerBagTest.php",
+    "relative_file": null,
+    "hash": "c794295efeb688d7d56a7a2770b524546cbf668c",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "ServerBag": "Symfony\\Component\\HttpFoundation\\ServerBag"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "testShouldExtractHeadersFromServerArray": {
+            "name": "testShouldExtractHeadersFromServerArray",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpPasswordIsOptional": {
+            "name": "testHttpPasswordIsOptional",
+            "line": 49,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpBasicAuthWithPhpCgi": {
+            "name": "testHttpBasicAuthWithPhpCgi",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpBasicAuthWithPhpCgiBogus": {
+            "name": "testHttpBasicAuthWithPhpCgiBogus",
+            "line": 71,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpBasicAuthWithPhpCgiRedirect": {
+            "name": "testHttpBasicAuthWithPhpCgiRedirect",
+            "line": 81,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpBasicAuthWithPhpCgiEmptyPassword": {
+            "name": "testHttpBasicAuthWithPhpCgiEmptyPassword",
+            "line": 92,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpDigestAuthWithPhpCgi": {
+            "name": "testHttpDigestAuthWithPhpCgi",
+            "line": 103,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpDigestAuthWithPhpCgiBogus": {
+            "name": "testHttpDigestAuthWithPhpCgiBogus",
+            "line": 114,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testHttpDigestAuthWithPhpCgiRedirect": {
+            "name": "testHttpDigestAuthWithPhpCgiRedirect",
+            "line": 125,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testOAuthBearerAuth": {
+            "name": "testOAuthBearerAuth",
+            "line": 136,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testOAuthBearerAuthWithRedirect": {
+            "name": "testOAuthBearerAuthWithRedirect",
+            "line": 146,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet": {
+            "name": "testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet",
+            "line": 159,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/github.com\/symfony\/symfony\/issues\/17345"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

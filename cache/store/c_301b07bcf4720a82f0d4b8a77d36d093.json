@@ -1,0 +1,201 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\FileBagTest",
+    "line": 24,
+    "short_desc": "FileBagTest.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ],
+            [
+                "Bulat",
+                "Shakirzyanov",
+                "<mallluhuct@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/FileBagTest.php",
+    "relative_file": null,
+    "hash": "045bc85badb8a35e25f81ace1454add2cceeab9c",
+    "parent": "PHPUnit\\Framework\\TestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "TestCase": "PHPUnit\\Framework\\TestCase",
+        "UploadedFile": "Symfony\\Component\\HttpFoundation\\File\\UploadedFile",
+        "FileBag": "Symfony\\Component\\HttpFoundation\\FileBag"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "testFileMustBeAnArrayOrUploadedFile": {
+            "name": "testFileMustBeAnArrayOrUploadedFile",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "expectedException": [
+                    [
+                        "\\InvalidArgumentException"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldConvertsUploadedFiles": {
+            "name": "testShouldConvertsUploadedFiles",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldSetEmptyUploadedFilesToNull": {
+            "name": "testShouldSetEmptyUploadedFilesToNull",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldRemoveEmptyUploadedFilesForMultiUpload": {
+            "name": "testShouldRemoveEmptyUploadedFilesForMultiUpload",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldNotRemoveEmptyUploadedFilesForAssociativeArray": {
+            "name": "testShouldNotRemoveEmptyUploadedFilesForAssociativeArray",
+            "line": 76,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldConvertUploadedFilesWithPhpBug": {
+            "name": "testShouldConvertUploadedFilesWithPhpBug",
+            "line": 89,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldConvertNestedUploadedFilesWithPhpBug": {
+            "name": "testShouldConvertNestedUploadedFilesWithPhpBug",
+            "line": 118,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "testShouldNotConvertNestedUploadedFiles": {
+            "name": "testShouldNotConvertNestedUploadedFiles",
+            "line": 147,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "createTempFile": {
+            "name": "createTempFile",
+            "line": 157,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setUp": {
+            "name": "setUp",
+            "line": 165,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 170,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

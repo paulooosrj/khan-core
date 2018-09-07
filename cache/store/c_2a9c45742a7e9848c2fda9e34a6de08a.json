@@ -1,0 +1,31 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\Exception\\PartialFileException",
+    "line": 19,
+    "short_desc": "Thrown when an UPLOAD_ERR_PARTIAL error occurred with UploadedFile.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Florent",
+                "Mata",
+                "<florentmata@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/Exception\/PartialFileException.php",
+    "relative_file": null,
+    "hash": "64db821a2b35c4f95c1817f111991bd1ff062625",
+    "parent": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

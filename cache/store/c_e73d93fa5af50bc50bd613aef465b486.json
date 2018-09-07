@@ -1,0 +1,65 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\ApacheRequest",
+    "line": 19,
+    "short_desc": "Request represents an HTTP request from an Apache server.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/ApacheRequest.php",
+    "relative_file": null,
+    "hash": "eb9132fd564b6b1c0d57c8e2290e46869c7e510d",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\Request",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "prepareRequestUri": {
+            "name": "prepareRequestUri",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "prepareBaseUrl": {
+            "name": "prepareBaseUrl",
+            "line": 32,
+            "short_desc": "Prepares the base URL.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

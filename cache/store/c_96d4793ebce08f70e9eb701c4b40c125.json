@@ -1,0 +1,334 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\StreamedResponse",
+    "line": 27,
+    "short_desc": "StreamedResponse represents a streamed HTTP response.",
+    "long_desc": "A StreamedResponse uses a callback for its content.\n\nThe callback should use the standard PHP functions like echo\nto stream the response back to the client. The flush() method\ncan also be used if needed.",
+    "hint": null,
+    "tags": {
+        "see": [
+            [
+                "flush()"
+            ]
+        ],
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/StreamedResponse.php",
+    "relative_file": null,
+    "hash": "d5ef959fce7666f0c4cf197398f4ec826c73a082",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\Response",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "callback": {
+            "name": "callback",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "streamed": {
+            "name": "streamed",
+            "line": 30,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 38,
+                    "short_desc": "A valid PHP callback or null to set it later",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "callable",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "callable",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 38,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 38,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "create": {
+            "name": "create",
+            "line": 58,
+            "short_desc": "Factory method for chainability.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Response",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 58,
+                    "short_desc": "A valid PHP callback or null to set it later",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "callable",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "status": {
+                    "name": "status",
+                    "line": 58,
+                    "short_desc": "The response status code",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "200",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "headers": {
+                    "name": "headers",
+                    "line": 58,
+                    "short_desc": "An array of response headers",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setCallback": {
+            "name": "setCallback",
+            "line": 70,
+            "short_desc": "Sets the PHP callback associated with this Response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 70,
+                    "short_desc": "A valid PHP callback",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "callable",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "callable",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "sendHeaders": {
+            "name": "sendHeaders",
+            "line": 84,
+            "short_desc": "Sends HTTP headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "sendContent": {
+            "name": "sendContent",
+            "line": 102,
+            "short_desc": "Sends content for the current web response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setContent": {
+            "name": "setContent",
+            "line": 126,
+            "short_desc": "Sets the response content.",
+            "long_desc": "Valid types are strings, numbers, null, and objects that implement a __toString() method.",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\UnexpectedValueException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "content": {
+                    "name": "content",
+                    "line": 126,
+                    "short_desc": "Content that can be cast to string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getContent": {
+            "name": "getContent",
+            "line": 140,
+            "short_desc": "Gets the current response content.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "Content",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

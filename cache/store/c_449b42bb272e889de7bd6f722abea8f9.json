@@ -1,0 +1,73 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\RedisArraySessionHandlerTest",
+    "line": 14,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/RedisArraySessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "d3f5408962a3f59050b569c68c19e10abda66525",
+    "parent": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\AbstractRedisSessionHandlerTestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "createRedisClient": {
+            "name": "createRedisClient",
+            "line": 16,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Redis",
+                    false
+                ],
+                [
+                    "\\RedisArray",
+                    false
+                ],
+                [
+                    "\\RedisCluster",
+                    false
+                ],
+                [
+                    "\\Predis\\Client",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "host": {
+                    "name": "host",
+                    "line": 16,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,61 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\ServerBag",
+    "line": 21,
+    "short_desc": "ServerBag is a container for HTTP headers from the $_SERVER variable.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ],
+            [
+                "Bulat",
+                "Shakirzyanov",
+                "<mallluhuct@gmail.com>"
+            ],
+            [
+                "Robert",
+                "Kiss",
+                "<kepten@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/ServerBag.php",
+    "relative_file": null,
+    "hash": "b0cdb47a85ad8490af8f147259283290b7618a6a",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\ParameterBag",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getHeaders": {
+            "name": "getHeaders",
+            "line": 28,
+            "short_desc": "Gets the HTTP headers.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

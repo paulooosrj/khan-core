@@ -1,0 +1,3093 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\Request",
+    "line": 31,
+    "short_desc": "Request represents an HTTP request.",
+    "long_desc": "The methods dealing with URL accept \/ return a raw path (% encoded):\n  * getBasePath\n  * getBaseUrl\n  * getPathInfo\n  * getRequestUri\n  * getUri\n  * getUriForPath",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Request.php",
+    "relative_file": null,
+    "hash": "a4061137ba7343539e1b21ec79e71660d6849653",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ConflictingHeadersException": "App\\Khan\\Component\\HttpFoundation\\Exception\\ConflictingHeadersException",
+        "SuspiciousOperationException": "App\\Khan\\Component\\HttpFoundation\\Exception\\SuspiciousOperationException",
+        "SessionInterface": "App\\Khan\\Component\\HttpFoundation\\Session\\SessionInterface"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "trustedProxies": {
+            "name": "trustedProxies",
+            "line": 55,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    true
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 55,
+                    "endLine": 55,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "trustedHostPatterns": {
+            "name": "trustedHostPatterns",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    true
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 60,
+                    "endLine": 60,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "trustedHosts": {
+            "name": "trustedHosts",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    true
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 65,
+                    "endLine": 65,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "httpMethodParameterOverride": {
+            "name": "httpMethodParameterOverride",
+            "line": 67,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 67,
+                        "endLine": 67,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "App",
+                                "Khan",
+                                "Component",
+                                "HttpFoundation",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 67,
+                                "endLine": 67
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 67,
+                    "endLine": 67
+                }
+            },
+            "errors": []
+        },
+        "attributes": {
+            "name": "attributes",
+            "line": 74,
+            "short_desc": "Custom parameters.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ParameterBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "request": {
+            "name": "request",
+            "line": 81,
+            "short_desc": "Request body parameters ($_POST).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ParameterBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "query": {
+            "name": "query",
+            "line": 88,
+            "short_desc": "Query string parameters ($_GET).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ParameterBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "server": {
+            "name": "server",
+            "line": 95,
+            "short_desc": "Server and execution environment parameters ($_SERVER).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ServerBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "files": {
+            "name": "files",
+            "line": 102,
+            "short_desc": "Uploaded files ($_FILES).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\FileBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "cookies": {
+            "name": "cookies",
+            "line": 109,
+            "short_desc": "Cookies ($_COOKIE).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\ParameterBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "headers": {
+            "name": "headers",
+            "line": 116,
+            "short_desc": "Headers (taken from the $_SERVER).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\HeaderBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "content": {
+            "name": "content",
+            "line": 121,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "resource",
+                    false
+                ],
+                [
+                    "false",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "languages": {
+            "name": "languages",
+            "line": 126,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "charsets": {
+            "name": "charsets",
+            "line": 131,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "encodings": {
+            "name": "encodings",
+            "line": 136,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "acceptableContentTypes": {
+            "name": "acceptableContentTypes",
+            "line": 141,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "pathInfo": {
+            "name": "pathInfo",
+            "line": 146,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "requestUri": {
+            "name": "requestUri",
+            "line": 151,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "baseUrl": {
+            "name": "baseUrl",
+            "line": 156,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "basePath": {
+            "name": "basePath",
+            "line": 161,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "method": {
+            "name": "method",
+            "line": 166,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "format": {
+            "name": "format",
+            "line": 171,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "session": {
+            "name": "session",
+            "line": 176,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "locale": {
+            "name": "locale",
+            "line": 181,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "defaultLocale": {
+            "name": "defaultLocale",
+            "line": 186,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "en",
+                "attributes": {
+                    "startLine": 186,
+                    "endLine": 186,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "formats": {
+            "name": "formats",
+            "line": 191,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 10,
+            "default": null,
+            "errors": []
+        },
+        "requestFactory": {
+            "name": "requestFactory",
+            "line": 193,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 233,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "query": {
+                    "name": "query",
+                    "line": 233,
+                    "short_desc": "The GET parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "request": {
+                    "name": "request",
+                    "line": 233,
+                    "short_desc": "The POST parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "attributes": {
+                    "name": "attributes",
+                    "line": 233,
+                    "short_desc": "The request attributes (parameters parsed from the PATH_INFO, ...)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "cookies": {
+                    "name": "cookies",
+                    "line": 233,
+                    "short_desc": "The COOKIE parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "files": {
+                    "name": "files",
+                    "line": 233,
+                    "short_desc": "The FILES parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "server": {
+                    "name": "server",
+                    "line": 233,
+                    "short_desc": "The SERVER parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "content": {
+                    "name": "content",
+                    "line": 233,
+                    "short_desc": "The raw body data",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "resource",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "initialize": {
+            "name": "initialize",
+            "line": 251,
+            "short_desc": "Sets the parameters for this request.",
+            "long_desc": "This method also re-initializes all properties.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "query": {
+                    "name": "query",
+                    "line": 251,
+                    "short_desc": "The GET parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "request": {
+                    "name": "request",
+                    "line": 251,
+                    "short_desc": "The POST parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "attributes": {
+                    "name": "attributes",
+                    "line": 251,
+                    "short_desc": "The request attributes (parameters parsed from the PATH_INFO, ...)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "cookies": {
+                    "name": "cookies",
+                    "line": 251,
+                    "short_desc": "The COOKIE parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "files": {
+                    "name": "files",
+                    "line": 251,
+                    "short_desc": "The FILES parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "server": {
+                    "name": "server",
+                    "line": 251,
+                    "short_desc": "The SERVER parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "content": {
+                    "name": "content",
+                    "line": 251,
+                    "short_desc": "The raw body data",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "resource",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "createFromGlobals": {
+            "name": "createFromGlobals",
+            "line": 279,
+            "short_desc": "Creates a new request with values from PHP's super globals.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "create": {
+            "name": "create",
+            "line": 309,
+            "short_desc": "Creates a Request based on a given URI and configuration.",
+            "long_desc": "The information contained in the URI always take precedence\nover the other information (server and parameters).",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "uri": {
+                    "name": "uri",
+                    "line": 309,
+                    "short_desc": "The URI",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "method": {
+                    "name": "method",
+                    "line": 309,
+                    "short_desc": "The HTTP method",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "'GET'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "parameters": {
+                    "name": "parameters",
+                    "line": 309,
+                    "short_desc": "The query (GET) or request (POST) parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "cookies": {
+                    "name": "cookies",
+                    "line": 309,
+                    "short_desc": "The request cookies ($_COOKIE)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "files": {
+                    "name": "files",
+                    "line": 309,
+                    "short_desc": "The request files ($_FILES)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "server": {
+                    "name": "server",
+                    "line": 309,
+                    "short_desc": "The server parameters ($_SERVER)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "content": {
+                    "name": "content",
+                    "line": 309,
+                    "short_desc": "The raw body data",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "resource",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setFactory": {
+            "name": "setFactory",
+            "line": 410,
+            "short_desc": "Sets a callable able to create a Request instance.",
+            "long_desc": "This is mainly useful when you need to override the Request class\nto keep BC with an existing system. It should not be used for any\nother purpose.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callable": {
+                    "name": "callable",
+                    "line": 410,
+                    "short_desc": "A PHP callable",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "callable",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "duplicate": {
+            "name": "duplicate",
+            "line": 427,
+            "short_desc": "Clones a request and overrides some of its parameters.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Request",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "query": {
+                    "name": "query",
+                    "line": 427,
+                    "short_desc": "The GET parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "request": {
+                    "name": "request",
+                    "line": 427,
+                    "short_desc": "The POST parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "attributes": {
+                    "name": "attributes",
+                    "line": 427,
+                    "short_desc": "The request attributes (parameters parsed from the PATH_INFO, ...)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "cookies": {
+                    "name": "cookies",
+                    "line": 427,
+                    "short_desc": "The COOKIE parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "files": {
+                    "name": "files",
+                    "line": 427,
+                    "short_desc": "The FILES parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "server": {
+                    "name": "server",
+                    "line": 427,
+                    "short_desc": "The SERVER parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__clone": {
+            "name": "__clone",
+            "line": 477,
+            "short_desc": "Clones the current request.",
+            "long_desc": "Note that the session is not cloned as duplicated requests\nare most of the time sub-requests of the main one.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__toString": {
+            "name": "__toString",
+            "line": 493,
+            "short_desc": "Returns the request as a string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The request",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "overrideGlobals": {
+            "name": "overrideGlobals",
+            "line": 525,
+            "short_desc": "Overrides the PHP global variables according to this request instance.",
+            "long_desc": "It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.\n$_FILES is never overridden, see rfc1867",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setTrustedProxies": {
+            "name": "setTrustedProxies",
+            "line": 564,
+            "short_desc": "Sets a list of trusted proxies.",
+            "long_desc": "You should only list the reverse proxies that you manage directly.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When $trustedHeaderSet is invalid"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "proxies": {
+                    "name": "proxies",
+                    "line": 564,
+                    "short_desc": "A list of trusted proxies",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "trustedHeaderSet": {
+                    "name": "trustedHeaderSet",
+                    "line": 564,
+                    "short_desc": "A bit field of Request::HEADER_*, to set which headers to trust from your proxies",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTrustedProxies": {
+            "name": "getTrustedProxies",
+            "line": 575,
+            "short_desc": "Gets the list of trusted proxies.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of trusted proxies",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getTrustedHeaderSet": {
+            "name": "getTrustedHeaderSet",
+            "line": 585,
+            "short_desc": "Gets the set of trusted headers from trusted proxies.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "A bit field of Request::HEADER_* that defines which headers are trusted from your proxies",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setTrustedHosts": {
+            "name": "setTrustedHosts",
+            "line": 597,
+            "short_desc": "Sets a list of trusted host patterns.",
+            "long_desc": "You should only list the hosts you manage using regexs.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "hostPatterns": {
+                    "name": "hostPatterns",
+                    "line": 597,
+                    "short_desc": "A list of trusted host patterns",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTrustedHosts": {
+            "name": "getTrustedHosts",
+            "line": 611,
+            "short_desc": "Gets the list of trusted host patterns.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of trusted host patterns",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "normalizeQueryString": {
+            "name": "normalizeQueryString",
+            "line": 626,
+            "short_desc": "Normalizes a query string.",
+            "long_desc": "It builds a normalized query string, where keys\/value pairs are alphabetized,\nhave consistent escaping and unneeded delimiters are removed.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "A normalized query string for the Request",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "qs": {
+                    "name": "qs",
+                    "line": 626,
+                    "short_desc": "Query string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "enableHttpMethodParameterOverride": {
+            "name": "enableHttpMethodParameterOverride",
+            "line": 649,
+            "short_desc": "Enables support for the _method request parameter to determine the intended HTTP method.",
+            "long_desc": "Be warned that enabling this feature might lead to CSRF issues in your code.\nCheck that you are using CSRF tokens when required.\nIf the HTTP method parameter override is enabled, an html-form with method \"POST\" can be altered\nand used to send a \"PUT\" or \"DELETE\" request via the _method request parameter.\nIf these methods are not protected against CSRF, this presents a possible vulnerability.\n\nThe HTTP method can only be overridden when the real HTTP method is POST.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getHttpMethodParameterOverride": {
+            "name": "getHttpMethodParameterOverride",
+            "line": 659,
+            "short_desc": "Checks whether support for the _method request parameter is enabled.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True when the _method request parameter is enabled, false otherwise",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "get": {
+            "name": "get",
+            "line": 678,
+            "short_desc": "Gets a \"parameter\" value from any bag.",
+            "long_desc": "This method is mainly useful for libraries that want to provide some flexibility. If you don't need the\nflexibility in controllers, it is better to explicitly get request parameters from the appropriate\npublic property instead (attributes, query, request).\n\nOrder of precedence: PATH (routing placeholders or custom attributes), GET, BODY",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 678,
+                    "short_desc": "The key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "default": {
+                    "name": "default",
+                    "line": 678,
+                    "short_desc": "The default value if the parameter key does not exist",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getSession": {
+            "name": "getSession",
+            "line": 700,
+            "short_desc": "Gets the Session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Session\\SessionInterface",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The session",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "hasPreviousSession": {
+            "name": "hasPreviousSession",
+            "line": 721,
+            "short_desc": "Whether the request contains a Session which was started in one of the\nprevious requests.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "hasSession": {
+            "name": "hasSession",
+            "line": 736,
+            "short_desc": "Whether the request contains a Session object.",
+            "long_desc": "This method does not give any information about the state of the session object,\nlike whether the session is started or not. It is just a way to check if this Request\nis associated with a Session instance.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true when the Request contains a Session object, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setSession": {
+            "name": "setSession",
+            "line": 746,
+            "short_desc": "Sets the Session.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session": {
+                    "name": "session",
+                    "line": 746,
+                    "short_desc": "The Session",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\Session\\SessionInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Khan",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "SessionInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 746,
+                            "endLine": 746
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setSessionFactory": {
+            "name": "setSessionFactory",
+            "line": 754,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "internal": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "factory": {
+                    "name": "factory",
+                    "line": 754,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "callable",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "callable",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getClientIps": {
+            "name": "getClientIps",
+            "line": 772,
+            "short_desc": "Returns the client IP addresses.",
+            "long_desc": "In the returned array the most trusted IP address is first, and the\nleast trusted one last. The \"real\" client IP address is the last one,\nbut this is also the least trusted one. Trusted proxies are stripped.\n\nUse this method carefully; you should use getClientIp() instead.",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "The client IP addresses",
+            "tags": {
+                "see": [
+                    [
+                        "getClientIp()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getClientIp": {
+            "name": "getClientIp",
+            "line": 797,
+            "short_desc": "Returns the client IP address.",
+            "long_desc": "This method can read the client IP address from the \"X-Forwarded-For\" header\nwhen trusted proxies were set via \"setTrustedProxies()\". The \"X-Forwarded-For\"\nheader value is a comma+space separated list of IP addresses, the left-most\nbeing the original client, and each successive proxy that passed the request\nadding the IP address where it received the request from.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The client IP address",
+            "tags": {
+                "see": [
+                    [
+                        "getClientIps()"
+                    ],
+                    [
+                        "http:\/\/en.wikipedia.org\/wiki\/X-Forwarded-For"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getScriptName": {
+            "name": "getScriptName",
+            "line": 809,
+            "short_desc": "Returns current script name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPathInfo": {
+            "name": "getPathInfo",
+            "line": 828,
+            "short_desc": "Returns the path being requested relative to the executed script.",
+            "long_desc": "The path info always starts with a \/.\n\nSuppose this request is instantiated from \/mysite on localhost:\n\n * http:\/\/localhost\/mysite              returns an empty string\n * http:\/\/localhost\/mysite\/about        returns '\/about'\n * http:\/\/localhost\/mysite\/enco%20ded   returns '\/enco%20ded'\n * http:\/\/localhost\/mysite\/about?var=1  returns '\/about'",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The raw path (i.e. not urldecoded)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getBasePath": {
+            "name": "getBasePath",
+            "line": 849,
+            "short_desc": "Returns the root path from which this request is executed.",
+            "long_desc": "Suppose that an index.php file instantiates this request object:\n\n * http:\/\/localhost\/index.php         returns an empty string\n * http:\/\/localhost\/index.php\/page    returns an empty string\n * http:\/\/localhost\/web\/index.php     returns '\/web'\n * http:\/\/localhost\/we%20b\/index.php  returns '\/we%20b'",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The raw path (i.e. not urldecoded)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getBaseUrl": {
+            "name": "getBaseUrl",
+            "line": 868,
+            "short_desc": "Returns the root URL from which this request is executed.",
+            "long_desc": "The base URL never ends with a \/.\n\nThis is similar to getBasePath(), except that it also includes the\nscript filename (e.g. index.php) if one exists.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The raw URL (i.e. not urldecoded)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getScheme": {
+            "name": "getScheme",
+            "line": 882,
+            "short_desc": "Gets the request's scheme.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPort": {
+            "name": "getPort",
+            "line": 897,
+            "short_desc": "Returns the port on which the request is made.",
+            "long_desc": "This method can read the client port from the \"X-Forwarded-Port\" header\nwhen trusted proxies were set via \"setTrustedProxies()\".\n\nThe \"X-Forwarded-Port\" header must contain the client port.",
+            "hint": [
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "can be a string if fetched from the server bag",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getUser": {
+            "name": "getUser",
+            "line": 925,
+            "short_desc": "Returns the user.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPassword": {
+            "name": "getPassword",
+            "line": 935,
+            "short_desc": "Returns the password.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getUserInfo": {
+            "name": "getUserInfo",
+            "line": 945,
+            "short_desc": "Gets the user info.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "A user name and, optionally, scheme-specific information about how to gain authorization to access the server",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getHttpHost": {
+            "name": "getHttpHost",
+            "line": 964,
+            "short_desc": "Returns the HTTP host being requested.",
+            "long_desc": "The port name will be appended to the host if it's non-standard.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getRequestUri": {
+            "name": "getRequestUri",
+            "line": 981,
+            "short_desc": "Returns the requested URI (path and query string).",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The raw URI (i.e. not URI decoded)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getSchemeAndHttpHost": {
+            "name": "getSchemeAndHttpHost",
+            "line": 998,
+            "short_desc": "Gets the scheme and HTTP host.",
+            "long_desc": "If the URL was called with basic authentication, the user\nand the password are not added to the generated string.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The scheme and HTTP host",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getUri": {
+            "name": "getUri",
+            "line": 1010,
+            "short_desc": "Generates a normalized URI (URL) for the Request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "A normalized URI (URL) for the Request",
+            "tags": {
+                "see": [
+                    [
+                        "getQueryString()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getUriForPath": {
+            "name": "getUriForPath",
+            "line": 1026,
+            "short_desc": "Generates a normalized URI for the given path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The normalized URI for the path",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 1026,
+                    "short_desc": "A path to use instead of the current one",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getRelativeUriForPath": {
+            "name": "getRelativeUriForPath",
+            "line": 1050,
+            "short_desc": "Returns the path as relative reference from the current Request path.",
+            "long_desc": "Only the URIs path component (no schema, host etc.) is relevant and must be given.\nBoth paths must be absolute and not contain relative parts.\nRelative URLs from one resource to another are useful when generating self-contained downloadable document archives.\nFurthermore, they can be used to reduce the link size in documents.\n\nExample target paths, given a base path of \"\/a\/b\/c\/d\":\n- \"\/a\/b\/c\/d\"     -> \"\"\n- \"\/a\/b\/c\/\"      -> \".\/\"\n- \"\/a\/b\/\"        -> \"..\/\"\n- \"\/a\/b\/c\/other\" -> \"other\"\n- \"\/a\/x\/y\"       -> \"..\/..\/x\/y\"",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The relative target path",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 1050,
+                    "short_desc": "The target path",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getQueryString": {
+            "name": "getQueryString",
+            "line": 1094,
+            "short_desc": "Generates the normalized query string for the Request.",
+            "long_desc": "It builds a normalized query string, where keys\/value pairs are alphabetized\nand have consistent escaping.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "A normalized query string for the Request",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isSecure": {
+            "name": "isSecure",
+            "line": 1111,
+            "short_desc": "Checks whether the request is secure or not.",
+            "long_desc": "This method can read the client protocol from the \"X-Forwarded-Proto\" header\nwhen trusted proxies were set via \"setTrustedProxies()\".\n\nThe \"X-Forwarded-Proto\" header must contain the protocol: \"https\" or \"http\".",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getHost": {
+            "name": "getHost",
+            "line": 1134,
+            "short_desc": "Returns the host name.",
+            "long_desc": "This method can read the client host name from the \"X-Forwarded-Host\" header\nwhen trusted proxies were set via \"setTrustedProxies()\".\n\nThe \"X-Forwarded-Host\" header must contain the client host name.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\Exception\\SuspiciousOperationException",
+                    "when the host name is invalid or not trusted"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "setMethod": {
+            "name": "setMethod",
+            "line": 1191,
+            "short_desc": "Sets the request method.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "method": {
+                    "name": "method",
+                    "line": 1191,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getMethod": {
+            "name": "getMethod",
+            "line": 1212,
+            "short_desc": "Gets the request \"intended\" method.",
+            "long_desc": "If the X-HTTP-Method-Override header is set, and if the method is a POST,\nthen it is used to determine the \"real\" intended HTTP method.\n\nThe _method request parameter can also be used to determine the HTTP method,\nbut only if enableHttpMethodParameterOverride() has been called.\n\nThe method is always an uppercased string.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The request method",
+            "tags": {
+                "see": [
+                    [
+                        "getRealMethod()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getRealMethod": {
+            "name": "getRealMethod",
+            "line": 1236,
+            "short_desc": "Gets the \"real\" request method.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The request method",
+            "tags": {
+                "see": [
+                    [
+                        "getMethod()"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getMimeType": {
+            "name": "getMimeType",
+            "line": 1248,
+            "short_desc": "Gets the mime type associated with the format.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The associated mime type (null if not found)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 1248,
+                    "short_desc": "The format",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getMimeTypes": {
+            "name": "getMimeTypes",
+            "line": 1264,
+            "short_desc": "Gets the mime types associated with the format.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "The associated mime types",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 1264,
+                    "short_desc": "The format",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getFormat": {
+            "name": "getFormat",
+            "line": 1280,
+            "short_desc": "Gets the format associated with the mime type.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The format (null if not found)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "mimeType": {
+                    "name": "mimeType",
+                    "line": 1280,
+                    "short_desc": "The associated mime type",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setFormat": {
+            "name": "setFormat",
+            "line": 1307,
+            "short_desc": "Associates a format with mime types.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 1307,
+                    "short_desc": "The format",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "mimeTypes": {
+                    "name": "mimeTypes",
+                    "line": 1307,
+                    "short_desc": "The associated mime types (the preferred one must be the first as it will be used as the content type)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getRequestFormat": {
+            "name": "getRequestFormat",
+            "line": 1329,
+            "short_desc": "Gets the request format.",
+            "long_desc": "Here is the process to determine the format:\n\n * format defined by the user (with setRequestFormat())\n * _format request attribute\n * $default",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The request format",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "default": {
+                    "name": "default",
+                    "line": 1329,
+                    "short_desc": "The default format",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "'html'",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setRequestFormat": {
+            "name": "setRequestFormat",
+            "line": 1343,
+            "short_desc": "Sets the request format.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 1343,
+                    "short_desc": "The request format",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getContentType": {
+            "name": "getContentType",
+            "line": 1353,
+            "short_desc": "Gets the format associated with the request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The format (null if no content type is present)",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setDefaultLocale": {
+            "name": "setDefaultLocale",
+            "line": 1363,
+            "short_desc": "Sets the default locale.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "locale": {
+                    "name": "locale",
+                    "line": 1363,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getDefaultLocale": {
+            "name": "getDefaultLocale",
+            "line": 1377,
+            "short_desc": "Get the default locale.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setLocale": {
+            "name": "setLocale",
+            "line": 1387,
+            "short_desc": "Sets the locale.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "locale": {
+                    "name": "locale",
+                    "line": 1387,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getLocale": {
+            "name": "getLocale",
+            "line": 1397,
+            "short_desc": "Get the locale.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isMethod": {
+            "name": "isMethod",
+            "line": 1409,
+            "short_desc": "Checks if the request method is of specified type.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "method": {
+                    "name": "method",
+                    "line": 1409,
+                    "short_desc": "Uppercase request method (GET, POST etc)",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isMethodSafe": {
+            "name": "isMethodSafe",
+            "line": 1423,
+            "short_desc": "Checks whether or not the method is safe.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/tools.ietf.org\/html\/rfc7231#section-4.2.1"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [
+                "\"0\" @param tags are expected but only \"1\" found"
+            ],
+            "parameters": []
+        },
+        "isMethodIdempotent": {
+            "name": "isMethodIdempotent",
+            "line": 1438,
+            "short_desc": "Checks whether or not the method is idempotent.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isMethodCacheable": {
+            "name": "isMethodCacheable",
+            "line": 1450,
+            "short_desc": "Checks whether the method is cacheable or not.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/tools.ietf.org\/html\/rfc7231#section-4.2.3"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getProtocolVersion": {
+            "name": "getProtocolVersion",
+            "line": 1466,
+            "short_desc": "Returns the protocol version.",
+            "long_desc": "If the application is behind a proxy, the protocol version used in the\nrequests between the client and the proxy and between the proxy and the\nserver might be different. This returns the former (from the \"Via\" header)\nif the proxy is trusted (see \"setTrustedProxies()\"), otherwise it returns\nthe latter (from the \"SERVER_PROTOCOL\" server parameter).",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getContent": {
+            "name": "getContent",
+            "line": 1488,
+            "short_desc": "Returns the request body content.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "resource",
+                    false
+                ]
+            ],
+            "hint_desc": "The request body content or a resource to read the body stream",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\LogicException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "asResource": {
+                    "name": "asResource",
+                    "line": 1488,
+                    "short_desc": "If true, a resource will be returned",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getETags": {
+            "name": "getETags",
+            "line": 1531,
+            "short_desc": "Gets the Etags.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "The entity tags",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isNoCache": {
+            "name": "isNoCache",
+            "line": 1539,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPreferredLanguage": {
+            "name": "getPreferredLanguage",
+            "line": 1551,
+            "short_desc": "Returns the preferred language.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The preferred locale",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "locales": {
+                    "name": "locales",
+                    "line": 1551,
+                    "short_desc": "An array of ordered available locales",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getLanguages": {
+            "name": "getLanguages",
+            "line": 1584,
+            "short_desc": "Gets a list of languages acceptable by the client browser.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "Languages ordered in the user browser preferences",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getCharsets": {
+            "name": "getCharsets",
+            "line": 1624,
+            "short_desc": "Gets a list of charsets acceptable by the client browser.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "List of charsets in preferable order",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getEncodings": {
+            "name": "getEncodings",
+            "line": 1638,
+            "short_desc": "Gets a list of encodings acceptable by the client browser.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "List of encodings in preferable order",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getAcceptableContentTypes": {
+            "name": "getAcceptableContentTypes",
+            "line": 1652,
+            "short_desc": "Gets a list of content types acceptable by the client browser.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "List of content types in preferable order",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isXmlHttpRequest": {
+            "name": "isXmlHttpRequest",
+            "line": 1671,
+            "short_desc": "Returns true if the request is a XMLHttpRequest.",
+            "long_desc": "It works if your JavaScript library sets an X-Requested-With HTTP header.\nIt is known to work with common JavaScript frameworks:",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the request is an XMLHttpRequest, false otherwise",
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/en.wikipedia.org\/wiki\/List_of_Ajax_frameworks#JavaScript"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "prepareRequestUri": {
+            "name": "prepareRequestUri",
+            "line": 1684,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "prepareBaseUrl": {
+            "name": "prepareBaseUrl",
+            "line": 1731,
+            "short_desc": "Prepares the base URL.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "prepareBasePath": {
+            "name": "prepareBasePath",
+            "line": 1800,
+            "short_desc": "Prepares the base path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "base path",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "preparePathInfo": {
+            "name": "preparePathInfo",
+            "line": 1826,
+            "short_desc": "Prepares the path info.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "path info",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "initializeFormats": {
+            "name": "initializeFormats",
+            "line": 1856,
+            "short_desc": "Initializes HTTP request formats.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isFromTrustedProxy": {
+            "name": "isFromTrustedProxy",
+            "line": 1930,
+            "short_desc": "Indicates whether this request originated from a trusted proxy.",
+            "long_desc": "This can be useful to determine whether or not to trust the\ncontents of a proxy-specific header.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "true if the request came from a trusted proxy, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": {
+        "HEADER_FORWARDED": {
+            "name": "HEADER_FORWARDED",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_FOR": {
+            "name": "HEADER_X_FORWARDED_FOR",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_HOST": {
+            "name": "HEADER_X_FORWARDED_HOST",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_PROTO": {
+            "name": "HEADER_X_FORWARDED_PROTO",
+            "line": 36,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_PORT": {
+            "name": "HEADER_X_FORWARDED_PORT",
+            "line": 37,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_ALL": {
+            "name": "HEADER_X_FORWARDED_ALL",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "HEADER_X_FORWARDED_AWS_ELB": {
+            "name": "HEADER_X_FORWARDED_AWS_ELB",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_HEAD": {
+            "name": "METHOD_HEAD",
+            "line": 41,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_GET": {
+            "name": "METHOD_GET",
+            "line": 42,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_POST": {
+            "name": "METHOD_POST",
+            "line": 43,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_PUT": {
+            "name": "METHOD_PUT",
+            "line": 44,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_PATCH": {
+            "name": "METHOD_PATCH",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_DELETE": {
+            "name": "METHOD_DELETE",
+            "line": 46,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_PURGE": {
+            "name": "METHOD_PURGE",
+            "line": 47,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_OPTIONS": {
+            "name": "METHOD_OPTIONS",
+            "line": 48,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_TRACE": {
+            "name": "METHOD_TRACE",
+            "line": 49,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "METHOD_CONNECT": {
+            "name": "METHOD_CONNECT",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

@@ -1,0 +1,772 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\MockArraySessionStorage",
+    "line": 28,
+    "short_desc": "MockArraySessionStorage mocks the session for unit tests.",
+    "long_desc": "No PHP session is actually started since a session can be initialized\nand shutdown only once per PHP execution cycle.\n\nWhen doing functional testing, you should use MockFileSessionStorage instead.",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ],
+            [
+                "Bulat",
+                "Shakirzyanov",
+                "<mallluhuct@gmail.com>"
+            ],
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/MockArraySessionStorage.php",
+    "relative_file": null,
+    "hash": "d65e7a736e0a0b83cc5bc1fd7d9a4dacb77d39ea",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "SessionBagInterface": "Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface"
+    },
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\Session\\Storage\\SessionStorageInterface": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\SessionStorageInterface"
+    },
+    "traits": [],
+    "properties": {
+        "id": {
+            "name": "id",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 33,
+                    "endLine": 33,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "name": {
+            "name": "name",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "started": {
+            "name": "started",
+            "line": 43,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 43,
+                        "endLine": 43,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "Symfony",
+                                "Component",
+                                "HttpFoundation",
+                                "Session",
+                                "Storage",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 43,
+                                "endLine": 43
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 43,
+                    "endLine": 43
+                }
+            },
+            "errors": []
+        },
+        "closed": {
+            "name": "closed",
+            "line": 48,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 48,
+                        "endLine": 48,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "Symfony",
+                                "Component",
+                                "HttpFoundation",
+                                "Session",
+                                "Storage",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 48,
+                                "endLine": 48
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 48,
+                    "endLine": 48
+                }
+            },
+            "errors": []
+        },
+        "data": {
+            "name": "data",
+            "line": 53,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 53,
+                    "endLine": 53,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "metadataBag": {
+            "name": "metadataBag",
+            "line": 58,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "bags": {
+            "name": "bags",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface",
+                    true
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 63,
+                    "endLine": 63,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 65,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 65,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "'MOCKSESSID'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "metaBag": {
+                    "name": "metaBag",
+                    "line": 65,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "Storage",
+                            "MetadataBag"
+                        ],
+                        "attributes": {
+                            "startLine": 65,
+                            "endLine": 65
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setSessionData": {
+            "name": "setSessionData",
+            "line": 71,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "array": {
+                    "name": "array",
+                    "line": 71,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "start": {
+            "name": "start",
+            "line": 79,
+            "short_desc": "Starts the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if started",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "if something goes wrong starting the session"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "regenerate": {
+            "name": "regenerate",
+            "line": 97,
+            "short_desc": "Regenerates id that represents this storage.",
+            "long_desc": "This method must invoke session_regenerate_id($destroy) unless\nthis interface is used for a storage object designed for unit\nor functional testing where a real PHP session would interfere\nwith testing.\n\nNote regenerate+destroy should not clear the session data in memory\nonly delete the session data from persistent storage.\n\nCare: When regenerating the session ID no locking is involved in PHP's\nsession design. See https:\/\/bugs.php.net\/bug.php?id=61470 for a discussion.\nSo you must make sure the regenerated session is saved BEFORE sending the\nheaders with the new ID. Symfony's HttpKernel offers a listener for this.\nSee Symfony\\Component\\HttpKernel\\EventListener\\SaveSessionListener.\nOtherwise session data could get lost again for concurrent requests with the\nnew ID. One result could be that you get logged out after just logging in.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if session regenerated, false if error",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "If an error occurs while regenerating this storage"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "destroy": {
+                    "name": "destroy",
+                    "line": 97,
+                    "short_desc": "Destroy session when regenerating?",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "lifetime": {
+                    "name": "lifetime",
+                    "line": 97,
+                    "short_desc": "Sets the cookie lifetime for the session cookie. A null value\n                      will leave the system settings unchanged, 0 sets the cookie\n                      to expire with browser session. Time is in seconds, and is\n                      not a Unix timestamp.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getId": {
+            "name": "getId",
+            "line": 112,
+            "short_desc": "Returns the session ID.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The session ID or empty",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setId": {
+            "name": "setId",
+            "line": 120,
+            "short_desc": "Sets the session ID.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 120,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getName": {
+            "name": "getName",
+            "line": 132,
+            "short_desc": "Returns the session name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "The session name",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setName": {
+            "name": "setName",
+            "line": 140,
+            "short_desc": "Sets the session name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 140,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "save": {
+            "name": "save",
+            "line": 148,
+            "short_desc": "Force the session to be saved and closed.",
+            "long_desc": "This method must invoke session_write_close() unless this interface is\nused for a storage object design for unit or functional testing where\na real PHP session would interfere with testing, in which case\nit should actually persist the session data if required.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "if the session is saved without being started, or if the session\n                          is already closed"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "clear": {
+            "name": "clear",
+            "line": 161,
+            "short_desc": "Clear all session data in memory.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "registerBag": {
+            "name": "registerBag",
+            "line": 178,
+            "short_desc": "Registers a SessionBagInterface for use.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "bag": {
+                    "name": "bag",
+                    "line": 178,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "SessionBagInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 178,
+                            "endLine": 178
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getBag": {
+            "name": "getBag",
+            "line": 186,
+            "short_desc": "Gets a SessionBagInterface by name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "If the bag does not exist"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 186,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isStarted": {
+            "name": "isStarted",
+            "line": 202,
+            "short_desc": "Checks if the session is started.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if started, false otherwise",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setMetadataBag": {
+            "name": "setMetadataBag",
+            "line": 207,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "bag": {
+                    "name": "bag",
+                    "line": 207,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "Storage",
+                            "MetadataBag"
+                        ],
+                        "attributes": {
+                            "startLine": 207,
+                            "endLine": 207
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getMetadataBag": {
+            "name": "getMetadataBag",
+            "line": 221,
+            "short_desc": "Gets the MetadataBag.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "generateId": {
+            "name": "generateId",
+            "line": 234,
+            "short_desc": "Generates a session ID.",
+            "long_desc": "This doesn't need to be particularly cryptographically secure since this is just\na mock.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "loadSession": {
+            "name": "loadSession",
+            "line": 239,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

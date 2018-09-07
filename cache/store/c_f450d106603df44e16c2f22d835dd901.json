@@ -1,0 +1,445 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+    "line": 23,
+    "short_desc": "Metadata container.",
+    "long_desc": "Adds metadata to the session.",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/MetadataBag.php",
+    "relative_file": null,
+    "hash": "6d8ad59843827d7c48423b1f51f17260bb4de013",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "SessionBagInterface": "Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface"
+    },
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface": "Symfony\\Component\\HttpFoundation\\Session\\SessionBagInterface"
+    },
+    "traits": [],
+    "properties": {
+        "meta": {
+            "name": "meta",
+            "line": 42,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "self"
+                                ],
+                                "attributes": {
+                                    "startLine": 42,
+                                    "endLine": 42
+                                }
+                            },
+                            "name": "CREATED",
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 0,
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42,
+                                "kind": 10
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 42,
+                            "endLine": 42
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "self"
+                                ],
+                                "attributes": {
+                                    "startLine": 42,
+                                    "endLine": 42
+                                }
+                            },
+                            "name": "UPDATED",
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 0,
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42,
+                                "kind": 10
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 42,
+                            "endLine": 42
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "self"
+                                ],
+                                "attributes": {
+                                    "startLine": 42,
+                                    "endLine": 42
+                                }
+                            },
+                            "name": "LIFETIME",
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_LNumber",
+                            "value": 0,
+                            "attributes": {
+                                "startLine": 42,
+                                "endLine": 42,
+                                "kind": 10
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 42,
+                            "endLine": 42
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 42,
+                    "endLine": 42,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 60,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "storageKey": {
+                    "name": "storageKey",
+                    "line": 60,
+                    "short_desc": "The key used to store bag in the session",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "'_sf2_meta'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "updateThreshold": {
+                    "name": "updateThreshold",
+                    "line": 60,
+                    "short_desc": "The time to wait between two UPDATED updates",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": "0",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "initialize": {
+            "name": "initialize",
+            "line": 69,
+            "short_desc": "Initializes the Bag.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "array": {
+                    "name": "array",
+                    "line": 69,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": true
+                }
+            }
+        },
+        "getLifetime": {
+            "name": "getLifetime",
+            "line": 90,
+            "short_desc": "Gets the lifetime that the session cookie was set with.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "stampNew": {
+            "name": "stampNew",
+            "line": 103,
+            "short_desc": "Stamps a new session's metadata.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "lifetime": {
+                    "name": "lifetime",
+                    "line": 103,
+                    "short_desc": "Sets the cookie lifetime for the session cookie. A null value\n                     will leave the system settings unchanged, 0 sets the cookie\n                     to expire with browser session. Time is in seconds, and is\n                     not a Unix timestamp.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getStorageKey": {
+            "name": "getStorageKey",
+            "line": 111,
+            "short_desc": "Gets the storage key for this bag.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getCreated": {
+            "name": "getCreated",
+            "line": 121,
+            "short_desc": "Gets the created timestamp metadata.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "Unix timestamp",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getLastUsed": {
+            "name": "getLastUsed",
+            "line": 131,
+            "short_desc": "Gets the last used metadata.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "Unix timestamp",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "clear": {
+            "name": "clear",
+            "line": 139,
+            "short_desc": "Clears out data from bag.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "Whatever data was contained",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getName": {
+            "name": "getName",
+            "line": 147,
+            "short_desc": "Gets this bag's name.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setName": {
+            "name": "setName",
+            "line": 157,
+            "short_desc": "Sets name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 157,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "CREATED": {
+            "name": "CREATED",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "UPDATED": {
+            "name": "UPDATED",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "LIFETIME": {
+            "name": "LIFETIME",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

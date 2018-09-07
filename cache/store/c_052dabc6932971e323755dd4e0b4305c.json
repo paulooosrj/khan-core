@@ -1,0 +1,109 @@
+{
+    "name": "StrategysAuth\\AuthStrategy",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "StrategysAuth",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/KhanCli\/storage\/auth\/AuthStrategy.php",
+    "relative_file": null,
+    "hash": "a9c1e919abee4a45c5cbaa0129317ac158629169",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "extendsRegister": {
+            "name": "extendsRegister",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 26,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "extendsValidate": {
+            "name": "extendsValidate",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 31,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "table": {
+            "name": "table",
+            "line": 8,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "logout": {
+            "name": "logout",
+            "line": 11,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "ignoreSession": {
+            "name": "ignoreSession",
+            "line": 14,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "login": {
+            "name": "login",
+            "line": 16,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "register": {
+            "name": "register",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

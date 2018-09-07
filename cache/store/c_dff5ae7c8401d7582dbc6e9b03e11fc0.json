@@ -1,0 +1,136 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\PhpBridgeSessionStorage",
+    "line": 19,
+    "short_desc": "Allows session to be started by PHP and managed by Symfony.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Drak",
+                "<drak@zikula.org>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/PhpBridgeSessionStorage.php",
+    "relative_file": null,
+    "hash": "6a77c4e539f7109785a96a32f93ef9325d04fccb",
+    "parent": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "handler": {
+                    "name": "handler",
+                    "line": 25,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\SessionHandlerInterface",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "metaBag": {
+                    "name": "metaBag",
+                    "line": 25,
+                    "short_desc": "MetadataBag",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\Session\\Storage\\MetadataBag",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "Session",
+                            "Storage",
+                            "MetadataBag"
+                        ],
+                        "attributes": {
+                            "startLine": 25,
+                            "endLine": 25
+                        }
+                    },
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "start": {
+            "name": "start",
+            "line": 34,
+            "short_desc": "Starts the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if started",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "if something goes wrong starting the session"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "clear": {
+            "name": "clear",
+            "line": 48,
+            "short_desc": "Clear all session data in memory.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

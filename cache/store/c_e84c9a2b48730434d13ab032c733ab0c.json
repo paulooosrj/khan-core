@@ -1,0 +1,140 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\FileinfoMimeTypeGuesser",
+    "line": 22,
+    "short_desc": "Guesses the mime type using the PECL extension FileInfo.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/FileinfoMimeTypeGuesser.php",
+    "relative_file": null,
+    "hash": "e82a9b910bd0c9da12b64922e92dd38a0bcc57e5",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "FileNotFoundException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "AccessDeniedException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException"
+    },
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/www.php.net\/manual\/en\/function.finfo-open.php"
+                    ]
+                ]
+            },
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "magicFile": {
+                    "name": "magicFile",
+                    "line": 31,
+                    "short_desc": "A magic file to use with the finfo instance",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "isSupported": {
+            "name": "isSupported",
+            "line": 41,
+            "short_desc": "Returns whether this guesser is supported on the current OS\/PHP setup.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "guess": {
+            "name": "guess",
+            "line": 49,
+            "short_desc": "Guesses the mime type of the file with the given path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The mime type or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    "If the file does not exist"
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException",
+                    "If the file could not be read"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 49,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

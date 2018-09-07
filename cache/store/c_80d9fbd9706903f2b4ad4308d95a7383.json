@@ -1,0 +1,75 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\PredisClusterSessionHandlerTest",
+    "line": 16,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Tests\/Session\/Storage\/Handler\/PredisClusterSessionHandlerTest.php",
+    "relative_file": null,
+    "hash": "37abef99f9ccfaff1903c9a384db40842836166a",
+    "parent": "Symfony\\Component\\HttpFoundation\\Tests\\Session\\Storage\\Handler\\AbstractRedisSessionHandlerTestCase",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Client": "Predis\\Client"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "createRedisClient": {
+            "name": "createRedisClient",
+            "line": 18,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Redis",
+                    false
+                ],
+                [
+                    "\\RedisArray",
+                    false
+                ],
+                [
+                    "\\RedisCluster",
+                    false
+                ],
+                [
+                    "\\Predis\\Client",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "host": {
+                    "name": "host",
+                    "line": 18,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

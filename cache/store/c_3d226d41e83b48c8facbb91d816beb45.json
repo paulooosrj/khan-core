@@ -1,0 +1,154 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesser",
+    "line": 26,
+    "short_desc": "A singleton mime type to file extension guesser.",
+    "long_desc": "A default guesser is provided.\nYou can register custom guessers by calling the register()\nmethod on the singleton instance:\n\n    $guesser = ExtensionGuesser::getInstance();\n    $guesser->register(new MyCustomExtensionGuesser());\n\nThe last registered guesser is preferred over previously registered ones.",
+    "hint": null,
+    "tags": [],
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/ExtensionGuesser.php",
+    "relative_file": null,
+    "hash": "35b9493fb3866aae40cad64a215f0a2c49ca3d45",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesserInterface": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesserInterface"
+    },
+    "traits": [],
+    "properties": {
+        "guessers": {
+            "name": "guessers",
+            "line": 40,
+            "short_desc": "All registered ExtensionGuesserInterface instances.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 40,
+                    "endLine": 40,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "getInstance": {
+            "name": "getInstance",
+            "line": 47,
+            "short_desc": "Returns the singleton instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesser",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "register": {
+            "name": "register",
+            "line": 69,
+            "short_desc": "Registers a new extension guesser.",
+            "long_desc": "When guessing, this guesser is preferred over previously registered ones.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "guesser": {
+                    "name": "guesser",
+                    "line": 69,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\HttpFoundation\\File\\MimeType\\ExtensionGuesserInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Symfony",
+                            "Component",
+                            "HttpFoundation",
+                            "File",
+                            "MimeType",
+                            "ExtensionGuesserInterface"
+                        ],
+                        "attributes": {
+                            "startLine": 69,
+                            "endLine": 69
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "guess": {
+            "name": "guess",
+            "line": 86,
+            "short_desc": "Tries to guess the extension.",
+            "long_desc": "The mime type is passed to each registered mime type guesser in reverse order\nof their registration (last registered is queried first). Once a guesser\nreturns a value that is not NULL, this method terminates and returns the\nvalue.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The guessed extension or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "mimeType": {
+                    "name": "mimeType",
+                    "line": 86,
+                    "short_desc": "The mime type",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

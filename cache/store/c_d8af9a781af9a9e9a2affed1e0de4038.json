@@ -1,0 +1,31 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\Exception\\UploadException",
+    "line": 19,
+    "short_desc": "Thrown when an error occurred during file upload.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\Exception",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/Exception\/UploadException.php",
+    "relative_file": null,
+    "hash": "d3a6378f918ef34a8591e649fd359f66de98b4bc",
+    "parent": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileException",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

@@ -1,0 +1,265 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\FileBag",
+    "line": 22,
+    "short_desc": "FileBag is a container for uploaded files.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ],
+            [
+                "Bulat",
+                "Shakirzyanov",
+                "<mallluhuct@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/FileBag.php",
+    "relative_file": null,
+    "hash": "fbc33bc82303bfdad52b65b6326164854a5b2692",
+    "parent": "App\\Khan\\Component\\HttpFoundation\\ParameterBag",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "UploadedFile": "App\\Khan\\Component\\HttpFoundation\\File\\UploadedFile"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "parameters": {
+                    "name": "parameters",
+                    "line": 29,
+                    "short_desc": "An array of parameters",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "replace": {
+            "name": "replace",
+            "line": 37,
+            "short_desc": "Replaces the current parameters by a new set.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "files": {
+                    "name": "files",
+                    "line": 37,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "set": {
+            "name": "set",
+            "line": 46,
+            "short_desc": "Sets a parameter by name.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 46,
+                    "short_desc": "The key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 46,
+                    "short_desc": "The value",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "add": {
+            "name": "add",
+            "line": 58,
+            "short_desc": "Adds parameters.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "files": {
+                    "name": "files",
+                    "line": 58,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "convertFileInformation": {
+            "name": "convertFileInformation",
+            "line": 72,
+            "short_desc": "Converts uploaded files to UploadedFile instances.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\UploadedFile",
+                    true
+                ],
+                [
+                    "\\App\\Khan\\Component\\HttpFoundation\\File\\UploadedFile",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "A (multi-dimensional) array of UploadedFile instances",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 72,
+                    "short_desc": "A (multi-dimensional) array of uploaded file information",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ],
+                        [
+                            "\\App\\Khan\\Component\\HttpFoundation\\File\\UploadedFile",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "fixPhpFilesArray": {
+            "name": "fixPhpFilesArray",
+            "line": 114,
+            "short_desc": "Fixes a malformed PHP $_FILES array.",
+            "long_desc": "PHP has a bug that the format of the $_FILES array differs, depending on\nwhether the uploaded file fields had normal field names or array-like\nfield names (\"normal\" vs. \"parent[child]\").\n\nThis method fixes the array to look like the \"normal\" $_FILES array.\n\nIt's safe to pass an already converted array, in which case this method\njust returns the original array unmodified.",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 114,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

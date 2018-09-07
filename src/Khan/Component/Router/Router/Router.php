@@ -334,8 +334,12 @@ class Router {
 			$fileDir = "{$folder}/{$reg[1]}";
 			if (file_exists($fileDir)) {
 				$mime = Mime::get($fileDir);
+				ob_start();
+				include($fileDir);
+				$res = ob_get_contents();
+				ob_end_clean();
 				header("Content-type: {$mime}", true);
-				return file_get_contents($fileDir);
+				return $res;
 			} else {
 				echo "error";
 				http_response_code(404);
@@ -379,11 +383,18 @@ class Router {
 	}
 
 	public function dispatch() {
+		
+		$path = parse_url($_ENV['APP_URL'], PHP_URL_PATH);
 
 		$this->setDefaultMiddlewares();
 		$this->setLoadTemp();
 
 		$uri = self::$config["path"];
+		
+		if($path !== "/"){
+			$uri = str_replace($path, '', $uri);
+		}
+		
 		$metodo = self::$config["method"];
 		$param_receive = false;
 
@@ -429,7 +440,6 @@ class Router {
 				$this->respondRouter($fn, $data_receive);
 
 			} else {
-
 				if (isset(self::$uses["not_found"]) && !empty(self::$uses["not_found"])) {
 					$this->respondRouter(
 						self::$uses["not_found"],

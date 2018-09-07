@@ -1,0 +1,463 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\PdoSessionHandler",
+    "line": 41,
+    "short_desc": "Session handler using a PDO connection to read and write data.",
+    "long_desc": "It works with MySQL, PostgreSQL, Oracle, SQL Server and SQLite and implements\ndifferent locking strategies to handle concurrent access to the same session.\nLocking is necessary to prevent loss of data due to race conditions and to keep\nthe session data consistent between read() and write(). With locking, requests\nfor the same session will wait until the other one finished writing. For this\nreason it's best practice to close a session as early as possible to improve\nconcurrency. PHPs internal files session handler also implements locking.\n\nAttention: Since SQLite does not support row level locks but locks the whole database,\nit means only one session can be accessed at a time. Even different sessions would wait\nfor another to finish. So saving session in SQLite should only be considered for\ndevelopment or prototypes.\n\nSession data is a binary string that can contain non-printable characters like the null byte.\nFor this reason it must be saved in a binary column in the database like BLOB in MySQL.\nSaving it in a character column could corrupt the data. You can use createTable()\nto initialize a correctly defined table.",
+    "hint": null,
+    "tags": {
+        "see": [
+            [
+                "http:\/\/php.net\/sessionhandlerinterface"
+            ]
+        ],
+        "author": [
+            [
+                "Fabien",
+                "Potencier",
+                "<fabien@symfony.com>"
+            ],
+            [
+                "Michael",
+                "Williams",
+                "<michael.williams@funsational.com>"
+            ],
+            [
+                "Tobias",
+                "Schultze",
+                "<http:\/\/tobion.de>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Session\/Storage\/Handler\/PdoSessionHandler.php",
+    "relative_file": null,
+    "hash": "a560e980d498865df649e3700996b21f18041b31",
+    "parent": "Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\AbstractSessionHandler",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 172,
+            "short_desc": "You can either pass an existing database connection as PDO instance or\npass a DSN string that will be used to lazy-connect to the database\nwhen the session is actually used. Furthermore it's possible to pass null\nwhich will then use the session.save_path ini setting as PDO DSN parameter.",
+            "long_desc": "List of available options:\n * db_table: The name of the table [default: sessions]\n * db_id_col: The column where to store the session id [default: sess_id]\n * db_data_col: The column where to store the session data [default: sess_data]\n * db_lifetime_col: The column where to store the lifetime [default: sess_lifetime]\n * db_time_col: The column where to store the timestamp [default: sess_time]\n * db_username: The username when lazy-connect [default: '']\n * db_password: The password when lazy-connect [default: '']\n * db_connection_options: An array of driver-specific connection options [default: array()]\n * lock_mode: The strategy for locking, see constants [default: LOCK_TRANSACTIONAL]",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    "When PDO error mode is not PDO::ERRMODE_EXCEPTION"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "pdoOrDsn": {
+                    "name": "pdoOrDsn",
+                    "line": 172,
+                    "short_desc": "A \\PDO instance or DSN string or URL string or null",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PDO",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "options": {
+                    "name": "options",
+                    "line": 172,
+                    "short_desc": "An associative array of options",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "array()",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "createTable": {
+            "name": "createTable",
+            "line": 209,
+            "short_desc": "Creates the table to store sessions which can be called once for setup.",
+            "long_desc": "Session ID is saved in a column of maximum length 128 because that is enough even\nfor a 512 bit configured session.hash_function like Whirlpool. Session data is\nsaved in a BLOB. One could also use a shorter inlined varbinary column\nif one was sure the data fits into it.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\PDOException",
+                    "When the table already exists"
+                ],
+                [
+                    "\\DomainException",
+                    "When an unsupported PDO driver is used"
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "isSessionExpired": {
+            "name": "isSessionExpired",
+            "line": 255,
+            "short_desc": "Returns true when the current session exists but expired according to session.gc_maxlifetime.",
+            "long_desc": "Can be used to distinguish between a new session and one that expired due to inactivity.",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "Whether current session expired",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "open": {
+            "name": "open",
+            "line": 263,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "savePath": {
+                    "name": "savePath",
+                    "line": 263,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "sessionName": {
+                    "name": "sessionName",
+                    "line": 263,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "read": {
+            "name": "read",
+            "line": 277,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 277,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "gc": {
+            "name": "gc",
+            "line": 291,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "maxlifetime": {
+                    "name": "maxlifetime",
+                    "line": 291,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "doDestroy": {
+            "name": "doDestroy",
+            "line": 303,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 303,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "doWrite": {
+            "name": "doWrite",
+            "line": 324,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 324,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "data": {
+                    "name": "data",
+                    "line": 324,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "updateTimestamp": {
+            "name": "updateTimestamp",
+            "line": 370,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 370,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "data": {
+                    "name": "data",
+                    "line": 370,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "close": {
+            "name": "close",
+            "line": 394,
+            "short_desc": "{@inheritdoc}",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "doRead": {
+            "name": "doRead",
+            "line": 610,
+            "short_desc": "Reads the session data in respect to the different locking strategies.",
+            "long_desc": "We need to make sure we do not return session data that is already considered garbage according\nto the session.gc_maxlifetime setting because gc() is called after read() and only sometimes.",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "sessionId": {
+                    "name": "sessionId",
+                    "line": 610,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getConnection": {
+            "name": "getConnection",
+            "line": 888,
+            "short_desc": "Return a PDO instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PDO",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": {
+        "LOCK_NONE": {
+            "name": "LOCK_NONE",
+            "line": 49,
+            "short_desc": "No locking is done. This means sessions are prone to loss of data due to\nrace conditions of concurrent requests to the same session. The last session\nwrite will win in this case. It might be useful when you implement your own\nlogic to deal with this like an optimistic approach.",
+            "long_desc": ""
+        },
+        "LOCK_ADVISORY": {
+            "name": "LOCK_ADVISORY",
+            "line": 58,
+            "short_desc": "Creates an application-level lock on a session. The disadvantage is that the\nlock is not enforced by the database and thus other, unaware parts of the\napplication could still concurrently modify the session. The advantage is it\ndoes not require a transaction.",
+            "long_desc": "This mode is not available for SQLite and not yet implemented for oci and sqlsrv."
+        },
+        "LOCK_TRANSACTIONAL": {
+            "name": "LOCK_TRANSACTIONAL",
+            "line": 66,
+            "short_desc": "Issues a real row lock. Since it uses a transaction between opening and\nclosing a session, you have to be careful when you use same database connection\nthat you also use for your application logic. This mode is the default because\nit's the only reliable solution across DBMSs.",
+            "long_desc": ""
+        }
+    }
+}

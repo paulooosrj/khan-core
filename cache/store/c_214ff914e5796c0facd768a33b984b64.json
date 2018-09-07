@@ -1,0 +1,617 @@
+{
+    "name": "App\\Khan\\Component\\HttpFoundation\\Cookie",
+    "line": 19,
+    "short_desc": "Represents a cookie.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Johannes",
+                "M.",
+                "Schmitt",
+                "<schmittjoh@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "App\\Khan\\Component\\HttpFoundation",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/Cookie.php",
+    "relative_file": null,
+    "hash": "8c97fa10f365bab8ec9650ef93d36b5a9b6b8c18",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "name": {
+            "name": "name",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "value": {
+            "name": "value",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "domain": {
+            "name": "domain",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "expire": {
+            "name": "expire",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "path": {
+            "name": "path",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "secure": {
+            "name": "secure",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "httpOnly": {
+            "name": "httpOnly",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "fromString": {
+            "name": "fromString",
+            "line": 42,
+            "short_desc": "Creates cookie from raw header string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Khan\\Component\\HttpFoundation\\Cookie",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "cookie": {
+                    "name": "cookie",
+                    "line": 42,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "decode": {
+                    "name": "decode",
+                    "line": 42,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__construct": {
+            "name": "__construct",
+            "line": 96,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\InvalidArgumentException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 96,
+                    "short_desc": "The name of the cookie",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 96,
+                    "short_desc": "The value of the cookie",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "expire": {
+                    "name": "expire",
+                    "line": 96,
+                    "short_desc": "The time the cookie expires",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "\\DateTimeInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "0",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "path": {
+                    "name": "path",
+                    "line": 96,
+                    "short_desc": "The path on the server in which the cookie will be available on",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "NullableType",
+                        "type": "string",
+                        "attributes": {
+                            "startLine": 96,
+                            "endLine": 96
+                        }
+                    },
+                    "default": "'\/'",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "domain": {
+                    "name": "domain",
+                    "line": 96,
+                    "short_desc": "The domain that the cookie is available to",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "secure": {
+                    "name": "secure",
+                    "line": 96,
+                    "short_desc": "Whether the cookie should only be transmitted over a secure HTTPS connection from the client",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "httpOnly": {
+                    "name": "httpOnly",
+                    "line": 96,
+                    "short_desc": "Whether the cookie will be made accessible only through the HTTP protocol",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "raw": {
+                    "name": "raw",
+                    "line": 96,
+                    "short_desc": "Whether the cookie value should be sent with no url encoding",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "bool",
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "sameSite": {
+                    "name": "sameSite",
+                    "line": 96,
+                    "short_desc": "Whether the cookie will be available for cross-site requests",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "__toString": {
+            "name": "__toString",
+            "line": 143,
+            "short_desc": "Returns the cookie as a string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The cookie",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getName": {
+            "name": "getName",
+            "line": 185,
+            "short_desc": "Gets the name of the cookie.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getValue": {
+            "name": "getValue",
+            "line": 195,
+            "short_desc": "Gets the value of the cookie.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getDomain": {
+            "name": "getDomain",
+            "line": 205,
+            "short_desc": "Gets the domain that the cookie is available to.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getExpiresTime": {
+            "name": "getExpiresTime",
+            "line": 215,
+            "short_desc": "Gets the time the cookie expires.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getMaxAge": {
+            "name": "getMaxAge",
+            "line": 225,
+            "short_desc": "Gets the max-age attribute.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getPath": {
+            "name": "getPath",
+            "line": 235,
+            "short_desc": "Gets the path on the server in which the cookie will be available on.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isSecure": {
+            "name": "isSecure",
+            "line": 245,
+            "short_desc": "Checks whether the cookie should only be transmitted over a secure HTTPS connection from the client.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isHttpOnly": {
+            "name": "isHttpOnly",
+            "line": 255,
+            "short_desc": "Checks whether the cookie will be made accessible only through the HTTP protocol.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isCleared": {
+            "name": "isCleared",
+            "line": 265,
+            "short_desc": "Whether this cookie is about to be cleared.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "isRaw": {
+            "name": "isRaw",
+            "line": 275,
+            "short_desc": "Checks if the cookie value should be sent with no url encoding.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getSameSite": {
+            "name": "getSameSite",
+            "line": 285,
+            "short_desc": "Gets the SameSite attribute.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": {
+        "SAMESITE_LAX": {
+            "name": "SAMESITE_LAX",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "SAMESITE_STRICT": {
+            "name": "SAMESITE_STRICT",
+            "line": 32,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

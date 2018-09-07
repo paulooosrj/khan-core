@@ -1,0 +1,81 @@
+{
+    "name": "Symfony\\Component\\HttpFoundation\\File\\MimeType\\MimeTypeGuesserInterface",
+    "line": 22,
+    "short_desc": "Guesses the mime type of a file.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "author": [
+            [
+                "Bernhard",
+                "Schussek",
+                "<bschussek@gmail.com>"
+            ]
+        ]
+    },
+    "namespace": "Symfony\\Component\\HttpFoundation\\File\\MimeType",
+    "file": "\/home\/cabox\/workspace\/core\/src\/Khan\/Component\/HttpFoundation\/File\/MimeType\/MimeTypeGuesserInterface.php",
+    "relative_file": null,
+    "hash": "c300b1347de4a63380fdab47f3d451e0e127528f",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": {
+        "FileNotFoundException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+        "AccessDeniedException": "Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "guess": {
+            "name": "guess",
+            "line": 34,
+            "short_desc": "Guesses the mime type of the file with the given path.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The mime type or NULL, if none could be guessed",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+                    "If the file does not exist"
+                ],
+                [
+                    "\\Symfony\\Component\\HttpFoundation\\File\\Exception\\AccessDeniedException",
+                    "If the file could not be read"
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 34,
+                    "short_desc": "The path to the file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

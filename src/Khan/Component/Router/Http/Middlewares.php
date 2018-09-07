@@ -13,7 +13,7 @@
 	        }
 
 	        public function setDefaultMiddlewares(){
-	            $middlewares = require(ROOT_FOLDER . '/config/Middlewares.php');
+	            $middlewares = require(ROOT_FOLDER . '/config/middlewares.php');
 	            call_user_func_array([$this, 'middleware'], $middlewares);
 	        }
 

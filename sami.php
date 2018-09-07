@@ -8,6 +8,7 @@
   $finder = Finder::create()
       ->files()
       ->name('*.php')
+      ->exclude('Symfony')
       ->in(__DIR__.'/src');
 
   $config = array(
