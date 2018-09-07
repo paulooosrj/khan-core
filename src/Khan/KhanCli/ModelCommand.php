@@ -27,6 +27,7 @@
 	    	$model = ($input->getArgument('model-name')) ? $input->getArgument('model-name') : false;
 	    	$botLearning = Bot\Bot::init('models');
 			$modelUses = $botLearning::loadUses();
+			$keys = 1;
 
 	    	if($model){
 
@@ -35,9 +36,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"modelName" => $model,
-					"usedss" => array_reduce($modelUses, function($ant, $atual){
-						return $ant . "\n	use $atual;";
-					}, "")
+					"usedss" => array_reduce($modelUses, function($ant, $atual) use($modelUses){
+						$some = end(array_values($modelUses)) === $atual ? ";" : ",\n		";
+						return $ant . "$atual". $some;
+					}, "use	")
 				]));
 
 	    		if($make){

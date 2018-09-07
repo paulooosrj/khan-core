@@ -35,9 +35,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"middlewareName" => $middleware,
-					"usedss" => array_reduce($middlewareUses, function($ant, $atual){
-						return $ant . "\n	use $atual;";
-					}, "")
+					"usedss" => array_reduce($middlewareUses, function($ant, $atual) use($middlewareUses){
+						$some = end(array_values($middlewareUses)) === $atual ? ";" : ",\n		";
+						return $ant . "$atual". $some;
+					}, "use	")
 				]));
 
 	    		if($make){

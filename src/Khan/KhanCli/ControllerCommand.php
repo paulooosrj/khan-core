@@ -35,9 +35,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"controllerName" => $controller . "Controller",
-					"usedss" => array_reduce($controllerUses, function($ant, $atual){
-						return $ant . "\n	use $atual;";
-					}, "")
+					"usedss" => array_reduce($controllerUses, function($ant, $atual) use($controllerUses){
+						$some = end(array_values($controllerUses)) === $atual ? ";" : ",\n		";
+						return $ant . "$atual". $some;
+					}, "use	")
 				]));
 
 	    		if($make){
