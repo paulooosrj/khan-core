@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "src/Khan/KhanCli/storage/gulp-files/file-package.json",
+        "src/Khan/KhanCli/storage/react-files/package.json",
+        "src/Khan/KhanCli/storage/vue-files/package.json"
+      ]
+    }
+  }
+}
