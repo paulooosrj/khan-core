@@ -11,7 +11,7 @@
   "author": "PaulaoDev",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.2",
     "babel-preset-env": "^1.7.0",
     "vue": "*",
     "webpack": "^4.12.0",
