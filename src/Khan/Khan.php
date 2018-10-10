@@ -1,7 +1,6 @@
 <?php
 
 /**
- * RouterKhan (Khan.php) - A fast, easy and flexible router system for PHP
  *
  * @author      PaulaoDev <jskhanframework@gmail.com>
  * @copyright   (c) PaulaoDev
@@ -10,9 +9,6 @@
  */
 
 namespace App\Khan;
-
-$dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
-$dotenv->load();
 
 define("ROOT_CORE", __DIR__);
 
@@ -72,9 +68,20 @@ class Khan {
 		$this->apps();
 
 	}
+	
+	public function set($name, $value){
+		define($name, $value);
+		return $this;
+	}
+	
+	public function loadEnv(){
+		$dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
+		$dotenv->load();
+	}
 
 	public function dispatch() {
-
+		
+		$this->loadEnv();
 		$this->services();
 
 	}

@@ -116,6 +116,24 @@ class Router {
 	private function uses() {
 		return self::$uses;
 	}
+	
+	public function create_instance($class, $params) {
+    if(stripos($class, "::")){
+			case(count($params)) {
+				case 2: return $class($param[0], $param[1]);
+				case 3: return $class($param[0], $param[1], $param[2]);
+				case 4: return $class($param[0], $param[1], $param[2], $param[3]);
+				case 5: return $class($param[0], $param[1], $param[2], $param[3], $param[4]);
+			}
+		}else{
+			case(count($params)) {
+				case 2: return new $class($param[0], $param[1]);
+				case 3: return new $class($param[0], $param[1], $param[2]);
+				case 4: return new $class($param[0], $param[1], $param[2], $param[3]);
+				case 5: return new $class($param[0], $param[1], $param[2], $param[3], $param[4]);
+			}
+		}
+  }
 
 	private function makeRoutes($route, $call = null, $method = 'GET') {
 		$scope = Router::create();
@@ -146,12 +164,13 @@ class Router {
 
 		if (strripos($class, "->")) {
 			list($className, $fun) = explode('->', $class);
-			$finish = new $className(...array_values($data));
-			$response = call_user_func_array([$finish, $fun], $data);
-		} elseif (strripos($class, "::")) {
-			$response = $class(...array_values($data));
+			$values = array_values($data);
+			$response = call_user_func_array(
+       array(new ReflectionClass($class), 'newInstance'),
+       $data
+     );
 		} else {
-			$response = new $class(...array_values($data));
+			$response = $this->create_instance($class, $data);
 		}
 
 		echo $this->isJsonRes($response);
