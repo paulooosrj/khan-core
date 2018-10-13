@@ -1,5 +1,3 @@
-#!/usr/bin/env php
-
 <?php
 
 	if (file_exists(__DIR__.'/../../autoload.php')) {
@@ -17,8 +15,18 @@
 		return new $command;
 	}
 
+	$botLearning = new Command\Bot\BotBuild();
+
+	echo "
+                  ======================
+                  ||  KHAN FRAMEWORK  ||
+                  ======================
+	
+	";
+
 	$application = new Application('Khan CLI', '2.0');
 	$application->add(factory('Server'));
+	$application->add(factory('Live'));
 	$application->add(factory('Create'));
 	$application->add(factory('Api'));
 	$application->add(factory('Controller'));
@@ -31,6 +39,6 @@
 	$application->add(factory('Vue'));
 	$application->add(factory('Sass'));
 	$application->add(factory('Js'));
-	$application->add(factory('Backup'));
 	$application->add(factory('Make'));
+
 	$application->run();

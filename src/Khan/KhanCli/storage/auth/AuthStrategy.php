@@ -1,36 +1,41 @@
 <?php
-	
-	namespace StrategysAuth;
 
-	class AuthStrategy {
+namespace StrategysAuth;
 
-		// Table mysql using
-		const table = "login";
+class AuthStrategy {
 
-		// Route logout
-		const logout = "../login";
+	// Table mysql using
+	const table = "login";
 
-		// Ignore key init session
-		const ignoreSession = ["password"];
+	// Route logout
+	const logout = "../login";
 
-		const login = [
-			// fields POST and COLUMNS
-			"email", "password"
-		];
+	// Ignore key init session
+	const ignoreSession = ["password"];
 
-		const register = [
-			// fields POST and COLUMNS
-			"email", "password", "name", "icone"
-		];
+	const login = [
+		// fields POST and COLUMNS
+		"email", "password",
+	];
 
-		public static function extendsRegister($data){
-			$data["password"] = md5($data["password"]);
-			return $data;
-		}
+	const register = [
+		// fields POST and COLUMNS
+		"email",
+		"password",
+		"name",
+		"icone",
+		"created_at",
+		"updated_at",
+	];
 
-		public static function extendsValidate($data){
-			$data["password"] = md5($data["password"]);
-			return $data;
-		}
-
+	public static function extendsRegister($data) {
+		$data["password"] = md5($data["password"]);
+		return $data;
 	}
+
+	public static function extendsValidate($data) {
+		$data["password"] = md5($data["password"]);
+		return $data;
+	}
+
+}

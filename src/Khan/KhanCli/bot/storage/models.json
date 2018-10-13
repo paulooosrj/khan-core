@@ -1,13 +1,5 @@
 {
-    "uses": {
-        "\\StrategysAuth\\Strategy": 2,
-        "\\App\\Khan\\Bootstrap\\KhanController": 2,
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 1
-    },
-    "top_uses": [
-        "\\StrategysAuth\\Strategy",
-        "\\App\\Khan\\Bootstrap\\KhanController",
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware"
-    ],
-    "media": 2.5
+    "uses": [],
+    "top_uses": [],
+    "media": 0
 }

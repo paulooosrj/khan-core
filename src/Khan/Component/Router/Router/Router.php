@@ -116,21 +116,45 @@ class Router {
 	private function uses() {
 		return self::$uses;
 	}
-	
+
 	public function create_instance($class, $params) {
-    $c = count($params);
-    if(stripos($class, "::")){
-			if($c === 2) return $class($param[0], $param[1]); 
-      if($c === 3) return $class($param[0], $param[1], $param[2]); 
-      if($c === 4) return $class($param[0], $param[1], $param[2], $param[3]);
-      if($c === 5) return $class($param[0], $param[1], $param[2], $param[3], $param[4]);
-		}else{
-			if($c === 2) return new $class($param[0], $param[1]);
-			if($c === 3) return new $class($param[0], $param[1], $param[2]);
-			if($c === 4) return new $class($param[0], $param[1], $param[2], $param[3]);
-			if($c === 5) return new $class($param[0], $param[1], $param[2], $param[3], $param[4]);
+		$c = count($params);
+		if (stripos($class, "::")) {
+			if ($c === 2) {
+				return $class($param[0], $param[1]);
+			}
+
+			if ($c === 3) {
+				return $class($param[0], $param[1], $param[2]);
+			}
+
+			if ($c === 4) {
+				return $class($param[0], $param[1], $param[2], $param[3]);
+			}
+
+			if ($c === 5) {
+				return $class($param[0], $param[1], $param[2], $param[3], $param[4]);
+			}
+
+		} else {
+			if ($c === 2) {
+				return new $class($param[0], $param[1]);
+			}
+
+			if ($c === 3) {
+				return new $class($param[0], $param[1], $param[2]);
+			}
+
+			if ($c === 4) {
+				return new $class($param[0], $param[1], $param[2], $param[3]);
+			}
+
+			if ($c === 5) {
+				return new $class($param[0], $param[1], $param[2], $param[3], $param[4]);
+			}
+
 		}
-  }
+	}
 
 	private function makeRoutes($route, $call = null, $method = 'GET') {
 		$scope = Router::create();
@@ -161,11 +185,12 @@ class Router {
 
 		if (strripos($class, "->")) {
 			list($className, $fun) = explode('->', $class);
-			$values = array_values($data);
-			$response = call_user_func_array(
-       array(new ReflectionClass($class), 'newInstance'),
-       $data
-     );
+			// $response = call_user_func_array(
+			// 	array(new ReflectionClass($class), 'newInstance'),
+			// 	$data
+			// );
+			$refl = new \ReflectionMethod($className, $fun);
+			$response = $refl->invokeArgs(new $className, $data);
 		} else {
 			$response = $this->create_instance($class, $data);
 		}
@@ -194,13 +219,13 @@ class Router {
 	private function trate_callback($callback, $data) {
 		$type = gettype($callback);
 		if ($type == "object") {
-      $refFunc = new \ReflectionFunction($callback);
-      foreach( $refFunc->getParameters() as $param ){
-          if ($param->getClass()) {
-            $classe = $param->getClass()->name;
-            $data[] = new $classe;
-          }
-      }
+			$refFunc = new \ReflectionFunction($callback);
+			foreach ($refFunc->getParameters() as $param) {
+				if ($param->getClass()) {
+					$classe = $param->getClass()->name;
+					$data[] = new $classe;
+				}
+			}
 			$this->type_trate($type, $callback, $data);
 		} elseif ($type == "string") {
 			$this->type_trate($type, $callback, $data);
@@ -351,7 +376,7 @@ class Router {
 			if (file_exists($fileDir)) {
 				$mime = Mime::get($fileDir);
 				ob_start();
-				include($fileDir);
+				include ($fileDir);
 				$res = ob_get_contents();
 				ob_end_clean();
 				header("Content-type: {$mime}", true);
@@ -383,7 +408,7 @@ class Router {
 	public function respondRouter($fn, $data_receive, $inject = []) {
 		$data = array_merge([
 			new Request($data_receive, Router::get_uri()),
-			new Response(self::$uses)
+			new Response(self::$uses),
 		], $inject);
 		$this->trate_callback($fn, $data);
 	}
@@ -399,18 +424,18 @@ class Router {
 	}
 
 	public function dispatch() {
-		
+
 		$path = parse_url($_ENV['APP_URL'], PHP_URL_PATH);
 
 		$this->setDefaultMiddlewares();
 		$this->setLoadTemp();
 
 		$uri = self::$config["path"];
-		
-		if($path !== "/"){
+
+		if ($path !== "/") {
 			$uri = str_replace($path, '', $uri);
 		}
-		
+
 		$metodo = self::$config["method"];
 		$param_receive = false;
 

@@ -1,10 +1,6 @@
 {
     "name": "middlewares",
-    "uses": {
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 2
-    },
-    "top_uses": [
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware"
-    ],
-    "media": 0.6666666666666666
+    "uses": [],
+    "top_uses": [],
+    "media": 0
 }

@@ -1,67 +1,68 @@
 <?php
 
-	namespace MyApp;
-	use App\Khan\Libraries\Session as Session;
-	use App\Khan\Component\Strategy\Strategy as Strategy;
-	use App\Khan\Component\Router\Router\Router as Router;
+namespace Controllers;
+use App\Khan\Component\Router\Router\Router as Router;
+use App\Khan\Component\Strategy\Strategy as Strategy;
 
-	class AuthController {
+class AuthController {
 
-		public function logout($req, $res){
-			Strategy::make('auth')::logout();
-		}
+	public function logout($req, $res) {
+		Strategy::make('auth')::logout();
+	}
 
-		public function login($req, $res){
+	public function login($req, $res) {
 
-			if(Router::csrf_token_verify($req->post('token'))){
-			
-				$login = Strategy::make('auth')::login([
-					"email" => $req->post('email'), 
-					"password" => $req->post('senha')
-				]);
+		if (Router::csrf_token_verify($req->post('token'))) {
 
-				if($login["msg"] === "sucess"){
-					$res->send("sucesso");
-				}else{
-					$res->send("error");
-				}
+			$login = Strategy::make('auth')::login([
+				"email" => $req->post('email'),
+				"password" => $req->post('senha'),
+			]);
 
-			}
-
-		}
-
-		public function uploadFile($file){
-			$fileNewName = md5(uniqid()).".".pathinfo($file["name"], PATHINFO_EXTENSION);
-			return $fileNewName;
-		}
-
-		public function register($req, $res){
-
-			if(Router::csrf_token_verify($req->post('token'))){
-
-        $date = date('m/d/Y h:i:s a', time());
-        $icone = $this->uploadFile($_FILES['icone']);
-        
-				$register = Strategy::make('auth')::register([
-					"email" => $req->post('email'),
-					"password" => $req->post('password'),
-          "name" => $req->post('username'),
-          "icone" => "public/img/{$icone}",
-          "created_at" => $date,
-          "updated_at" => $date
-				]);
-
-				if($register["msg"] === "sucess"){
-					move_uploaded_file($_FILES['icone']["tmp_name"], "public/img/{$icone}");
-					$res->send("sucesso");
-					redirect('../../login');
-				}else{
-					$res->send("error");
-					redirect('../../register');
-				}
-
+			if ($login["msg"] === "sucess") {
+				$res->send("sucesso");
+			} else {
+				$res->send("error");
 			}
 
 		}
 
 	}
+
+	public function uploadFile($file) {
+		$fileNewName = md5(uniqid()) . "." . pathinfo($file["name"], PATHINFO_EXTENSION);
+		return $fileNewName;
+	}
+
+	public function register($req, $res) {
+
+		if (Router::csrf_token_verify($req->post('token'))) {
+
+			$date = date('m/d/Y h:i:s a', time());
+			$icone = $this->uploadFile($_FILES['icone']);
+
+			$save = [
+				"email" => $req->post('email'),
+				"password" => $req->post('password'),
+				"name" => $req->post('username'),
+				"icone" => "public/img/{$icone}",
+				"created_at" => $date,
+				"updated_at" => $date,
+			];
+
+			$register = Strategy::make('auth')::register($save);
+
+			if ($register["msg"] === "sucess") {
+				move_uploaded_file($_FILES['icone']["tmp_name"], "public/img/{$icone}");
+				$res->send("sucesso");
+				redirect('../../login');
+			} else {
+				$res->send("error");
+				redirect('../../register');
+			}
+
+		}
+
+	}
+
+}

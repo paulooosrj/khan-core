@@ -1,15 +1,14 @@
 {
     "name": "controllers",
     "uses": {
-        "\\App\\Khan\\Component\\Cdn\\Cdn": 2,
-        "\\StrategysAuth\\Strategy": 1,
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware": 1,
-        "\\App\\Khan\\Component\\Hooks\\Hooks": 1
+        "\\App\\Khan\\Component\\Router\\Router\\Router": 1,
+        "\\App\\Khan\\Component\\Strategy\\Strategy": 1,
+        "\\StrategysAuth\\Strategy": 1
     },
     "top_uses": [
-        "\\App\\Khan\\Component\\Cdn\\Cdn",
-        "\\StrategysAuth\\Strategy",
-        "\\App\\Khan\\Contracts\\Middlewares\\Middleware"
+        "\\App\\Khan\\Component\\Router\\Router\\Router",
+        "\\App\\Khan\\Component\\Strategy\\Strategy",
+        "\\StrategysAuth\\Strategy"
     ],
-    "media": 2.5
+    "media": 1
 }
