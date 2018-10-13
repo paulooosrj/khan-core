@@ -51,7 +51,7 @@
 
 				$conn = new \PDO("mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_DATABASE']}", $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
 			    $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-				$sql = "CREATE TABLE IF NOT EXISTS `login` ( `id` INT(11) NOT NULL AUTO_INCREMENT, `email` VARCHAR(50) NOT NULL, `password` VARCHAR(50) NOT NULL, `name` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`) ) COLLATE='utf8_general_ci' ENGINE=InnoDB AUTO_INCREMENT=13;";
+				$sql = "CREATE TABLE IF NOT EXISTS `login` ( `id` INT(11) NOT NULL AUTO_INCREMENT, `email` VARCHAR(50) NOT NULL, `password` VARCHAR(50) NOT NULL, `name` VARCHAR(20) NOT NULL, `created_at` VARCHAR(50) NOT NULL, `updated_at` VARCHAR(50) NOT NULLPRIMARY KEY (`id`) ) COLLATE='utf8_general_ci' ENGINE=InnoDB AUTO_INCREMENT=13;";
 				$conn->exec($sql);
 				$output->writeln("Table create success!!");
 

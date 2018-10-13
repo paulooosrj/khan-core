@@ -4,9 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="public/css/estilo.css">
-    <link rel="icon" type="image/jpeg" href="public/img/icone.png" />
+    <link rel="stylesheet" type="text/css" href="{{ assets('css/estilo.css') }}">
+    <link rel="icon" type="image/jpeg" href="{{ assets('img/icone.png') }}" />
     <title>Khan</title>
   </head>
   <body>
@@ -18,7 +20,7 @@
     			<header>
 					<nav class="nav-project navbar navbar-light bg-primary">
 						  <a class="navbar-brand" href="#">
-						    <img src="public/img/icone.png" width="50" height="50" class="d-inline-block align-top" alt="">
+						    <img src="{{ assets('img/icone.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
 						  </a>
 					</nav>
 				</header>
@@ -73,10 +75,6 @@
     	</div>
 
     </div>
-
-
-    <!-- FONT AWESOME -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
   </body>
 </html>

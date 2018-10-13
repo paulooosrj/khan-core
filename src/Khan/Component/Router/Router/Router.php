@@ -118,20 +118,17 @@ class Router {
 	}
 	
 	public function create_instance($class, $params) {
+    $c = count($params);
     if(stripos($class, "::")){
-			case(count($params)) {
-				case 2: return $class($param[0], $param[1]);
-				case 3: return $class($param[0], $param[1], $param[2]);
-				case 4: return $class($param[0], $param[1], $param[2], $param[3]);
-				case 5: return $class($param[0], $param[1], $param[2], $param[3], $param[4]);
-			}
+			if($c === 2) return $class($param[0], $param[1]); 
+      if($c === 3) return $class($param[0], $param[1], $param[2]); 
+      if($c === 4) return $class($param[0], $param[1], $param[2], $param[3]);
+      if($c === 5) return $class($param[0], $param[1], $param[2], $param[3], $param[4]);
 		}else{
-			case(count($params)) {
-				case 2: return new $class($param[0], $param[1]);
-				case 3: return new $class($param[0], $param[1], $param[2]);
-				case 4: return new $class($param[0], $param[1], $param[2], $param[3]);
-				case 5: return new $class($param[0], $param[1], $param[2], $param[3], $param[4]);
-			}
+			if($c === 2) return new $class($param[0], $param[1]);
+			if($c === 3) return new $class($param[0], $param[1], $param[2]);
+			if($c === 4) return new $class($param[0], $param[1], $param[2], $param[3]);
+			if($c === 5) return new $class($param[0], $param[1], $param[2], $param[3], $param[4]);
 		}
   }
 

@@ -4,10 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../public/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="{{ assets('css/estilo.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="icon" type="image/jpeg" href="../public/img/icone.png" />
+    <link rel="icon" type="image/jpeg" href="{{ assets('img/icone.png') }}" />
     <title>Khan Panel</title>
     <style>body{height: 100vh}.cc{border-bottom:5px solid #343a40!important;}.logout{cursor:pointer}</style>
   </head>
@@ -29,10 +31,7 @@
       </div>
 
     </div>
-
-
-    <!-- FONT AWESOME -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  
     <script type="text/javascript">
       document.querySelector('.logout').onclick = function(){
           location.href = "./logout";

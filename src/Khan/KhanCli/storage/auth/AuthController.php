@@ -39,12 +39,16 @@
 
 			if(Router::csrf_token_verify($req->post('token'))){
 
-				$icone = $this->uploadFile($_FILES['icone']);
+        $date = date('m/d/Y h:i:s a', time());
+        $icone = $this->uploadFile($_FILES['icone']);
+        
 				$register = Strategy::make('auth')::register([
 					"email" => $req->post('email'),
 					"password" => $req->post('password'),
-					"name" => $req->post('username'),
-					"icone" => "public/img/{$icone}"
+          "name" => $req->post('username'),
+          "icone" => "public/img/{$icone}",
+          "created_at" => $date,
+          "updated_at" => $date
 				]);
 
 				if($register["msg"] === "sucess"){

@@ -91,4 +91,8 @@ function cors() {
 	};
 }
 
+function router($method, $path, $call){
+  Router::$method($path, $call);
+}
+
 $app = app();
