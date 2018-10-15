@@ -49,15 +49,12 @@ class Router {
 	protected function __construct($config = null) {
 		$server = $_SERVER;
 		self::$config["uri"] = Router::get_uri();
-
 		self::$config["path"] = (strripos($server["REQUEST_URI"], "?"))
 		? explode("?", $server["REQUEST_URI"])[0]
 		: $server["REQUEST_URI"];
-
 		self::$config["method"] = (isset($server["REQUEST_METHOD"]))
 		? $server["REQUEST_METHOD"]
 		: "GET";
-
 		$this->outherMethods($config);
 	}
 
@@ -185,17 +182,13 @@ class Router {
 
 		if (strripos($class, "->")) {
 			list($className, $fun) = explode('->', $class);
-			// $response = call_user_func_array(
-			// 	array(new ReflectionClass($class), 'newInstance'),
-			// 	$data
-			// );
 			$refl = new \ReflectionMethod($className, $fun);
 			$response = $refl->invokeArgs(new $className, $data);
 		} else {
 			$response = $this->create_instance($class, $data);
 		}
 
-		echo $this->isJsonRes($response);
+		return $this->isJsonRes($response);
 
 	}
 
@@ -210,9 +203,9 @@ class Router {
 			if (isset($this->req_mid)) {$data[0] = $this->req_mid;}
 			if (isset($this->res_mid)) {$data[1] = $this->res_mid;}
 			$response = call_user_func_array($callback, $data);
-			echo $this->isJsonRes($response);
+			return $this->isJsonRes($response);
 		} elseif ($type == "string") {
-			$this->class_invoked($callback, $data);
+			return $this->class_invoked($callback, $data);
 		}
 	}
 
@@ -226,13 +219,13 @@ class Router {
 					$data[] = new $classe;
 				}
 			}
-			$this->type_trate($type, $callback, $data);
+			return $this->type_trate($type, $callback, $data);
 		} elseif ($type == "string") {
-			$this->type_trate($type, $callback, $data);
+			return $this->type_trate($type, $callback, $data);
 		} elseif ($type == "array") {
 			foreach ($callback as $key => $value) {
 				$t = gettype($value);
-				$this->type_trate($t, $value, $data);
+				return $this->type_trate($t, $value, $data);
 			}
 		}
 	}
@@ -410,7 +403,7 @@ class Router {
 			new Request($data_receive, Router::get_uri()),
 			new Response(self::$uses),
 		], $inject);
-		$this->trate_callback($fn, $data);
+		return $this->trate_callback($fn, $data);
 	}
 
 	public function isMiddlewareRouter($route) {
@@ -423,76 +416,21 @@ class Router {
 		}
 	}
 
-	public function dispatch() {
-
-		$path = parse_url($_ENV['APP_URL'], PHP_URL_PATH);
+	public function dispatch($method = '', $path = '', $test = false) {
 
 		$this->setDefaultMiddlewares();
 		$this->setLoadTemp();
 
-		$uri = self::$config["path"];
+		$configs = self::$config;
+		$method = $method ?: $configs['method'];
+		$path = $path ?: $configs['path'];
+		$dispatcher = new Dispatcher($this);
+		$res = $dispatcher($path, $method, self::$routes, self::$uses);
 
-		if ($path !== "/") {
-			$uri = str_replace($path, '', $uri);
-		}
-
-		$metodo = self::$config["method"];
-		$param_receive = false;
-
-		if (in_array('RESPOND', array_keys(self::$routes))) {
-			foreach (self::$routes["RESPOND"] as $key => $fn) {
-				if ($this->isRespond($key, $uri)) {
-					$fn = self::$routes["RESPOND"][$key];
-					$this->respondRouter(
-						$fn,
-						$this->makeData(),
-						["reg" => $this->isRespond($key, $uri)]
-					);
-					return true;
-				}
-			}
-		}
-
-		if (in_array('PARAMS', array_keys(self::$routes))) {
-			$param = $this->build(self::$routes["PARAMS"], $uri);
-			if (is_array($param)) {
-				$param_receive = $param;
-				$metodo = "PARAMS";
-			}
-		}
-
-		// Limpa URL
-		$uri = strip_tags(addslashes($uri));
-
-		if (in_array($metodo, array_keys(self::$routes))) {
-
-			if (in_array($uri, array_keys(self::$routes[$metodo])) || in_array($param_receive["rota"], array_keys(self::$routes[$metodo]))) {
-
-				$data_receive = $this->makeData($param_receive['params']);
-				$rota = $uri;
-
-				if (is_array($param_receive)) {
-					$rota = $param_receive['rota'];
-				}
-
-				$fn = self::$routes[$metodo][$rota];
-
-				$this->isMiddlewareRouter($rota);
-				$this->respondRouter($fn, $data_receive);
-
-			} else {
-				if (isset(self::$uses["not_found"]) && !empty(self::$uses["not_found"])) {
-					$this->respondRouter(
-						self::$uses["not_found"],
-						$this->makeData()
-					);
-				} else {
-					http_response_code(404);
-					die("Route not found");
-				}
-
-			}
-
+		if (!$test) {
+			echo $res;
+		} else {
+			return $res;
 		}
 
 	}

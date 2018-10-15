@@ -1,14 +1,10 @@
 {
     "name": "controllers",
     "uses": {
-        "\\App\\Khan\\Component\\Router\\Router\\Router": 1,
-        "\\App\\Khan\\Component\\Strategy\\Strategy": 1,
         "\\StrategysAuth\\Strategy": 1
     },
     "top_uses": [
-        "\\App\\Khan\\Component\\Router\\Router\\Router",
-        "\\App\\Khan\\Component\\Strategy\\Strategy",
         "\\StrategysAuth\\Strategy"
     ],
-    "media": 1
+    "media": 0.5
 }
