@@ -9,6 +9,7 @@
  */
 
 namespace App\Khan;
+use App\Khan\Component\Dotenv;
 
 define("ROOT_CORE", __DIR__);
 
@@ -44,8 +45,8 @@ class Khan {
 			class_alias($value, $key);
 		}
 	}
-	
-	public function apps(){
+
+	public function apps() {
 		include_once __DIR__ . '/Component/Functions/Helpers.php';
 		include_once __DIR__ . '/Bootstrap/Config.php';
 		$callTo = $app::resolve('app');
@@ -68,19 +69,18 @@ class Khan {
 		$this->apps();
 
 	}
-	
-	public function set($name, $value){
+
+	public function set($name, $value) {
 		define($name, $value);
 		return $this;
 	}
-	
-	public function loadEnv(){
-		$dotenv = new \Dotenv\Dotenv(ROOT_FOLDER);
-		$dotenv->load();
+
+	public function loadEnv() {
+		return Dotenv\init(ROOT_FOLDER);
 	}
 
 	public function dispatch() {
-		
+
 		$this->loadEnv();
 		$this->services();
 
