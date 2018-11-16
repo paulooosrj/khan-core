@@ -19,7 +19,7 @@
         "symfony/console": "^4.0",
         "ralouphie/mimey": "^2.0",
         "goaop/parser-reflection": "^1.4",
-        "sergiors/prelude": "dev-master"
+        "sergiors/prelude": "*"
     },
     "require-dev": {
       "nochso/sami-theme": "^0.2.0"
