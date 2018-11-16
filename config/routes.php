@@ -28,6 +28,11 @@ Router\get('/', function ($req, $res, Container $container) {
 	return $message;
 });
 
+Router\get('/h', function ($req, $res, Container $container) {
+	$message = ['musica' => 'isso é amor'];
+	return $message;
+});
+
 Router\get('/model', function () {
 	$model = new Models\MyModel();
 	/* $model->email = "jskhanframework@gmail.com";

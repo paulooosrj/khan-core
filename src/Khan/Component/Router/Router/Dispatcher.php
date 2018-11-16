@@ -10,7 +10,8 @@ class Dispatcher {
 
 	public function __invoke($uri, $metodo, $routes, $uses) {
 
-		$path = parse_url($_ENV['APP_URL'], PHP_URL_PATH);
+        $path = parse_url($_ENV['APP_URL'], PHP_URL_PATH);
+
 		$param_receive = false;
 		$scope = $this->router;
 
@@ -34,7 +35,7 @@ class Dispatcher {
 		}
 
 		// Limpa URL
-		$uri = strip_tags(addslashes($uri));
+        $uri = strip_tags(addslashes($uri));
 
 		if (in_array($metodo, array_keys($routes))) {
 

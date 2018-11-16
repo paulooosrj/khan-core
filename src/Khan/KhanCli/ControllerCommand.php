@@ -2,7 +2,7 @@
 
 	namespace Command;
 
-	set_time_limit(0); 
+	set_time_limit(0);
 
 	use Symfony\Component\Console\Command\Command as Comando;
 	use Symfony\Component\Console\Input\InputInterface;
@@ -23,10 +23,10 @@
 	    }
 
 	    protected function execute(InputInterface $input, OutputInterface $output){
-	    		
+
 	    	$controller = ($input->getArgument('controller-name')) ? $input->getArgument('controller-name') : false;
 	    	$botLearning = Bot\Bot::init('controllers');
-			$controllerUses = $botLearning::loadUses();
+            $controllerUses = $botLearning::loadUses();
 
 	    	if($controller){
 
@@ -35,10 +35,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"controllerName" => $controller . "Controller",
-					"usedss" => array_reduce($controllerUses, function($ant, $atual) use($controllerUses){
+					"usedss" => count($controllerUses) > 0 ? array_reduce($controllerUses, function($ant, $atual) use($controllerUses){
 						$some = end(array_values($controllerUses)) === $atual ? ";" : ",\n		";
 						return $ant . "$atual". $some;
-					}, "use	")
+					}, "use	") : ''
 				]));
 
 	    		if($make){

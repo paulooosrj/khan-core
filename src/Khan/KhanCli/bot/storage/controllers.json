@@ -1,10 +1,5 @@
 {
-    "name": "controllers",
-    "uses": {
-        "\\StrategysAuth\\Strategy": 1
-    },
-    "top_uses": [
-        "\\StrategysAuth\\Strategy"
-    ],
-    "media": 0.5
+    "uses": [],
+    "top_uses": [],
+    "media": 0
 }

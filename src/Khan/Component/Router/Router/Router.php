@@ -36,8 +36,8 @@ function pipe(){
  *
  * @return void
  */
-function server($v){
-    return $_SERVER[$v] ?: false;
+function server(string $v){
+    return in_array($v, $_SERVER) ? $_SERVER[$v] : '';
 }
 
 /**
@@ -276,11 +276,16 @@ class Router {
 	 */
 	protected function __construct($config = null) {
 
+        $server = $_SERVER;
+
 		self::$config = array_merge(self::$config, [
             "uri" => Router::get_uri(),
-            "path" => (strripos(server("REQUEST_URI"), "?")) ?
-            explode("?", server("REQUEST_URI"))[0] : server("REQUEST_URI"),
-            "method" => server("REQUEST_METHOD") ? server("REQUEST_METHOD") : "GET"
+            "path" => (strripos($server["REQUEST_URI"], "?"))
+            ? explode("?", $server["REQUEST_URI"])[0]
+            : $server["REQUEST_URI"],
+            "method" => (isset($server["REQUEST_METHOD"]))
+            ? $server["REQUEST_METHOD"]
+            : "GET"
         ]);
 
         $this->outherMethods($config);
@@ -314,11 +319,14 @@ class Router {
 	 * @return void
 	 */
 	public static function get_uri() {
-		$scheme = server("REQUEST_SCHEME");
-		$host = server('HTTP_HOST');
-		$protocol = $scheme ?: (server("HTTP_X_FORWARDED_PROTO") ?: "http");
-		$domain = $host ?: server("SERVER_NAME");
-		$path = server("REQUEST_URI") ?: "/";
+		$server = $_SERVER;
+		$scheme = isset($server["REQUEST_SCHEME"]) ?: null;
+		$host = $server['HTTP_HOST'];
+		$protocol = (isset($scheme)) ? $scheme : ((
+			isset($server["HTTP_X_FORWARDED_PROTO"]
+			)) ? $server["HTTP_X_FORWARDED_PROTO"] : "http");
+		$domain = (isset($host)) ? $host : $server["SERVER_NAME"];
+		$path = (isset($server["REQUEST_URI"])) ? $server["REQUEST_URI"] : "/";
 		return "{$protocol}://{$domain}{$path}";
 	}
 
@@ -560,7 +568,11 @@ class Router {
 				http_response_code(404);
 			}
 		});
-	}
+    }
+
+    public function isRespond($key, $uri){
+        return isRespond($key, $uri);
+    }
 
 	public static function notFound($call = null) {
 		self::$uses["not_found"] = $call;
@@ -611,7 +623,8 @@ class Router {
 		$this->setDefaultMiddlewares();
 		$this->setLoadTemp();
 
-		$configs = self::$config;
+        $configs = self::$config;
+
 		$method = $method ?: $configs['method'];
 		$path = $path ?: $configs['path'];
 		$dispatcher = new Dispatcher($this);
