@@ -135,17 +135,14 @@ class Response extends ResponseFoundation implements ResponseInterface {
 
 	public function render($file, $data = []) {
 		echo $this->twig->render($file, $data);
-		return $this;
 	}
 
 	public function load($file) {
 		$this->twig->load($file);
-		return $this;
 	}
 
 	public function json($array = []) {
 		echo json_encode($array, JSON_PRETTY_PRINT);
-		return $this;
 	}
 
 	public function status($state = 200) {
