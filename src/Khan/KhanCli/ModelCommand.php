@@ -2,7 +2,7 @@
 
 	namespace Command;
 
-	set_time_limit(0); 
+	set_time_limit(0);
 
 	use Symfony\Component\Console\Command\Command as Comando;
 	use Symfony\Component\Console\Input\InputInterface;
@@ -23,7 +23,7 @@
 	    }
 
 	    protected function execute(InputInterface $input, OutputInterface $output){
-	    		
+
 	    	$model = ($input->getArgument('model-name')) ? $input->getArgument('model-name') : false;
 	    	$botLearning = Bot\Bot::init('models');
 			$modelUses = $botLearning::loadUses();
@@ -36,10 +36,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"modelName" => $model,
-					"usedss" => array_reduce($modelUses, function($ant, $atual) use($modelUses){
+					"usedss" => count($modelUses) > 0 ? array_reduce($modelUses, function($ant, $atual) use($modelUses){
 						$some = end(array_values($modelUses)) === $atual ? ";" : ",\n		";
 						return $ant . "$atual". $some;
-					}, "use	")
+					}, "use	") : ''
 				]));
 
 	    		if($make){

@@ -1,5 +1,9 @@
 {
-    "uses": [],
-    "top_uses": [],
-    "media": 0
+    "uses": {
+        "\\StrategysAuth\\Strategy": 1
+    },
+    "top_uses": [
+        "\\StrategysAuth\\Strategy"
+    ],
+    "media": 0.3333333333333333
 }

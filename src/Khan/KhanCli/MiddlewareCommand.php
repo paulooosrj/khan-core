@@ -2,7 +2,7 @@
 
 	namespace Command;
 
-	set_time_limit(0); 
+	set_time_limit(0);
 
 	use Symfony\Component\Console\Command\Command as Comando;
 	use Symfony\Component\Console\Input\InputInterface;
@@ -23,7 +23,7 @@
 	    }
 
 	    protected function execute(InputInterface $input, OutputInterface $output){
-	    		
+
 	    	$middleware = ($input->getArgument('middleware-name')) ? $input->getArgument('middleware-name') : false;
 	    	$botLearning = Bot\Bot::init('middlewares');
 			$middlewareUses = $botLearning::loadUses();
@@ -35,10 +35,10 @@
 
 	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
 					"middlewareName" => $middleware,
-					"usedss" => array_reduce($middlewareUses, function($ant, $atual) use($middlewareUses){
+					"usedss" => count($middlewareUses) > 0 ?  array_reduce($middlewareUses, function($ant, $atual) use($middlewareUses){
 						$some = end(array_values($middlewareUses)) === $atual ? ";" : ",\n		";
 						return $ant . "$atual". $some;
-					}, "use	")
+					}, "use	") : ''
 				]));
 
 	    		if($make){
