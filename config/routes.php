@@ -49,6 +49,20 @@ Router\get('/model', function () {
 	return $row;
 });
 
+Router\get('/sqlite', function(){
+
+    $model = new \Models\MyModel();
+    $model->nome = "jskhanframework@gmail.com";
+    $model->id = 2;
+
+    if($model->save()->rowCount()){
+        echo "Save";
+    }
+
+    return 'oi';
+
+});
+
 //   router('get', '/test', function(){
 //     $data = new DateTime();
 //     return ["horario" => $data->format('d-m-Y H:i:s')];

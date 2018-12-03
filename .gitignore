@@ -1,4 +1,5 @@
 /vendor/
+/database/
 /app/http/controllers/**/*.php
 /app/http/middlewares/**/*.php
 /app/models/**/*.php

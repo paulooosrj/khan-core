@@ -7,7 +7,7 @@
 
         private static $db = null;
         private static $instance = null;
-        
+
         public static function create(){
             if (!self::$instance) {
                 self::$instance = new DB();
@@ -26,6 +26,13 @@
             ];
         }
 
+        public static function sqlite($env){
+            return [
+              'database_type' => 'sqlite',
+              'database_file' => $env['DB_FILE']
+            ];
+        }
+
         public static function getConn($env = null) {
             if (self::$db === null && $env !== null) {
                 $type = "App\Khan\Component\DB\DB::" . $env['DB_CONNECTION'] ?: "mysql";
@@ -33,5 +40,5 @@
             }
             return self::$db;
         }
-        
+
     }
