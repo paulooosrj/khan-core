@@ -63,6 +63,10 @@ Router\get('/sqlite', function(){
 
 });
 
+Router\params('/mundo/{name}', function($req, $res){
+    return "Teste {$req::params('name')} and i have {$req::query('idade')} years.";
+});
+
 //   router('get', '/test', function(){
 //     $data = new DateTime();
 //     return ["horario" => $data->format('d-m-Y H:i:s')];

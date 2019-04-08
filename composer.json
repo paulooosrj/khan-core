@@ -21,7 +21,8 @@
         "goaop/parser-reflection": "^1.4"
     },
     "require-dev": {
-      "nochso/sami-theme": "^0.2.0"
+      "nochso/sami-theme": "^0.2.0",
+        "phpunit/phpunit": "^8"
     },
     "autoload": {
         "psr-4": {

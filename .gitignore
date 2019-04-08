@@ -10,4 +10,3 @@ routes
 gulpfile.js
 /node_modules/
 sami.phar
-.env

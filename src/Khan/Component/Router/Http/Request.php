@@ -1,17 +1,17 @@
 <?php
-	
+
 	namespace App\Khan\Component\Router\Http;
   use \App\Khan\Component\HttpFoundation\Request as RequestFoundation;
   use \App\Khan\Component\Router\Http\Interfaces\Request as RequestInterface;
-  
+
 	/**
 	* Request Class and Interface Implement
 	*/
 
 	class Request extends RequestFoundation implements RequestInterface{
-      
+
     private static $data = [];
-    
+
       public function __construct(Array $reqs = array(), $uri = ''){
         $this->makeRequests();
         parent::__construct($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
@@ -30,7 +30,7 @@
         }
         return $data;
       }
-    
+
       public function makeRequests(){
         if(is_null($_GET)): $_GET = []; endif;
         if(is_null($_POST)): $_POST = []; endif;
@@ -40,19 +40,19 @@
         if(is_null($_COOKIE)): $_COOKIE = []; endif;
         if(is_null($_FILES)): $_FILES = []; endif;
       }
-      
+
       public static function getAll(){
           return self::$data;
       }
-       
+
       public static function make($name = null, $key, $value){
           self::$data[$name][$key] = $value;
       }
-    
+
       public static function validateValue($type, $value){
         return in_array($value, self::$data[$type]);
       }
-    
+
       public static function validateType($type, $value){
         $retorno = '';
         if(in_array($type, self::$data)){
@@ -60,7 +60,7 @@
         }
         return $retorno;
       }
-    
+
       public static function post($name = null){
         $validate = Request::validateValue("post", $name);
         if($validate && $name !== null){ return false; }
@@ -71,7 +71,18 @@
         }
         return false;
       }
-    
+
+      public static function query($name = null){
+        $validate = Request::validateValue("get", $name);
+        if($validate && $name !== null){ return false; }
+        if($name == null){
+          return self::$data["get"];
+        }else{
+          return self::$data["get"][$name];
+        }
+        return false;
+      }
+
       public static function files($name = null){
         $validate = Request::validateValue("files", $name);
         if($validate && $name !== null){ return false; }
@@ -82,7 +93,7 @@
         }
         return false;
       }
-    
+
       public static function put($name = null){
         $validate = Request::validateValue("put", $name);
         if($validate && $name !== null){ return false; }
@@ -93,7 +104,7 @@
         }
         return false;
       }
-    
+
       public static function delete($name = null){
         $validate = Request::validateValue("delete", $name);
         if($validate && $name !== null){ return false; }
@@ -104,7 +115,7 @@
         }
         return false;
       }
-    
+
       public static function params($name = null){
         $validate = Request::validateValue("params", $name);
         if($validate && $name !== null){ return false; }
@@ -115,7 +126,7 @@
         }
         return false;
       }
-    
+
       public static function session($name = null){
         $validate = Request::validateValue("session", $name);
         if($validate && $name !== null){ return false; }
@@ -126,5 +137,5 @@
         }
         return false;
       }
-    
+
 	}
