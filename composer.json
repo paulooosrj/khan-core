@@ -22,7 +22,7 @@
     },
     "require-dev": {
       "nochso/sami-theme": "^0.2.0",
-        "phpunit/phpunit": "^8"
+        "phpunit/phpunit": "^8 || ^9"
     },
     "autoload": {
         "psr-4": {
